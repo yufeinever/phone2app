@@ -1,0 +1,23 @@
+server_url: "http://127.0.0.1:4723"
+implicit_wait_seconds: 2
+explicit_wait_seconds: 15
+
+capabilities:
+  platformName: "Android"
+  automationName: "UiAutomator2"
+  udid: null
+  appPackage: "com.example.app"
+  appActivity: ".MainActivity"
+  noReset: true
+  newCommandTimeout: 300
+
+input:
+  provider: "fastinput_ime"
+  fallback_provider: "appium"
+
+features:
+  carousel_labels:
+    - "Voice Chat"
+    - "音视频通话"
+    - "AI Writing"
+    - "Podcast"

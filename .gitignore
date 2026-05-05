@@ -1,0 +1,50 @@
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+dist/
+build/
+*.egg-info/
+.env
+.env.*
+!.env.example
+*.local.json
+*.local.toml
+
+# Large/generated execution artifacts.
+reports/
+tools/
+_tmp*.json
+tmp/
+temp/
+
+# Local agent/runbook notes can include machine-specific app identifiers.
+AGENTS.md
+
+# Android/test runtime artifacts.
+*.apk
+*.aab
+*.apks
+*.perfetto-trace
+*.trace
+*.har
+*.pcap
+*.pcapng
+*.log
+*.xml.tmp
+*.uiautomator.xml
+logcat*.txt
+
+# Captured media should live under ignored reports/ unless explicitly curated.
+*.mp4
+*.mov
+*.webm
+*.avi
+
+# Local tool caches.
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+node_modules/

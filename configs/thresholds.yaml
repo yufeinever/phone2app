@@ -1,0 +1,6 @@
+startup_p90_warn_ratio: 0.15
+startup_p90_fail_ratio: 0.25
+scenario_p90_fail_ratio: 0.20
+crash_or_anr_fail: true
+memory_growth_warn_mb: 80
+memory_growth_fail_mb: 150

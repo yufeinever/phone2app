@@ -1,0 +1,6 @@
+devices:
+  - name: default-usb
+    serial: null
+    min_android_version: 10
+    network: wifi
+    notes: "Use the first authorized adb device when serial is null."

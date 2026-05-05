@@ -1,0 +1,52 @@
+app:
+  package: "com.example.app"
+  activity: ".MainActivity"
+  apk_path: null
+  appium_server: "http://127.0.0.1:4723"
+  appium_caps:
+    platformName: "Android"
+    automationName: "UiAutomator2"
+    noReset: true
+
+run:
+  repeats: 5
+  warmups: 1
+  collect_perfetto: false
+  perfetto_seconds: 15
+  cold_start_each_iteration: true
+
+scenarios:
+  - name: cold_start
+    description: "Cold start to first activity."
+    steps:
+      - action: launch
+      - action: wait
+        seconds: 3
+
+  - name: home_refresh
+    description: "Example Appium flow. Replace selectors with your app selectors."
+    enabled: false
+    steps:
+      - action: launch
+      - action: wait
+        seconds: 2
+      - action: tap_accessibility_id
+        value: "refresh"
+      - action: wait
+        seconds: 3
+      - action: assert_text
+        value: "首页"
+
+  - name: home_smoke
+    description: "ADB-only UI smoke test for an example app home screen."
+    repeats: 3
+    warmups: 0
+    enabled: true
+    steps:
+      - action: launch
+      - action: wait
+        seconds: 2
+      - action: assert_content_desc_contains
+        value: "Home"
+      - action: assert_content_desc_contains
+        value: "AI"
