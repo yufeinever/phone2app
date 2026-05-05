@@ -92,6 +92,37 @@ python -m phone2app compare --current reports\latest\report.json --baseline repo
 
 配置文件位于 [configs/appium.yaml](configs/appium.yaml)。
 
+## LLM 主对话评测资产
+
+仓库包含当前三款 App 横向评测所需的核心脚本和用例集，但不包含历史执行报告、截图、XML、trace 和人工复核 HTML。
+
+可执行用例集位于：
+
+- `data/eval_cases/main-dialogue-300-v3.2/cases.json`：300 题完整池，其中 274 题为纯文本主对话题，26 题为产品操作/性能采集题。
+- `data/eval_cases/main-dialogue-300-v3.2/dialogue_cases.json`：274 题主对话模型题。
+- `data/eval_cases/main-dialogue-300-v3.2/operation_cases.json`：26 题产品操作题。
+- `data/eval_cases/ceval-abcd-50/cases.json`：50 题 C-Eval 单选学科考察题。
+
+产品专用 runner 位于 `tools/`：
+
+- `run_main_dialogue_eval.py`：团队版灵犀主对话 runner。
+- `run_mobile_lingxi_eval.py` / `mobile_lingxi_common.py`：移动灵犀 runner 与状态机。
+- `run_doubao_eval.py` / `doubao_common.py`：豆包 runner 与状态机。
+- `run_rotating_main_dialogue_eval.py`：三产品轮转执行调度器。
+- `judge_main_dialogue_cross_eval.py`：赛后横向裁判。
+
+真机序列号不写死在公开配置中。多设备场景下先设置：
+
+```powershell
+$env:ANDROID_SERIAL='<your-adb-serial>'
+```
+
+裁判模型密钥通过环境变量注入，不写入仓库：
+
+```powershell
+$env:JUDGE_API_KEY='<your-key>'
+```
+
 ## 输出
 
 每次运行会生成独立目录：

@@ -1,0 +1,2951 @@
+{
+  "metadata": {
+    "name": "ceval-abcd-50",
+    "created_at": "2026-05-05T16:31:23",
+    "source": "ceval/ceval-exam",
+    "split": "validation",
+    "seed": 20260505,
+    "case_count": 50,
+    "raw_paths": {
+      "accountant": "data\\ceval_abcd_50\\raw\\accountant\\val-00000-of-00001.parquet",
+      "advanced_mathematics": "data\\ceval_abcd_50\\raw\\advanced_mathematics\\val-00000-of-00001.parquet",
+      "business_administration": "data\\ceval_abcd_50\\raw\\business_administration\\val-00000-of-00001.parquet",
+      "chinese_language_and_literature": "data\\ceval_abcd_50\\raw\\chinese_language_and_literature\\val-00000-of-00001.parquet",
+      "civil_servant": "data\\ceval_abcd_50\\raw\\civil_servant\\val-00000-of-00001.parquet",
+      "college_chemistry": "data\\ceval_abcd_50\\raw\\college_chemistry\\val-00000-of-00001.parquet",
+      "college_economics": "data\\ceval_abcd_50\\raw\\college_economics\\val-00000-of-00001.parquet",
+      "college_physics": "data\\ceval_abcd_50\\raw\\college_physics\\val-00000-of-00001.parquet",
+      "computer_architecture": "data\\ceval_abcd_50\\raw\\computer_architecture\\val-00000-of-00001.parquet",
+      "computer_network": "data\\ceval_abcd_50\\raw\\computer_network\\val-00000-of-00001.parquet",
+      "discrete_mathematics": "data\\ceval_abcd_50\\raw\\discrete_mathematics\\val-00000-of-00001.parquet",
+      "high_school_chemistry": "data\\ceval_abcd_50\\raw\\high_school_chemistry\\val-00000-of-00001.parquet",
+      "high_school_chinese": "data\\ceval_abcd_50\\raw\\high_school_chinese\\val-00000-of-00001.parquet",
+      "high_school_geography": "data\\ceval_abcd_50\\raw\\high_school_geography\\val-00000-of-00001.parquet",
+      "high_school_history": "data\\ceval_abcd_50\\raw\\high_school_history\\val-00000-of-00001.parquet",
+      "high_school_mathematics": "data\\ceval_abcd_50\\raw\\high_school_mathematics\\val-00000-of-00001.parquet",
+      "high_school_physics": "data\\ceval_abcd_50\\raw\\high_school_physics\\val-00000-of-00001.parquet",
+      "high_school_politics": "data\\ceval_abcd_50\\raw\\high_school_politics\\val-00000-of-00001.parquet",
+      "ideological_and_moral_cultivation": "data\\ceval_abcd_50\\raw\\ideological_and_moral_cultivation\\val-00000-of-00001.parquet",
+      "law": "data\\ceval_abcd_50\\raw\\law\\val-00000-of-00001.parquet",
+      "legal_professional": "data\\ceval_abcd_50\\raw\\legal_professional\\val-00000-of-00001.parquet",
+      "logic": "data\\ceval_abcd_50\\raw\\logic\\val-00000-of-00001.parquet",
+      "marxism": "data\\ceval_abcd_50\\raw\\marxism\\val-00000-of-00001.parquet",
+      "middle_school_chemistry": "data\\ceval_abcd_50\\raw\\middle_school_chemistry\\val-00000-of-00001.parquet",
+      "middle_school_geography": "data\\ceval_abcd_50\\raw\\middle_school_geography\\val-00000-of-00001.parquet",
+      "middle_school_history": "data\\ceval_abcd_50\\raw\\middle_school_history\\val-00000-of-00001.parquet",
+      "middle_school_mathematics": "data\\ceval_abcd_50\\raw\\middle_school_mathematics\\val-00000-of-00001.parquet",
+      "middle_school_physics": "data\\ceval_abcd_50\\raw\\middle_school_physics\\val-00000-of-00001.parquet",
+      "modern_chinese_history": "data\\ceval_abcd_50\\raw\\modern_chinese_history\\val-00000-of-00001.parquet",
+      "operating_system": "data\\ceval_abcd_50\\raw\\operating_system\\val-00000-of-00001.parquet",
+      "probability_and_statistics": "data\\ceval_abcd_50\\raw\\probability_and_statistics\\val-00000-of-00001.parquet"
+    },
+    "selection_rule": "C-Eval validation 单项选择题；过滤图表/材料风险题；prompt 长度受控；按能力域分层确定性抽样。",
+    "product_order": [
+      "团队版灵犀",
+      "移动灵犀",
+      "豆包"
+    ]
+  },
+  "results": [
+    {
+      "case_id": "CEVAL-ABCD-001",
+      "priority": "P0",
+      "module": "主对话-标准选择题",
+      "feature": "逻辑与公务员",
+      "ability": "公务员",
+      "source": "C-Eval validation",
+      "benchmark": "C-Eval",
+      "benchmark_dataset": "ceval/ceval-exam",
+      "benchmark_split": "validation",
+      "benchmark_subject": "civil_servant",
+      "benchmark_subject_name": "公务员",
+      "benchmark_source_id": 46,
+      "source_fidelity": "原题引用",
+      "source_fidelity_reason": "来自 C-Eval validation split 的原始单项选择题，保留原题题干、选项与标准答案。",
+      "easy_wrong": "否",
+      "summary": "2009年有两次“立春”，很容易让人联想到“第二春”“二度春”，可想而知这样的婚姻不稳定，所以网络上有“2009年不能结婚，或者2009年爱情不会长久”等传闻。",
+      "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：公务员\n题目：2009年有两次“立春”，很容易让人联想到“第二春”“二度春”，可想而知这样的婚姻不稳定，所以网络上有“2009年不能结婚，或者2009年爱情不会长久”等传闻。但是，大多数年轻人认为，登记结婚是件水到渠成的事，不会因为赶日子仓促提前或延迟。 根据这段文字，下列说法正确的是。\nA. 作者认为2009年不适合结婚\nB. 大多数年轻人认为2009年是结婚的好年头\nC. 2009年结婚会使婚姻不稳定的说法是无稽之谈\nD. 大多数年轻人不会因为2009年有两次“立春”而改变自己的结婚计划\n答案：",
+      "expected_result": "D",
+      "steps": [
+        "新建会话",
+        "输入 C-Eval 单项选择题",
+        "发送",
+        "等待回答",
+        "提取首个独立 A/B/C/D 判分并记录截图/XML/时延"
+      ],
+      "recovery_action": "用新建会话隔离用例；必要时关闭当前 App 后拉起下一产品。",
+      "test_type": "model_dialogue",
+      "execution_mode": "uiautomator2_text_dialogue",
+      "send_as_model_question": true,
+      "execution_protocol": "text_dialogue_or_metric",
+      "current_dialogue_suitable": "是",
+      "needs_material": "否",
+      "needs_operation": "否",
+      "scoring_type": "single_choice_abcd",
+      "strict_expected": "D",
+      "score_rule": "App 必须仅回答选项 A/B/C/D 中的一个字母，不要解释；与 strict_expected 完全一致为 correct，否则 wrong；不使用 partial。",
+      "turns": [
+        {
+          "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：公务员\n题目：2009年有两次“立春”，很容易让人联想到“第二春”“二度春”，可想而知这样的婚姻不稳定，所以网络上有“2009年不能结婚，或者2009年爱情不会长久”等传闻。但是，大多数年轻人认为，登记结婚是件水到渠成的事，不会因为赶日子仓促提前或延迟。 根据这段文字，下列说法正确的是。\nA. 作者认为2009年不适合结婚\nB. 大多数年轻人认为2009年是结婚的好年头\nC. 2009年结婚会使婚姻不稳定的说法是无稽之谈\nD. 大多数年轻人不会因为2009年有两次“立春”而改变自己的结婚计划\n答案：",
+          "expected": "D",
+          "must_contain": [
+            "D"
+          ],
+          "scoring_type": "single_choice_abcd",
+          "strict_answer_only": true
+        }
+      ],
+      "question": "2009年有两次“立春”，很容易让人联想到“第二春”“二度春”，可想而知这样的婚姻不稳定，所以网络上有“2009年不能结婚，或者2009年爱情不会长久”等传闻。但是，大多数年轻人认为，登记结婚是件水到渠成的事，不会因为赶日子仓促提前或延迟。 根据这段文字，下列说法正确的是____。",
+      "options": {
+        "A": "作者认为2009年不适合结婚",
+        "B": "大多数年轻人认为2009年是结婚的好年头",
+        "C": "2009年结婚会使婚姻不稳定的说法是无稽之谈",
+        "D": "大多数年轻人不会因为2009年有两次“立春”而改变自己的结婚计划"
+      },
+      "answer": "D",
+      "explanation": ""
+    },
+    {
+      "case_id": "CEVAL-ABCD-002",
+      "priority": "P0",
+      "module": "主对话-标准选择题",
+      "feature": "逻辑与公务员",
+      "ability": "公务员",
+      "source": "C-Eval validation",
+      "benchmark": "C-Eval",
+      "benchmark_dataset": "ceval/ceval-exam",
+      "benchmark_split": "validation",
+      "benchmark_subject": "civil_servant",
+      "benchmark_subject_name": "公务员",
+      "benchmark_source_id": 19,
+      "source_fidelity": "原题引用",
+      "source_fidelity_reason": "来自 C-Eval validation split 的原始单项选择题，保留原题题干、选项与标准答案。",
+      "easy_wrong": "否",
+      "summary": "古人归纳总结出许多观天象识天气的谚语。下列与天气变化无关的谚语是。",
+      "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：公务员\n题目：古人归纳总结出许多观天象识天气的谚语。下列与天气变化无关的谚语是。\nA. 朝霞不出门，晚霞行千里\nB. 天上鱼鳞云，地下雨淋淋\nC. 东风是个精，不下也要阴\nD. 百日连阴雨，总有一日晴\n答案：",
+      "expected_result": "D",
+      "steps": [
+        "新建会话",
+        "输入 C-Eval 单项选择题",
+        "发送",
+        "等待回答",
+        "提取首个独立 A/B/C/D 判分并记录截图/XML/时延"
+      ],
+      "recovery_action": "用新建会话隔离用例；必要时关闭当前 App 后拉起下一产品。",
+      "test_type": "model_dialogue",
+      "execution_mode": "uiautomator2_text_dialogue",
+      "send_as_model_question": true,
+      "execution_protocol": "text_dialogue_or_metric",
+      "current_dialogue_suitable": "是",
+      "needs_material": "否",
+      "needs_operation": "否",
+      "scoring_type": "single_choice_abcd",
+      "strict_expected": "D",
+      "score_rule": "App 必须仅回答选项 A/B/C/D 中的一个字母，不要解释；与 strict_expected 完全一致为 correct，否则 wrong；不使用 partial。",
+      "turns": [
+        {
+          "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：公务员\n题目：古人归纳总结出许多观天象识天气的谚语。下列与天气变化无关的谚语是。\nA. 朝霞不出门，晚霞行千里\nB. 天上鱼鳞云，地下雨淋淋\nC. 东风是个精，不下也要阴\nD. 百日连阴雨，总有一日晴\n答案：",
+          "expected": "D",
+          "must_contain": [
+            "D"
+          ],
+          "scoring_type": "single_choice_abcd",
+          "strict_answer_only": true
+        }
+      ],
+      "question": "古人归纳总结出许多观天象识天气的谚语。下列与天气变化无关的谚语是____。",
+      "options": {
+        "A": "朝霞不出门，晚霞行千里",
+        "B": "天上鱼鳞云，地下雨淋淋",
+        "C": "东风是个精，不下也要阴",
+        "D": "百日连阴雨，总有一日晴"
+      },
+      "answer": "D",
+      "explanation": ""
+    },
+    {
+      "case_id": "CEVAL-ABCD-003",
+      "priority": "P0",
+      "module": "主对话-标准选择题",
+      "feature": "数学",
+      "ability": "初中数学",
+      "source": "C-Eval validation",
+      "benchmark": "C-Eval",
+      "benchmark_dataset": "ceval/ceval-exam",
+      "benchmark_split": "validation",
+      "benchmark_subject": "middle_school_mathematics",
+      "benchmark_subject_name": "初中数学",
+      "benchmark_source_id": 6,
+      "source_fidelity": "原题引用",
+      "source_fidelity_reason": "来自 C-Eval validation split 的原始单项选择题，保留原题题干、选项与标准答案。",
+      "easy_wrong": "否",
+      "summary": "线段$AB=9$ ，点C在线段$AB$上，且有$AC=\\frac{1}{3}AB$ ， M是AB 的中点，则 MC等于",
+      "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：初中数学\n题目：线段$AB=9$ ，点C在线段$AB$上，且有$AC=\\frac{1}{3}AB$ ， M是AB 的中点，则 MC等于\nA. $3$\nB. $\\frac{3}{2}$\nC. $\\frac{9}{2}$\nD. $\\frac{15}{2}$\n答案：",
+      "expected_result": "B",
+      "steps": [
+        "新建会话",
+        "输入 C-Eval 单项选择题",
+        "发送",
+        "等待回答",
+        "提取首个独立 A/B/C/D 判分并记录截图/XML/时延"
+      ],
+      "recovery_action": "用新建会话隔离用例；必要时关闭当前 App 后拉起下一产品。",
+      "test_type": "model_dialogue",
+      "execution_mode": "uiautomator2_text_dialogue",
+      "send_as_model_question": true,
+      "execution_protocol": "text_dialogue_or_metric",
+      "current_dialogue_suitable": "是",
+      "needs_material": "否",
+      "needs_operation": "否",
+      "scoring_type": "single_choice_abcd",
+      "strict_expected": "B",
+      "score_rule": "App 必须仅回答选项 A/B/C/D 中的一个字母，不要解释；与 strict_expected 完全一致为 correct，否则 wrong；不使用 partial。",
+      "turns": [
+        {
+          "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：初中数学\n题目：线段$AB=9$ ，点C在线段$AB$上，且有$AC=\\frac{1}{3}AB$ ， M是AB 的中点，则 MC等于\nA. $3$\nB. $\\frac{3}{2}$\nC. $\\frac{9}{2}$\nD. $\\frac{15}{2}$\n答案：",
+          "expected": "B",
+          "must_contain": [
+            "B"
+          ],
+          "scoring_type": "single_choice_abcd",
+          "strict_answer_only": true
+        }
+      ],
+      "question": "线段$AB=9$ ，点C在线段$AB$上，且有$AC=\\frac{1}{3}AB$ ， M是AB 的中点，则 MC等于____",
+      "options": {
+        "A": "$3$",
+        "B": "$\\frac{3}{2}$",
+        "C": "$\\frac{9}{2}$",
+        "D": "$\\frac{15}{2}$"
+      },
+      "answer": "B",
+      "explanation": ""
+    },
+    {
+      "case_id": "CEVAL-ABCD-004",
+      "priority": "P0",
+      "module": "主对话-标准选择题",
+      "feature": "理科",
+      "ability": "大学物理",
+      "source": "C-Eval validation",
+      "benchmark": "C-Eval",
+      "benchmark_dataset": "ceval/ceval-exam",
+      "benchmark_split": "validation",
+      "benchmark_subject": "college_physics",
+      "benchmark_subject_name": "大学物理",
+      "benchmark_source_id": 2,
+      "source_fidelity": "原题引用",
+      "source_fidelity_reason": "来自 C-Eval validation split 的原始单项选择题，保留原题题干、选项与标准答案。",
+      "easy_wrong": "否",
+      "summary": "在双缝干涉实验中，两条缝的宽度原来是相等的。若其中一缝的宽度略变窄(缝中心位置不变)，则",
+      "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：大学物理\n题目：在双缝干涉实验中，两条缝的宽度原来是相等的。若其中一缝的宽度略变窄(缝中心位置不变)，则\nA. 干涉条纹的间距变宽\nB. 干涉条纹的间距变窄\nC. 干涉条纹的间距不变，但原极小处的强度不再为零\nD. 不再发生干涉现象\n答案：",
+      "expected_result": "C",
+      "steps": [
+        "新建会话",
+        "输入 C-Eval 单项选择题",
+        "发送",
+        "等待回答",
+        "提取首个独立 A/B/C/D 判分并记录截图/XML/时延"
+      ],
+      "recovery_action": "用新建会话隔离用例；必要时关闭当前 App 后拉起下一产品。",
+      "test_type": "model_dialogue",
+      "execution_mode": "uiautomator2_text_dialogue",
+      "send_as_model_question": true,
+      "execution_protocol": "text_dialogue_or_metric",
+      "current_dialogue_suitable": "是",
+      "needs_material": "否",
+      "needs_operation": "否",
+      "scoring_type": "single_choice_abcd",
+      "strict_expected": "C",
+      "score_rule": "App 必须仅回答选项 A/B/C/D 中的一个字母，不要解释；与 strict_expected 完全一致为 correct，否则 wrong；不使用 partial。",
+      "turns": [
+        {
+          "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：大学物理\n题目：在双缝干涉实验中，两条缝的宽度原来是相等的。若其中一缝的宽度略变窄(缝中心位置不变)，则\nA. 干涉条纹的间距变宽\nB. 干涉条纹的间距变窄\nC. 干涉条纹的间距不变，但原极小处的强度不再为零\nD. 不再发生干涉现象\n答案：",
+          "expected": "C",
+          "must_contain": [
+            "C"
+          ],
+          "scoring_type": "single_choice_abcd",
+          "strict_answer_only": true
+        }
+      ],
+      "question": "在双缝干涉实验中，两条缝的宽度原来是相等的。若其中一缝的宽度略变窄(缝中心位置不变)，则____",
+      "options": {
+        "A": "干涉条纹的间距变宽",
+        "B": "干涉条纹的间距变窄",
+        "C": "干涉条纹的间距不变，但原极小处的强度不再为零",
+        "D": "不再发生干涉现象"
+      },
+      "answer": "C",
+      "explanation": ""
+    },
+    {
+      "case_id": "CEVAL-ABCD-005",
+      "priority": "P0",
+      "module": "主对话-标准选择题",
+      "feature": "历史地理",
+      "ability": "高中历史",
+      "source": "C-Eval validation",
+      "benchmark": "C-Eval",
+      "benchmark_dataset": "ceval/ceval-exam",
+      "benchmark_split": "validation",
+      "benchmark_subject": "high_school_history",
+      "benchmark_subject_name": "高中历史",
+      "benchmark_source_id": 0,
+      "source_fidelity": "原题引用",
+      "source_fidelity_reason": "来自 C-Eval validation split 的原始单项选择题，保留原题题干、选项与标准答案。",
+      "easy_wrong": "否",
+      "summary": "据美国钢铁业统计，1870年，美国有钢铁企业808个，工人7.8万人，钢产量320万吨，投资额1210万美元；到1900年，美国有钢铁企业669个，工人27.2",
+      "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：高中历史\n题目：据美国钢铁业统计，1870年，美国有钢铁企业808个，工人7.8万人，钢产量320万吨，投资额1210万美元；到1900年，美国有钢铁企业669个，工人27.2万人，钢产量2950万吨，投资额5.9亿美元。这一数据反映的19世纪后期美国钢铁业发展变化的主要特征是\nA. 行业竞争激烈\nB. 生产和资本走向集中\nC. 企业规模保持稳定\nD. 劳动生产率快速提高\n答案：",
+      "expected_result": "B",
+      "steps": [
+        "新建会话",
+        "输入 C-Eval 单项选择题",
+        "发送",
+        "等待回答",
+        "提取首个独立 A/B/C/D 判分并记录截图/XML/时延"
+      ],
+      "recovery_action": "用新建会话隔离用例；必要时关闭当前 App 后拉起下一产品。",
+      "test_type": "model_dialogue",
+      "execution_mode": "uiautomator2_text_dialogue",
+      "send_as_model_question": true,
+      "execution_protocol": "text_dialogue_or_metric",
+      "current_dialogue_suitable": "是",
+      "needs_material": "否",
+      "needs_operation": "否",
+      "scoring_type": "single_choice_abcd",
+      "strict_expected": "B",
+      "score_rule": "App 必须仅回答选项 A/B/C/D 中的一个字母，不要解释；与 strict_expected 完全一致为 correct，否则 wrong；不使用 partial。",
+      "turns": [
+        {
+          "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：高中历史\n题目：据美国钢铁业统计，1870年，美国有钢铁企业808个，工人7.8万人，钢产量320万吨，投资额1210万美元；到1900年，美国有钢铁企业669个，工人27.2万人，钢产量2950万吨，投资额5.9亿美元。这一数据反映的19世纪后期美国钢铁业发展变化的主要特征是\nA. 行业竞争激烈\nB. 生产和资本走向集中\nC. 企业规模保持稳定\nD. 劳动生产率快速提高\n答案：",
+          "expected": "B",
+          "must_contain": [
+            "B"
+          ],
+          "scoring_type": "single_choice_abcd",
+          "strict_answer_only": true
+        }
+      ],
+      "question": "据美国钢铁业统计，1870年，美国有钢铁企业808个，工人7.8万人，钢产量320万吨，投资额1210万美元；到1900年，美国有钢铁企业669个，工人27.2万人，钢产量2950万吨，投资额5.9亿美元。这一数据反映的19世纪后期美国钢铁业发展变化的主要特征是____",
+      "options": {
+        "A": "行业竞争激烈",
+        "B": "生产和资本走向集中",
+        "C": "企业规模保持稳定",
+        "D": "劳动生产率快速提高"
+      },
+      "answer": "B",
+      "explanation": ""
+    },
+    {
+      "case_id": "CEVAL-ABCD-006",
+      "priority": "P0",
+      "module": "主对话-标准选择题",
+      "feature": "法律与公共知识",
+      "ability": "大学经济学",
+      "source": "C-Eval validation",
+      "benchmark": "C-Eval",
+      "benchmark_dataset": "ceval/ceval-exam",
+      "benchmark_split": "validation",
+      "benchmark_subject": "college_economics",
+      "benchmark_subject_name": "大学经济学",
+      "benchmark_source_id": 47,
+      "source_fidelity": "原题引用",
+      "source_fidelity_reason": "来自 C-Eval validation split 的原始单项选择题，保留原题题干、选项与标准答案。",
+      "easy_wrong": "否",
+      "summary": "若在d曲线上某一点的Ed=3，P=6，则相应的MR为",
+      "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：大学经济学\n题目：若在d曲线上某一点的Ed=3，P=6，则相应的MR为\nA. MR=2\nB. MR=4\nC. MR=18\nD. MR=1\n答案：",
+      "expected_result": "B",
+      "steps": [
+        "新建会话",
+        "输入 C-Eval 单项选择题",
+        "发送",
+        "等待回答",
+        "提取首个独立 A/B/C/D 判分并记录截图/XML/时延"
+      ],
+      "recovery_action": "用新建会话隔离用例；必要时关闭当前 App 后拉起下一产品。",
+      "test_type": "model_dialogue",
+      "execution_mode": "uiautomator2_text_dialogue",
+      "send_as_model_question": true,
+      "execution_protocol": "text_dialogue_or_metric",
+      "current_dialogue_suitable": "是",
+      "needs_material": "否",
+      "needs_operation": "否",
+      "scoring_type": "single_choice_abcd",
+      "strict_expected": "B",
+      "score_rule": "App 必须仅回答选项 A/B/C/D 中的一个字母，不要解释；与 strict_expected 完全一致为 correct，否则 wrong；不使用 partial。",
+      "turns": [
+        {
+          "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：大学经济学\n题目：若在d曲线上某一点的Ed=3，P=6，则相应的MR为\nA. MR=2\nB. MR=4\nC. MR=18\nD. MR=1\n答案：",
+          "expected": "B",
+          "must_contain": [
+            "B"
+          ],
+          "scoring_type": "single_choice_abcd",
+          "strict_answer_only": true
+        }
+      ],
+      "question": "若在d曲线上某一点的Ed=3，P=6，则相应的MR为____",
+      "options": {
+        "A": "MR=2",
+        "B": "MR=4",
+        "C": "MR=18",
+        "D": "MR=1"
+      },
+      "answer": "B",
+      "explanation": ""
+    },
+    {
+      "case_id": "CEVAL-ABCD-007",
+      "priority": "P0",
+      "module": "主对话-标准选择题",
+      "feature": "理科",
+      "ability": "高中化学",
+      "source": "C-Eval validation",
+      "benchmark": "C-Eval",
+      "benchmark_dataset": "ceval/ceval-exam",
+      "benchmark_split": "validation",
+      "benchmark_subject": "high_school_chemistry",
+      "benchmark_subject_name": "高中化学",
+      "benchmark_source_id": 16,
+      "source_fidelity": "原题引用",
+      "source_fidelity_reason": "来自 C-Eval validation split 的原始单项选择题，保留原题题干、选项与标准答案。",
+      "easy_wrong": "否",
+      "summary": "生石灰中含有碳酸钙和二氧化硅，要检验这两种杂质是否存在，选用的试剂最好是",
+      "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：高中化学\n题目：生石灰中含有碳酸钙和二氧化硅，要检验这两种杂质是否存在，选用的试剂最好是\nA. 稀盐酸\nB. 水\nC. 烧碱溶液\nD. 稀硫酸\n答案：",
+      "expected_result": "A",
+      "steps": [
+        "新建会话",
+        "输入 C-Eval 单项选择题",
+        "发送",
+        "等待回答",
+        "提取首个独立 A/B/C/D 判分并记录截图/XML/时延"
+      ],
+      "recovery_action": "用新建会话隔离用例；必要时关闭当前 App 后拉起下一产品。",
+      "test_type": "model_dialogue",
+      "execution_mode": "uiautomator2_text_dialogue",
+      "send_as_model_question": true,
+      "execution_protocol": "text_dialogue_or_metric",
+      "current_dialogue_suitable": "是",
+      "needs_material": "否",
+      "needs_operation": "否",
+      "scoring_type": "single_choice_abcd",
+      "strict_expected": "A",
+      "score_rule": "App 必须仅回答选项 A/B/C/D 中的一个字母，不要解释；与 strict_expected 完全一致为 correct，否则 wrong；不使用 partial。",
+      "turns": [
+        {
+          "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：高中化学\n题目：生石灰中含有碳酸钙和二氧化硅，要检验这两种杂质是否存在，选用的试剂最好是\nA. 稀盐酸\nB. 水\nC. 烧碱溶液\nD. 稀硫酸\n答案：",
+          "expected": "A",
+          "must_contain": [
+            "A"
+          ],
+          "scoring_type": "single_choice_abcd",
+          "strict_answer_only": true
+        }
+      ],
+      "question": "生石灰中含有碳酸钙和二氧化硅，要检验这两种杂质是否存在，选用的试剂最好是____",
+      "options": {
+        "A": "稀盐酸",
+        "B": "水",
+        "C": "烧碱溶液",
+        "D": "稀硫酸"
+      },
+      "answer": "A",
+      "explanation": ""
+    },
+    {
+      "case_id": "CEVAL-ABCD-008",
+      "priority": "P0",
+      "module": "主对话-标准选择题",
+      "feature": "理科",
+      "ability": "大学化学",
+      "source": "C-Eval validation",
+      "benchmark": "C-Eval",
+      "benchmark_dataset": "ceval/ceval-exam",
+      "benchmark_split": "validation",
+      "benchmark_subject": "college_chemistry",
+      "benchmark_subject_name": "大学化学",
+      "benchmark_source_id": 13,
+      "source_fidelity": "原题引用",
+      "source_fidelity_reason": "来自 C-Eval validation split 的原始单项选择题，保留原题题干、选项与标准答案。",
+      "easy_wrong": "否",
+      "summary": "比较原子核外2s和2p原子轨道的能量，",
+      "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：大学化学\n题目：比较原子核外2s和2p原子轨道的能量，\nA. 所有原子两者都相等\nB. 所有原子两者都不等\nC. H的两者相等\nD. Ne的两者相等\n答案：",
+      "expected_result": "C",
+      "steps": [
+        "新建会话",
+        "输入 C-Eval 单项选择题",
+        "发送",
+        "等待回答",
+        "提取首个独立 A/B/C/D 判分并记录截图/XML/时延"
+      ],
+      "recovery_action": "用新建会话隔离用例；必要时关闭当前 App 后拉起下一产品。",
+      "test_type": "model_dialogue",
+      "execution_mode": "uiautomator2_text_dialogue",
+      "send_as_model_question": true,
+      "execution_protocol": "text_dialogue_or_metric",
+      "current_dialogue_suitable": "是",
+      "needs_material": "否",
+      "needs_operation": "否",
+      "scoring_type": "single_choice_abcd",
+      "strict_expected": "C",
+      "score_rule": "App 必须仅回答选项 A/B/C/D 中的一个字母，不要解释；与 strict_expected 完全一致为 correct，否则 wrong；不使用 partial。",
+      "turns": [
+        {
+          "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：大学化学\n题目：比较原子核外2s和2p原子轨道的能量，\nA. 所有原子两者都相等\nB. 所有原子两者都不等\nC. H的两者相等\nD. Ne的两者相等\n答案：",
+          "expected": "C",
+          "must_contain": [
+            "C"
+          ],
+          "scoring_type": "single_choice_abcd",
+          "strict_answer_only": true
+        }
+      ],
+      "question": "比较原子核外2s和2p原子轨道的能量，____",
+      "options": {
+        "A": "所有原子两者都相等",
+        "B": "所有原子两者都不等",
+        "C": "H的两者相等",
+        "D": "Ne的两者相等"
+      },
+      "answer": "C",
+      "explanation": ""
+    },
+    {
+      "case_id": "CEVAL-ABCD-009",
+      "priority": "P0",
+      "module": "主对话-标准选择题",
+      "feature": "理科",
+      "ability": "高中物理",
+      "source": "C-Eval validation",
+      "benchmark": "C-Eval",
+      "benchmark_dataset": "ceval/ceval-exam",
+      "benchmark_split": "validation",
+      "benchmark_subject": "high_school_physics",
+      "benchmark_subject_name": "高中物理",
+      "benchmark_source_id": 1,
+      "source_fidelity": "原题引用",
+      "source_fidelity_reason": "来自 C-Eval validation split 的原始单项选择题，保留原题题干、选项与标准答案。",
+      "easy_wrong": "否",
+      "summary": "原子的核式结构学说,是卢瑟福根据以下哪个实验或现象提出来的",
+      "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：高中物理\n题目：原子的核式结构学说,是卢瑟福根据以下哪个实验或现象提出来的\nA. 光电效应实验\nB. 氢原子光谱实验\nC. $\\alpha$粒子散射实验\nD. 天然放射现象\n答案：",
+      "expected_result": "C",
+      "steps": [
+        "新建会话",
+        "输入 C-Eval 单项选择题",
+        "发送",
+        "等待回答",
+        "提取首个独立 A/B/C/D 判分并记录截图/XML/时延"
+      ],
+      "recovery_action": "用新建会话隔离用例；必要时关闭当前 App 后拉起下一产品。",
+      "test_type": "model_dialogue",
+      "execution_mode": "uiautomator2_text_dialogue",
+      "send_as_model_question": true,
+      "execution_protocol": "text_dialogue_or_metric",
+      "current_dialogue_suitable": "是",
+      "needs_material": "否",
+      "needs_operation": "否",
+      "scoring_type": "single_choice_abcd",
+      "strict_expected": "C",
+      "score_rule": "App 必须仅回答选项 A/B/C/D 中的一个字母，不要解释；与 strict_expected 完全一致为 correct，否则 wrong；不使用 partial。",
+      "turns": [
+        {
+          "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：高中物理\n题目：原子的核式结构学说,是卢瑟福根据以下哪个实验或现象提出来的\nA. 光电效应实验\nB. 氢原子光谱实验\nC. $\\alpha$粒子散射实验\nD. 天然放射现象\n答案：",
+          "expected": "C",
+          "must_contain": [
+            "C"
+          ],
+          "scoring_type": "single_choice_abcd",
+          "strict_answer_only": true
+        }
+      ],
+      "question": "原子的核式结构学说,是卢瑟福根据以下哪个实验或现象提出来的____",
+      "options": {
+        "A": "光电效应实验",
+        "B": "氢原子光谱实验",
+        "C": "$\\alpha$粒子散射实验",
+        "D": "天然放射现象"
+      },
+      "answer": "C",
+      "explanation": ""
+    },
+    {
+      "case_id": "CEVAL-ABCD-010",
+      "priority": "P0",
+      "module": "主对话-标准选择题",
+      "feature": "计算机",
+      "ability": "计算机网络",
+      "source": "C-Eval validation",
+      "benchmark": "C-Eval",
+      "benchmark_dataset": "ceval/ceval-exam",
+      "benchmark_split": "validation",
+      "benchmark_subject": "computer_network",
+      "benchmark_subject_name": "计算机网络",
+      "benchmark_source_id": 2,
+      "source_fidelity": "原题引用",
+      "source_fidelity_reason": "来自 C-Eval validation split 的原始单项选择题，保留原题题干、选项与标准答案。",
+      "easy_wrong": "否",
+      "summary": "TCP端对端通信作用于",
+      "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：计算机网络\n题目：TCP端对端通信作用于\nA. 主机之间\nB. 网络之间\nC. 进程之间\nD. 主机到网络\n答案：",
+      "expected_result": "C",
+      "steps": [
+        "新建会话",
+        "输入 C-Eval 单项选择题",
+        "发送",
+        "等待回答",
+        "提取首个独立 A/B/C/D 判分并记录截图/XML/时延"
+      ],
+      "recovery_action": "用新建会话隔离用例；必要时关闭当前 App 后拉起下一产品。",
+      "test_type": "model_dialogue",
+      "execution_mode": "uiautomator2_text_dialogue",
+      "send_as_model_question": true,
+      "execution_protocol": "text_dialogue_or_metric",
+      "current_dialogue_suitable": "是",
+      "needs_material": "否",
+      "needs_operation": "否",
+      "scoring_type": "single_choice_abcd",
+      "strict_expected": "C",
+      "score_rule": "App 必须仅回答选项 A/B/C/D 中的一个字母，不要解释；与 strict_expected 完全一致为 correct，否则 wrong；不使用 partial。",
+      "turns": [
+        {
+          "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：计算机网络\n题目：TCP端对端通信作用于\nA. 主机之间\nB. 网络之间\nC. 进程之间\nD. 主机到网络\n答案：",
+          "expected": "C",
+          "must_contain": [
+            "C"
+          ],
+          "scoring_type": "single_choice_abcd",
+          "strict_answer_only": true
+        }
+      ],
+      "question": "TCP端对端通信作用于____",
+      "options": {
+        "A": "主机之间",
+        "B": "网络之间",
+        "C": "进程之间",
+        "D": "主机到网络"
+      },
+      "answer": "C",
+      "explanation": ""
+    },
+    {
+      "case_id": "CEVAL-ABCD-011",
+      "priority": "P0",
+      "module": "主对话-标准选择题",
+      "feature": "语言与人文",
+      "ability": "高中语文",
+      "source": "C-Eval validation",
+      "benchmark": "C-Eval",
+      "benchmark_dataset": "ceval/ceval-exam",
+      "benchmark_split": "validation",
+      "benchmark_subject": "high_school_chinese",
+      "benchmark_subject_name": "高中语文",
+      "benchmark_source_id": 17,
+      "source_fidelity": "原题引用",
+      "source_fidelity_reason": "来自 C-Eval validation split 的原始单项选择题，保留原题题干、选项与标准答案。",
+      "easy_wrong": "否",
+      "summary": "填入下面横线处的句子，与上句衔接最恰当的一组是 公安干警及时赶赴现场侦察，中午12时，。",
+      "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：高中语文\n题目：填入下面横线处的句子，与上句衔接最恰当的一组是 公安干警及时赶赴现场侦察，中午12时，。\nA. 在家里犯罪嫌疑人被抓获，全部赃物和赃款也同时起获\nB. 在犯罪嫌疑人家里将其抓获，全部赃物和赃款也同时起获\nC. 犯罪嫌疑人在家里被抓获，并起获了全部赃物和赃款\nD. 在犯罪嫌疑人家里将其抓获，并起获了全部赃物和赃款\n答案：",
+      "expected_result": "D",
+      "steps": [
+        "新建会话",
+        "输入 C-Eval 单项选择题",
+        "发送",
+        "等待回答",
+        "提取首个独立 A/B/C/D 判分并记录截图/XML/时延"
+      ],
+      "recovery_action": "用新建会话隔离用例；必要时关闭当前 App 后拉起下一产品。",
+      "test_type": "model_dialogue",
+      "execution_mode": "uiautomator2_text_dialogue",
+      "send_as_model_question": true,
+      "execution_protocol": "text_dialogue_or_metric",
+      "current_dialogue_suitable": "是",
+      "needs_material": "否",
+      "needs_operation": "否",
+      "scoring_type": "single_choice_abcd",
+      "strict_expected": "D",
+      "score_rule": "App 必须仅回答选项 A/B/C/D 中的一个字母，不要解释；与 strict_expected 完全一致为 correct，否则 wrong；不使用 partial。",
+      "turns": [
+        {
+          "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：高中语文\n题目：填入下面横线处的句子，与上句衔接最恰当的一组是 公安干警及时赶赴现场侦察，中午12时，。\nA. 在家里犯罪嫌疑人被抓获，全部赃物和赃款也同时起获\nB. 在犯罪嫌疑人家里将其抓获，全部赃物和赃款也同时起获\nC. 犯罪嫌疑人在家里被抓获，并起获了全部赃物和赃款\nD. 在犯罪嫌疑人家里将其抓获，并起获了全部赃物和赃款\n答案：",
+          "expected": "D",
+          "must_contain": [
+            "D"
+          ],
+          "scoring_type": "single_choice_abcd",
+          "strict_answer_only": true
+        }
+      ],
+      "question": "填入下面横线处的句子，与上句衔接最恰当的一组是____ 公安干警及时赶赴现场侦察，中午12时，____。",
+      "options": {
+        "A": "在家里犯罪嫌疑人被抓获，全部赃物和赃款也同时起获",
+        "B": "在犯罪嫌疑人家里将其抓获，全部赃物和赃款也同时起获",
+        "C": "犯罪嫌疑人在家里被抓获，并起获了全部赃物和赃款",
+        "D": "在犯罪嫌疑人家里将其抓获，并起获了全部赃物和赃款"
+      },
+      "answer": "D",
+      "explanation": ""
+    },
+    {
+      "case_id": "CEVAL-ABCD-012",
+      "priority": "P0",
+      "module": "主对话-标准选择题",
+      "feature": "逻辑与公务员",
+      "ability": "公务员",
+      "source": "C-Eval validation",
+      "benchmark": "C-Eval",
+      "benchmark_dataset": "ceval/ceval-exam",
+      "benchmark_split": "validation",
+      "benchmark_subject": "civil_servant",
+      "benchmark_subject_name": "公务员",
+      "benchmark_source_id": 40,
+      "source_fidelity": "原题引用",
+      "source_fidelity_reason": "来自 C-Eval validation split 的原始单项选择题，保留原题题干、选项与标准答案。",
+      "easy_wrong": "否",
+      "summary": "据《咬文嚼字》编辑部透露，编制年度“十大流行语”是一项十分严肃的事，既要到词语在当年的流行度，又要从语文伦理角度加以必要的，选优汰劣，力争通过“十大流行语”向社",
+      "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：公务员\n题目：据《咬文嚼字》编辑部透露，编制年度“十大流行语”是一项十分严肃的事，既要到词语在当年的流行度，又要从语文伦理角度加以必要的，选优汰劣，力争通过“十大流行语”向社会正能量。 填入画横线部分最恰当的一项是。\nA. 斟酌 估量 传播\nB. 思考 权衡 传送\nC. 思索 考察 传达\nD. 考虑 考量 传递\n答案：",
+      "expected_result": "D",
+      "steps": [
+        "新建会话",
+        "输入 C-Eval 单项选择题",
+        "发送",
+        "等待回答",
+        "提取首个独立 A/B/C/D 判分并记录截图/XML/时延"
+      ],
+      "recovery_action": "用新建会话隔离用例；必要时关闭当前 App 后拉起下一产品。",
+      "test_type": "model_dialogue",
+      "execution_mode": "uiautomator2_text_dialogue",
+      "send_as_model_question": true,
+      "execution_protocol": "text_dialogue_or_metric",
+      "current_dialogue_suitable": "是",
+      "needs_material": "否",
+      "needs_operation": "否",
+      "scoring_type": "single_choice_abcd",
+      "strict_expected": "D",
+      "score_rule": "App 必须仅回答选项 A/B/C/D 中的一个字母，不要解释；与 strict_expected 完全一致为 correct，否则 wrong；不使用 partial。",
+      "turns": [
+        {
+          "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：公务员\n题目：据《咬文嚼字》编辑部透露，编制年度“十大流行语”是一项十分严肃的事，既要到词语在当年的流行度，又要从语文伦理角度加以必要的，选优汰劣，力争通过“十大流行语”向社会正能量。 填入画横线部分最恰当的一项是。\nA. 斟酌 估量 传播\nB. 思考 权衡 传送\nC. 思索 考察 传达\nD. 考虑 考量 传递\n答案：",
+          "expected": "D",
+          "must_contain": [
+            "D"
+          ],
+          "scoring_type": "single_choice_abcd",
+          "strict_answer_only": true
+        }
+      ],
+      "question": "据《咬文嚼字》编辑部透露，编制年度“十大流行语”是一项十分严肃的事，既要____到词语在当年的流行度，又要从语文伦理角度加以必要的____，选优汰劣，力争通过“十大流行语”向社会____正能量。 填入画横线部分最恰当的一项是____。",
+      "options": {
+        "A": "斟酌 估量 传播",
+        "B": "思考 权衡 传送",
+        "C": "思索 考察 传达",
+        "D": "考虑 考量 传递"
+      },
+      "answer": "D",
+      "explanation": ""
+    },
+    {
+      "case_id": "CEVAL-ABCD-013",
+      "priority": "P0",
+      "module": "主对话-标准选择题",
+      "feature": "历史地理",
+      "ability": "高中地理",
+      "source": "C-Eval validation",
+      "benchmark": "C-Eval",
+      "benchmark_dataset": "ceval/ceval-exam",
+      "benchmark_split": "validation",
+      "benchmark_subject": "high_school_geography",
+      "benchmark_subject_name": "高中地理",
+      "benchmark_source_id": 1,
+      "source_fidelity": "原题引用",
+      "source_fidelity_reason": "来自 C-Eval validation split 的原始单项选择题，保留原题题干、选项与标准答案。",
+      "easy_wrong": "否",
+      "summary": "采用下玻璃温室生产蔬菜、花卉，属于农业分类中的：",
+      "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：高中地理\n题目：采用下玻璃温室生产蔬菜、花卉，属于农业分类中的：\nA. 粗放农业\nB. 自给农业\nC. 种植园农业\nD. 密集农业\n答案：",
+      "expected_result": "D",
+      "steps": [
+        "新建会话",
+        "输入 C-Eval 单项选择题",
+        "发送",
+        "等待回答",
+        "提取首个独立 A/B/C/D 判分并记录截图/XML/时延"
+      ],
+      "recovery_action": "用新建会话隔离用例；必要时关闭当前 App 后拉起下一产品。",
+      "test_type": "model_dialogue",
+      "execution_mode": "uiautomator2_text_dialogue",
+      "send_as_model_question": true,
+      "execution_protocol": "text_dialogue_or_metric",
+      "current_dialogue_suitable": "是",
+      "needs_material": "否",
+      "needs_operation": "否",
+      "scoring_type": "single_choice_abcd",
+      "strict_expected": "D",
+      "score_rule": "App 必须仅回答选项 A/B/C/D 中的一个字母，不要解释；与 strict_expected 完全一致为 correct，否则 wrong；不使用 partial。",
+      "turns": [
+        {
+          "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：高中地理\n题目：采用下玻璃温室生产蔬菜、花卉，属于农业分类中的：\nA. 粗放农业\nB. 自给农业\nC. 种植园农业\nD. 密集农业\n答案：",
+          "expected": "D",
+          "must_contain": [
+            "D"
+          ],
+          "scoring_type": "single_choice_abcd",
+          "strict_answer_only": true
+        }
+      ],
+      "question": "采用下玻璃温室生产蔬菜、花卉，属于农业分类中的：____",
+      "options": {
+        "A": "粗放农业",
+        "B": "自给农业",
+        "C": "种植园农业",
+        "D": "密集农业"
+      },
+      "answer": "D",
+      "explanation": ""
+    },
+    {
+      "case_id": "CEVAL-ABCD-014",
+      "priority": "P0",
+      "module": "主对话-标准选择题",
+      "feature": "历史地理",
+      "ability": "初中历史",
+      "source": "C-Eval validation",
+      "benchmark": "C-Eval",
+      "benchmark_dataset": "ceval/ceval-exam",
+      "benchmark_split": "validation",
+      "benchmark_subject": "middle_school_history",
+      "benchmark_subject_name": "初中历史",
+      "benchmark_source_id": 12,
+      "source_fidelity": "原题引用",
+      "source_fidelity_reason": "来自 C-Eval validation split 的原始单项选择题，保留原题题干、选项与标准答案。",
+      "easy_wrong": "否",
+      "summary": "甲午中日战争失败以后，李鸿章伤感地反省说：“我办了一辈子事，练兵也，海军也，都是纸糊的老虎……不过勉强涂饰，虚有其表。”对这句话的理解，最为正确的应当是",
+      "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：初中历史\n题目：甲午中日战争失败以后，李鸿章伤感地反省说：“我办了一辈子事，练兵也，海军也，都是纸糊的老虎……不过勉强涂饰，虚有其表。”对这句话的理解，最为正确的应当是\nA. 洋务运动一无是处\nB. 洋务运动劳而无功\nC. 洋务运动的目的在于表面做做样子\nD. 洋务运动没有达到“自强”、“求富”的目的\n答案：",
+      "expected_result": "D",
+      "steps": [
+        "新建会话",
+        "输入 C-Eval 单项选择题",
+        "发送",
+        "等待回答",
+        "提取首个独立 A/B/C/D 判分并记录截图/XML/时延"
+      ],
+      "recovery_action": "用新建会话隔离用例；必要时关闭当前 App 后拉起下一产品。",
+      "test_type": "model_dialogue",
+      "execution_mode": "uiautomator2_text_dialogue",
+      "send_as_model_question": true,
+      "execution_protocol": "text_dialogue_or_metric",
+      "current_dialogue_suitable": "是",
+      "needs_material": "否",
+      "needs_operation": "否",
+      "scoring_type": "single_choice_abcd",
+      "strict_expected": "D",
+      "score_rule": "App 必须仅回答选项 A/B/C/D 中的一个字母，不要解释；与 strict_expected 完全一致为 correct，否则 wrong；不使用 partial。",
+      "turns": [
+        {
+          "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：初中历史\n题目：甲午中日战争失败以后，李鸿章伤感地反省说：“我办了一辈子事，练兵也，海军也，都是纸糊的老虎……不过勉强涂饰，虚有其表。”对这句话的理解，最为正确的应当是\nA. 洋务运动一无是处\nB. 洋务运动劳而无功\nC. 洋务运动的目的在于表面做做样子\nD. 洋务运动没有达到“自强”、“求富”的目的\n答案：",
+          "expected": "D",
+          "must_contain": [
+            "D"
+          ],
+          "scoring_type": "single_choice_abcd",
+          "strict_answer_only": true
+        }
+      ],
+      "question": "甲午中日战争失败以后，李鸿章伤感地反省说：“我办了一辈子事，练兵也，海军也，都是纸糊的老虎……不过勉强涂饰，虚有其表。”对这句话的理解，最为正确的应当是____",
+      "options": {
+        "A": "洋务运动一无是处",
+        "B": "洋务运动劳而无功",
+        "C": "洋务运动的目的在于表面做做样子",
+        "D": "洋务运动没有达到“自强”、“求富”的目的"
+      },
+      "answer": "D",
+      "explanation": ""
+    },
+    {
+      "case_id": "CEVAL-ABCD-015",
+      "priority": "P0",
+      "module": "主对话-标准选择题",
+      "feature": "法律与公共知识",
+      "ability": "马克思主义",
+      "source": "C-Eval validation",
+      "benchmark": "C-Eval",
+      "benchmark_dataset": "ceval/ceval-exam",
+      "benchmark_split": "validation",
+      "benchmark_subject": "marxism",
+      "benchmark_subject_name": "马克思主义",
+      "benchmark_source_id": 8,
+      "source_fidelity": "原题引用",
+      "source_fidelity_reason": "来自 C-Eval validation split 的原始单项选择题，保留原题题干、选项与标准答案。",
+      "easy_wrong": "否",
+      "summary": "“没有革命的理论，就没有事命的运动”，这句话直接体现的哲学原型是",
+      "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：马克思主义\n题目：“没有革命的理论，就没有事命的运动”，这句话直接体现的哲学原型是\nA. 意识有能动作用\nB. 认识有能动作用\nC. 科学理论对实践有巨大指导作用\nD. 物质决定意识\n答案：",
+      "expected_result": "C",
+      "steps": [
+        "新建会话",
+        "输入 C-Eval 单项选择题",
+        "发送",
+        "等待回答",
+        "提取首个独立 A/B/C/D 判分并记录截图/XML/时延"
+      ],
+      "recovery_action": "用新建会话隔离用例；必要时关闭当前 App 后拉起下一产品。",
+      "test_type": "model_dialogue",
+      "execution_mode": "uiautomator2_text_dialogue",
+      "send_as_model_question": true,
+      "execution_protocol": "text_dialogue_or_metric",
+      "current_dialogue_suitable": "是",
+      "needs_material": "否",
+      "needs_operation": "否",
+      "scoring_type": "single_choice_abcd",
+      "strict_expected": "C",
+      "score_rule": "App 必须仅回答选项 A/B/C/D 中的一个字母，不要解释；与 strict_expected 完全一致为 correct，否则 wrong；不使用 partial。",
+      "turns": [
+        {
+          "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：马克思主义\n题目：“没有革命的理论，就没有事命的运动”，这句话直接体现的哲学原型是\nA. 意识有能动作用\nB. 认识有能动作用\nC. 科学理论对实践有巨大指导作用\nD. 物质决定意识\n答案：",
+          "expected": "C",
+          "must_contain": [
+            "C"
+          ],
+          "scoring_type": "single_choice_abcd",
+          "strict_answer_only": true
+        }
+      ],
+      "question": "“没有革命的理论，就没有事命的运动”，这句话直接体现的哲学原型是____",
+      "options": {
+        "A": "意识有能动作用",
+        "B": "认识有能动作用",
+        "C": "科学理论对实践有巨大指导作用",
+        "D": "物质决定意识"
+      },
+      "answer": "C",
+      "explanation": ""
+    },
+    {
+      "case_id": "CEVAL-ABCD-016",
+      "priority": "P0",
+      "module": "主对话-标准选择题",
+      "feature": "历史地理",
+      "ability": "初中历史",
+      "source": "C-Eval validation",
+      "benchmark": "C-Eval",
+      "benchmark_dataset": "ceval/ceval-exam",
+      "benchmark_split": "validation",
+      "benchmark_subject": "middle_school_history",
+      "benchmark_subject_name": "初中历史",
+      "benchmark_source_id": 14,
+      "source_fidelity": "原题引用",
+      "source_fidelity_reason": "来自 C-Eval validation split 的原始单项选择题，保留原题题干、选项与标准答案。",
+      "easy_wrong": "否",
+      "summary": "有些人的名字往往与时代特征有一定的联系，下列名字中与他出生的时代特征不相符合的是",
+      "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：初中历史\n题目：有些人的名字往往与时代特征有一定的联系，下列名字中与他出生的时代特征不相符合的是\nA. 出生于1949年，取名建国\nB. 出生于1951年，取名援朝\nC. 出生于1958年，取名跃进\nD. 出生于1978年，取名文革\n答案：",
+      "expected_result": "D",
+      "steps": [
+        "新建会话",
+        "输入 C-Eval 单项选择题",
+        "发送",
+        "等待回答",
+        "提取首个独立 A/B/C/D 判分并记录截图/XML/时延"
+      ],
+      "recovery_action": "用新建会话隔离用例；必要时关闭当前 App 后拉起下一产品。",
+      "test_type": "model_dialogue",
+      "execution_mode": "uiautomator2_text_dialogue",
+      "send_as_model_question": true,
+      "execution_protocol": "text_dialogue_or_metric",
+      "current_dialogue_suitable": "是",
+      "needs_material": "否",
+      "needs_operation": "否",
+      "scoring_type": "single_choice_abcd",
+      "strict_expected": "D",
+      "score_rule": "App 必须仅回答选项 A/B/C/D 中的一个字母，不要解释；与 strict_expected 完全一致为 correct，否则 wrong；不使用 partial。",
+      "turns": [
+        {
+          "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：初中历史\n题目：有些人的名字往往与时代特征有一定的联系，下列名字中与他出生的时代特征不相符合的是\nA. 出生于1949年，取名建国\nB. 出生于1951年，取名援朝\nC. 出生于1958年，取名跃进\nD. 出生于1978年，取名文革\n答案：",
+          "expected": "D",
+          "must_contain": [
+            "D"
+          ],
+          "scoring_type": "single_choice_abcd",
+          "strict_answer_only": true
+        }
+      ],
+      "question": "有些人的名字往往与时代特征有一定的联系，下列名字中与他出生的时代特征不相符合的是____",
+      "options": {
+        "A": "出生于1949年，取名建国",
+        "B": "出生于1951年，取名援朝",
+        "C": "出生于1958年，取名跃进",
+        "D": "出生于1978年，取名文革"
+      },
+      "answer": "D",
+      "explanation": ""
+    },
+    {
+      "case_id": "CEVAL-ABCD-017",
+      "priority": "P0",
+      "module": "主对话-标准选择题",
+      "feature": "数学",
+      "ability": "概率统计",
+      "source": "C-Eval validation",
+      "benchmark": "C-Eval",
+      "benchmark_dataset": "ceval/ceval-exam",
+      "benchmark_split": "validation",
+      "benchmark_subject": "probability_and_statistics",
+      "benchmark_subject_name": "概率统计",
+      "benchmark_source_id": 3,
+      "source_fidelity": "原题引用",
+      "source_fidelity_reason": "来自 C-Eval validation split 的原始单项选择题，保留原题题干、选项与标准答案。",
+      "easy_wrong": "否",
+      "summary": "设总体$X$服从拉普拉斯分布$f(x,\\lambda)=\\frac{1}{4\\lambda}e^{-\\frac{|x|}{2\\lambda}},-\\infty<",
+      "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：概率统计\n题目：设总体$X$服从拉普拉斯分布$f(x,\\lambda)=\\frac{1}{4\\lambda}e^{-\\frac{|x|}{2\\lambda}},-\\infty<x<\\infty$,其中$\\lambda>0$。则$E(|X|)=$\nA. $\\frac{1}{2 \\lambda}$\nB. $\\frac{1}{\\lambda}$\nC. $2 \\lambda$\nD. $\\lambda$\n答案：",
+      "expected_result": "C",
+      "steps": [
+        "新建会话",
+        "输入 C-Eval 单项选择题",
+        "发送",
+        "等待回答",
+        "提取首个独立 A/B/C/D 判分并记录截图/XML/时延"
+      ],
+      "recovery_action": "用新建会话隔离用例；必要时关闭当前 App 后拉起下一产品。",
+      "test_type": "model_dialogue",
+      "execution_mode": "uiautomator2_text_dialogue",
+      "send_as_model_question": true,
+      "execution_protocol": "text_dialogue_or_metric",
+      "current_dialogue_suitable": "是",
+      "needs_material": "否",
+      "needs_operation": "否",
+      "scoring_type": "single_choice_abcd",
+      "strict_expected": "C",
+      "score_rule": "App 必须仅回答选项 A/B/C/D 中的一个字母，不要解释；与 strict_expected 完全一致为 correct，否则 wrong；不使用 partial。",
+      "turns": [
+        {
+          "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：概率统计\n题目：设总体$X$服从拉普拉斯分布$f(x,\\lambda)=\\frac{1}{4\\lambda}e^{-\\frac{|x|}{2\\lambda}},-\\infty<x<\\infty$,其中$\\lambda>0$。则$E(|X|)=$\nA. $\\frac{1}{2 \\lambda}$\nB. $\\frac{1}{\\lambda}$\nC. $2 \\lambda$\nD. $\\lambda$\n答案：",
+          "expected": "C",
+          "must_contain": [
+            "C"
+          ],
+          "scoring_type": "single_choice_abcd",
+          "strict_answer_only": true
+        }
+      ],
+      "question": "设总体$X$服从拉普拉斯分布$f(x,\\lambda)=\\frac{1}{4\\lambda}e^{-\\frac{|x|}{2\\lambda}},-\\infty<x<\\infty$,其中$\\lambda>0$。则$E(|X|)=$____",
+      "options": {
+        "A": "$\\frac{1}{2 \\lambda}$",
+        "B": "$\\frac{1}{\\lambda}$",
+        "C": "$2 \\lambda$",
+        "D": "$\\lambda$"
+      },
+      "answer": "C",
+      "explanation": ""
+    },
+    {
+      "case_id": "CEVAL-ABCD-018",
+      "priority": "P0",
+      "module": "主对话-标准选择题",
+      "feature": "历史地理",
+      "ability": "高中地理",
+      "source": "C-Eval validation",
+      "benchmark": "C-Eval",
+      "benchmark_dataset": "ceval/ceval-exam",
+      "benchmark_split": "validation",
+      "benchmark_subject": "high_school_geography",
+      "benchmark_subject_name": "高中地理",
+      "benchmark_source_id": 0,
+      "source_fidelity": "原题引用",
+      "source_fidelity_reason": "来自 C-Eval validation split 的原始单项选择题，保留原题题干、选项与标准答案。",
+      "easy_wrong": "否",
+      "summary": "中国实行可持续发展的核心是：",
+      "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：高中地理\n题目：中国实行可持续发展的核心是：\nA. 发展是关键\nB. 经济增长为主\nC. 人民生活水平提高\nD. 自然资源合理利用B.季节性特点\n答案：",
+      "expected_result": "A",
+      "steps": [
+        "新建会话",
+        "输入 C-Eval 单项选择题",
+        "发送",
+        "等待回答",
+        "提取首个独立 A/B/C/D 判分并记录截图/XML/时延"
+      ],
+      "recovery_action": "用新建会话隔离用例；必要时关闭当前 App 后拉起下一产品。",
+      "test_type": "model_dialogue",
+      "execution_mode": "uiautomator2_text_dialogue",
+      "send_as_model_question": true,
+      "execution_protocol": "text_dialogue_or_metric",
+      "current_dialogue_suitable": "是",
+      "needs_material": "否",
+      "needs_operation": "否",
+      "scoring_type": "single_choice_abcd",
+      "strict_expected": "A",
+      "score_rule": "App 必须仅回答选项 A/B/C/D 中的一个字母，不要解释；与 strict_expected 完全一致为 correct，否则 wrong；不使用 partial。",
+      "turns": [
+        {
+          "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：高中地理\n题目：中国实行可持续发展的核心是：\nA. 发展是关键\nB. 经济增长为主\nC. 人民生活水平提高\nD. 自然资源合理利用B.季节性特点\n答案：",
+          "expected": "A",
+          "must_contain": [
+            "A"
+          ],
+          "scoring_type": "single_choice_abcd",
+          "strict_answer_only": true
+        }
+      ],
+      "question": "中国实行可持续发展的核心是：____",
+      "options": {
+        "A": "发展是关键",
+        "B": "经济增长为主",
+        "C": "人民生活水平提高",
+        "D": "自然资源合理利用B.季节性特点"
+      },
+      "answer": "A",
+      "explanation": ""
+    },
+    {
+      "case_id": "CEVAL-ABCD-019",
+      "priority": "P0",
+      "module": "主对话-标准选择题",
+      "feature": "历史地理",
+      "ability": "近代史纲要",
+      "source": "C-Eval validation",
+      "benchmark": "C-Eval",
+      "benchmark_dataset": "ceval/ceval-exam",
+      "benchmark_split": "validation",
+      "benchmark_subject": "modern_chinese_history",
+      "benchmark_subject_name": "近代史纲要",
+      "benchmark_source_id": 18,
+      "source_fidelity": "原题引用",
+      "source_fidelity_reason": "来自 C-Eval validation split 的原始单项选择题，保留原题题干、选项与标准答案。",
+      "easy_wrong": "否",
+      "summary": "抗战进入相持阶段后，中国人民在华北给日本侵略者沉重打击的一次军事行动是",
+      "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：近代史纲要\n题目：抗战进入相持阶段后，中国人民在华北给日本侵略者沉重打击的一次军事行动是\nA. 百团大战\nB. 平型关战役\nC. 凇沪会战\nD. 台儿庄战役\n答案：",
+      "expected_result": "D",
+      "steps": [
+        "新建会话",
+        "输入 C-Eval 单项选择题",
+        "发送",
+        "等待回答",
+        "提取首个独立 A/B/C/D 判分并记录截图/XML/时延"
+      ],
+      "recovery_action": "用新建会话隔离用例；必要时关闭当前 App 后拉起下一产品。",
+      "test_type": "model_dialogue",
+      "execution_mode": "uiautomator2_text_dialogue",
+      "send_as_model_question": true,
+      "execution_protocol": "text_dialogue_or_metric",
+      "current_dialogue_suitable": "是",
+      "needs_material": "否",
+      "needs_operation": "否",
+      "scoring_type": "single_choice_abcd",
+      "strict_expected": "D",
+      "score_rule": "App 必须仅回答选项 A/B/C/D 中的一个字母，不要解释；与 strict_expected 完全一致为 correct，否则 wrong；不使用 partial。",
+      "turns": [
+        {
+          "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：近代史纲要\n题目：抗战进入相持阶段后，中国人民在华北给日本侵略者沉重打击的一次军事行动是\nA. 百团大战\nB. 平型关战役\nC. 凇沪会战\nD. 台儿庄战役\n答案：",
+          "expected": "D",
+          "must_contain": [
+            "D"
+          ],
+          "scoring_type": "single_choice_abcd",
+          "strict_answer_only": true
+        }
+      ],
+      "question": "抗战进入相持阶段后，中国人民在华北给日本侵略者沉重打击的一次军事行动是____",
+      "options": {
+        "A": "百团大战",
+        "B": "平型关战役",
+        "C": "凇沪会战",
+        "D": "台儿庄战役"
+      },
+      "answer": "D",
+      "explanation": ""
+    },
+    {
+      "case_id": "CEVAL-ABCD-020",
+      "priority": "P0",
+      "module": "主对话-标准选择题",
+      "feature": "计算机",
+      "ability": "计算机网络",
+      "source": "C-Eval validation",
+      "benchmark": "C-Eval",
+      "benchmark_dataset": "ceval/ceval-exam",
+      "benchmark_split": "validation",
+      "benchmark_subject": "computer_network",
+      "benchmark_subject_name": "计算机网络",
+      "benchmark_source_id": 18,
+      "source_fidelity": "原题引用",
+      "source_fidelity_reason": "来自 C-Eval validation split 的原始单项选择题，保留原题题干、选项与标准答案。",
+      "easy_wrong": "否",
+      "summary": "若采用后退N帧ARQ协议进行流量控制，帧编号字段为7位，则发送窗口的最大长度为。",
+      "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：计算机网络\n题目：若采用后退N帧ARQ协议进行流量控制，帧编号字段为7位，则发送窗口的最大长度为。\nA. 7\nB. 8\nC. 127\nD. 128\n答案：",
+      "expected_result": "C",
+      "steps": [
+        "新建会话",
+        "输入 C-Eval 单项选择题",
+        "发送",
+        "等待回答",
+        "提取首个独立 A/B/C/D 判分并记录截图/XML/时延"
+      ],
+      "recovery_action": "用新建会话隔离用例；必要时关闭当前 App 后拉起下一产品。",
+      "test_type": "model_dialogue",
+      "execution_mode": "uiautomator2_text_dialogue",
+      "send_as_model_question": true,
+      "execution_protocol": "text_dialogue_or_metric",
+      "current_dialogue_suitable": "是",
+      "needs_material": "否",
+      "needs_operation": "否",
+      "scoring_type": "single_choice_abcd",
+      "strict_expected": "C",
+      "score_rule": "App 必须仅回答选项 A/B/C/D 中的一个字母，不要解释；与 strict_expected 完全一致为 correct，否则 wrong；不使用 partial。",
+      "turns": [
+        {
+          "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：计算机网络\n题目：若采用后退N帧ARQ协议进行流量控制，帧编号字段为7位，则发送窗口的最大长度为。\nA. 7\nB. 8\nC. 127\nD. 128\n答案：",
+          "expected": "C",
+          "must_contain": [
+            "C"
+          ],
+          "scoring_type": "single_choice_abcd",
+          "strict_answer_only": true
+        }
+      ],
+      "question": "若采用后退N帧ARQ协议进行流量控制，帧编号字段为7位，则发送窗口的最大长度为____。",
+      "options": {
+        "A": "7",
+        "B": "8",
+        "C": "127",
+        "D": "128"
+      },
+      "answer": "C",
+      "explanation": ""
+    },
+    {
+      "case_id": "CEVAL-ABCD-021",
+      "priority": "P0",
+      "module": "主对话-标准选择题",
+      "feature": "逻辑与公务员",
+      "ability": "公务员",
+      "source": "C-Eval validation",
+      "benchmark": "C-Eval",
+      "benchmark_dataset": "ceval/ceval-exam",
+      "benchmark_split": "validation",
+      "benchmark_subject": "civil_servant",
+      "benchmark_subject_name": "公务员",
+      "benchmark_source_id": 5,
+      "source_fidelity": "原题引用",
+      "source_fidelity_reason": "来自 C-Eval validation split 的原始单项选择题，保留原题题干、选项与标准答案。",
+      "easy_wrong": "否",
+      "summary": "2，5，8，12，17，24，",
+      "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：公务员\n题目：2，5，8，12，17，24，\nA. 30\nB. 32\nC. 34\nD. 36\n答案：",
+      "expected_result": "C",
+      "steps": [
+        "新建会话",
+        "输入 C-Eval 单项选择题",
+        "发送",
+        "等待回答",
+        "提取首个独立 A/B/C/D 判分并记录截图/XML/时延"
+      ],
+      "recovery_action": "用新建会话隔离用例；必要时关闭当前 App 后拉起下一产品。",
+      "test_type": "model_dialogue",
+      "execution_mode": "uiautomator2_text_dialogue",
+      "send_as_model_question": true,
+      "execution_protocol": "text_dialogue_or_metric",
+      "current_dialogue_suitable": "是",
+      "needs_material": "否",
+      "needs_operation": "否",
+      "scoring_type": "single_choice_abcd",
+      "strict_expected": "C",
+      "score_rule": "App 必须仅回答选项 A/B/C/D 中的一个字母，不要解释；与 strict_expected 完全一致为 correct，否则 wrong；不使用 partial。",
+      "turns": [
+        {
+          "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：公务员\n题目：2，5，8，12，17，24，\nA. 30\nB. 32\nC. 34\nD. 36\n答案：",
+          "expected": "C",
+          "must_contain": [
+            "C"
+          ],
+          "scoring_type": "single_choice_abcd",
+          "strict_answer_only": true
+        }
+      ],
+      "question": "2，5，8，12，17，24，____",
+      "options": {
+        "A": "30",
+        "B": "32",
+        "C": "34",
+        "D": "36"
+      },
+      "answer": "C",
+      "explanation": ""
+    },
+    {
+      "case_id": "CEVAL-ABCD-022",
+      "priority": "P0",
+      "module": "主对话-标准选择题",
+      "feature": "计算机",
+      "ability": "计算机组成",
+      "source": "C-Eval validation",
+      "benchmark": "C-Eval",
+      "benchmark_dataset": "ceval/ceval-exam",
+      "benchmark_split": "validation",
+      "benchmark_subject": "computer_architecture",
+      "benchmark_subject_name": "计算机组成",
+      "benchmark_source_id": 12,
+      "source_fidelity": "原题引用",
+      "source_fidelity_reason": "来自 C-Eval validation split 的原始单项选择题，保留原题题干、选项与标准答案。",
+      "easy_wrong": "否",
+      "summary": "子程序调用指令执行时，要把当前程序计数器(PC)的内容存到。",
+      "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：计算机组成\n题目：子程序调用指令执行时，要把当前程序计数器(PC)的内容存到。\nA. 通用寄存器\nB. 堆栈\nC. 指令寄存器\nD. 数据缓冲器\n答案：",
+      "expected_result": "B",
+      "steps": [
+        "新建会话",
+        "输入 C-Eval 单项选择题",
+        "发送",
+        "等待回答",
+        "提取首个独立 A/B/C/D 判分并记录截图/XML/时延"
+      ],
+      "recovery_action": "用新建会话隔离用例；必要时关闭当前 App 后拉起下一产品。",
+      "test_type": "model_dialogue",
+      "execution_mode": "uiautomator2_text_dialogue",
+      "send_as_model_question": true,
+      "execution_protocol": "text_dialogue_or_metric",
+      "current_dialogue_suitable": "是",
+      "needs_material": "否",
+      "needs_operation": "否",
+      "scoring_type": "single_choice_abcd",
+      "strict_expected": "B",
+      "score_rule": "App 必须仅回答选项 A/B/C/D 中的一个字母，不要解释；与 strict_expected 完全一致为 correct，否则 wrong；不使用 partial。",
+      "turns": [
+        {
+          "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：计算机组成\n题目：子程序调用指令执行时，要把当前程序计数器(PC)的内容存到。\nA. 通用寄存器\nB. 堆栈\nC. 指令寄存器\nD. 数据缓冲器\n答案：",
+          "expected": "B",
+          "must_contain": [
+            "B"
+          ],
+          "scoring_type": "single_choice_abcd",
+          "strict_answer_only": true
+        }
+      ],
+      "question": "子程序调用指令执行时，要把当前程序计数器(PC)的内容存到____。",
+      "options": {
+        "A": "通用寄存器",
+        "B": "堆栈",
+        "C": "指令寄存器",
+        "D": "数据缓冲器"
+      },
+      "answer": "B",
+      "explanation": ""
+    },
+    {
+      "case_id": "CEVAL-ABCD-023",
+      "priority": "P0",
+      "module": "主对话-标准选择题",
+      "feature": "法律与公共知识",
+      "ability": "思想道德修养",
+      "source": "C-Eval validation",
+      "benchmark": "C-Eval",
+      "benchmark_dataset": "ceval/ceval-exam",
+      "benchmark_split": "validation",
+      "benchmark_subject": "ideological_and_moral_cultivation",
+      "benchmark_subject_name": "思想道德修养",
+      "benchmark_source_id": 14,
+      "source_fidelity": "原题引用",
+      "source_fidelity_reason": "来自 C-Eval validation split 的原始单项选择题，保留原题题干、选项与标准答案。",
+      "easy_wrong": "否",
+      "summary": "马克思主义理想信念的基础是",
+      "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：思想道德修养\n题目：马克思主义理想信念的基础是\nA. 信仰\nB. 科学\nC. 坚定\nD. 革命\n答案：",
+      "expected_result": "B",
+      "steps": [
+        "新建会话",
+        "输入 C-Eval 单项选择题",
+        "发送",
+        "等待回答",
+        "提取首个独立 A/B/C/D 判分并记录截图/XML/时延"
+      ],
+      "recovery_action": "用新建会话隔离用例；必要时关闭当前 App 后拉起下一产品。",
+      "test_type": "model_dialogue",
+      "execution_mode": "uiautomator2_text_dialogue",
+      "send_as_model_question": true,
+      "execution_protocol": "text_dialogue_or_metric",
+      "current_dialogue_suitable": "是",
+      "needs_material": "否",
+      "needs_operation": "否",
+      "scoring_type": "single_choice_abcd",
+      "strict_expected": "B",
+      "score_rule": "App 必须仅回答选项 A/B/C/D 中的一个字母，不要解释；与 strict_expected 完全一致为 correct，否则 wrong；不使用 partial。",
+      "turns": [
+        {
+          "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：思想道德修养\n题目：马克思主义理想信念的基础是\nA. 信仰\nB. 科学\nC. 坚定\nD. 革命\n答案：",
+          "expected": "B",
+          "must_contain": [
+            "B"
+          ],
+          "scoring_type": "single_choice_abcd",
+          "strict_answer_only": true
+        }
+      ],
+      "question": "马克思主义理想信念的基础是____",
+      "options": {
+        "A": "信仰",
+        "B": "科学",
+        "C": "坚定",
+        "D": "革命"
+      },
+      "answer": "B",
+      "explanation": ""
+    },
+    {
+      "case_id": "CEVAL-ABCD-024",
+      "priority": "P0",
+      "module": "主对话-标准选择题",
+      "feature": "法律与公共知识",
+      "ability": "工商管理",
+      "source": "C-Eval validation",
+      "benchmark": "C-Eval",
+      "benchmark_dataset": "ceval/ceval-exam",
+      "benchmark_split": "validation",
+      "benchmark_subject": "business_administration",
+      "benchmark_subject_name": "工商管理",
+      "benchmark_source_id": 4,
+      "source_fidelity": "原题引用",
+      "source_fidelity_reason": "来自 C-Eval validation split 的原始单项选择题，保留原题题干、选项与标准答案。",
+      "easy_wrong": "否",
+      "summary": "《价格法》并没有对所有的价格歧视都加以禁止，应加以禁止的价格歧视行为是",
+      "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：工商管理\n题目：《价格法》并没有对所有的价格歧视都加以禁止，应加以禁止的价格歧视行为是\nA. 甲企业对乙企业和丙企业提供相同的商品或服务，但实行不同的价格\nB. 运输企业对老人、在岗人员和学生制定不同的价格\nC. 寒暑假期间，民航对乘坐飞机的教师可凭教师证给予7折优惠\nD. 电信部门对单位用市话和家庭用市话制定不同的收费标准\n答案：",
+      "expected_result": "A",
+      "steps": [
+        "新建会话",
+        "输入 C-Eval 单项选择题",
+        "发送",
+        "等待回答",
+        "提取首个独立 A/B/C/D 判分并记录截图/XML/时延"
+      ],
+      "recovery_action": "用新建会话隔离用例；必要时关闭当前 App 后拉起下一产品。",
+      "test_type": "model_dialogue",
+      "execution_mode": "uiautomator2_text_dialogue",
+      "send_as_model_question": true,
+      "execution_protocol": "text_dialogue_or_metric",
+      "current_dialogue_suitable": "是",
+      "needs_material": "否",
+      "needs_operation": "否",
+      "scoring_type": "single_choice_abcd",
+      "strict_expected": "A",
+      "score_rule": "App 必须仅回答选项 A/B/C/D 中的一个字母，不要解释；与 strict_expected 完全一致为 correct，否则 wrong；不使用 partial。",
+      "turns": [
+        {
+          "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：工商管理\n题目：《价格法》并没有对所有的价格歧视都加以禁止，应加以禁止的价格歧视行为是\nA. 甲企业对乙企业和丙企业提供相同的商品或服务，但实行不同的价格\nB. 运输企业对老人、在岗人员和学生制定不同的价格\nC. 寒暑假期间，民航对乘坐飞机的教师可凭教师证给予7折优惠\nD. 电信部门对单位用市话和家庭用市话制定不同的收费标准\n答案：",
+          "expected": "A",
+          "must_contain": [
+            "A"
+          ],
+          "scoring_type": "single_choice_abcd",
+          "strict_answer_only": true
+        }
+      ],
+      "question": "《价格法》并没有对所有的价格歧视都加以禁止，应加以禁止的价格歧视行为是____",
+      "options": {
+        "A": "甲企业对乙企业和丙企业提供相同的商品或服务，但实行不同的价格",
+        "B": "运输企业对老人、在岗人员和学生制定不同的价格",
+        "C": "寒暑假期间，民航对乘坐飞机的教师可凭教师证给予7折优惠",
+        "D": "电信部门对单位用市话和家庭用市话制定不同的收费标准"
+      },
+      "answer": "A",
+      "explanation": ""
+    },
+    {
+      "case_id": "CEVAL-ABCD-025",
+      "priority": "P0",
+      "module": "主对话-标准选择题",
+      "feature": "数学",
+      "ability": "高中数学",
+      "source": "C-Eval validation",
+      "benchmark": "C-Eval",
+      "benchmark_dataset": "ceval/ceval-exam",
+      "benchmark_split": "validation",
+      "benchmark_subject": "high_school_mathematics",
+      "benchmark_subject_name": "高中数学",
+      "benchmark_source_id": 8,
+      "source_fidelity": "原题引用",
+      "source_fidelity_reason": "来自 C-Eval validation split 的原始单项选择题，保留原题题干、选项与标准答案。",
+      "easy_wrong": "否",
+      "summary": "已知函数$f(x)=a \\ln x-2x$,若不等式$f(x+1)>a x-2e^{x}$在$x \\in \\left(0 +\\infty\\right)$上恒成立",
+      "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：高中数学\n题目：已知函数$f(x)=a \\ln x-2x$,若不等式$f(x+1)>a x-2e^{x}$在$x \\in \\left(0 +\\infty\\right)$上恒成立，则实数a的取值范围是\nA. $a{\\leq}2$\nB. $a\\geq2$\nC. $a{\\leq}0$\nD. $0\\leq a\\leq2$\n答案：",
+      "expected_result": "A",
+      "steps": [
+        "新建会话",
+        "输入 C-Eval 单项选择题",
+        "发送",
+        "等待回答",
+        "提取首个独立 A/B/C/D 判分并记录截图/XML/时延"
+      ],
+      "recovery_action": "用新建会话隔离用例；必要时关闭当前 App 后拉起下一产品。",
+      "test_type": "model_dialogue",
+      "execution_mode": "uiautomator2_text_dialogue",
+      "send_as_model_question": true,
+      "execution_protocol": "text_dialogue_or_metric",
+      "current_dialogue_suitable": "是",
+      "needs_material": "否",
+      "needs_operation": "否",
+      "scoring_type": "single_choice_abcd",
+      "strict_expected": "A",
+      "score_rule": "App 必须仅回答选项 A/B/C/D 中的一个字母，不要解释；与 strict_expected 完全一致为 correct，否则 wrong；不使用 partial。",
+      "turns": [
+        {
+          "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：高中数学\n题目：已知函数$f(x)=a \\ln x-2x$,若不等式$f(x+1)>a x-2e^{x}$在$x \\in \\left(0 +\\infty\\right)$上恒成立，则实数a的取值范围是\nA. $a{\\leq}2$\nB. $a\\geq2$\nC. $a{\\leq}0$\nD. $0\\leq a\\leq2$\n答案：",
+          "expected": "A",
+          "must_contain": [
+            "A"
+          ],
+          "scoring_type": "single_choice_abcd",
+          "strict_answer_only": true
+        }
+      ],
+      "question": "已知函数$f(x)=a \\ln x-2x$,若不等式$f(x+1)>a x-2e^{x}$在$x \\in \\left(0 +\\infty\\right)$上恒成立，则实数a的取值范围是____",
+      "options": {
+        "A": "$a{\\leq}2$",
+        "B": "$a\\geq2$",
+        "C": "$a{\\leq}0$",
+        "D": "$0\\leq a\\leq2$"
+      },
+      "answer": "A",
+      "explanation": ""
+    },
+    {
+      "case_id": "CEVAL-ABCD-026",
+      "priority": "P0",
+      "module": "主对话-标准选择题",
+      "feature": "逻辑与公务员",
+      "ability": "逻辑学",
+      "source": "C-Eval validation",
+      "benchmark": "C-Eval",
+      "benchmark_dataset": "ceval/ceval-exam",
+      "benchmark_split": "validation",
+      "benchmark_subject": "logic",
+      "benchmark_subject_name": "逻辑学",
+      "benchmark_source_id": 2,
+      "source_fidelity": "原题引用",
+      "source_fidelity_reason": "来自 C-Eval validation split 的原始单项选择题，保留原题题干、选项与标准答案。",
+      "easy_wrong": "否",
+      "summary": "社会成员的幸福感是可以运用现代手段精确量化的。衡量一项社会改革措施是否成功，要看社会成员的幸福感总量是否增加。S市最近推出的福利改革明显增加了公务员的幸福感总量",
+      "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：逻辑学\n题目：社会成员的幸福感是可以运用现代手段精确量化的。衡量一项社会改革措施是否成功，要看社会成员的幸福感总量是否增加。S市最近推出的福利改革明显增加了公务员的幸福感总量，因此，这项改革措施是成功的。以下哪项如果为真，最能削弱上述论证?\nA. 上述改革措施并没有增加s市所有公务员的幸福感。\nB. S市公务员只占全市社会成员很小的比例。\nC. 上述改革措施在增加公务员幸福感总量的同时，减少了S市民营企业人员的幸福感总量。\nD. 上述改革措施在增加公务员幸福感总量的同时，减少了S市全体社会成员的幸福感总量。\n答案：",
+      "expected_result": "D",
+      "steps": [
+        "新建会话",
+        "输入 C-Eval 单项选择题",
+        "发送",
+        "等待回答",
+        "提取首个独立 A/B/C/D 判分并记录截图/XML/时延"
+      ],
+      "recovery_action": "用新建会话隔离用例；必要时关闭当前 App 后拉起下一产品。",
+      "test_type": "model_dialogue",
+      "execution_mode": "uiautomator2_text_dialogue",
+      "send_as_model_question": true,
+      "execution_protocol": "text_dialogue_or_metric",
+      "current_dialogue_suitable": "是",
+      "needs_material": "否",
+      "needs_operation": "否",
+      "scoring_type": "single_choice_abcd",
+      "strict_expected": "D",
+      "score_rule": "App 必须仅回答选项 A/B/C/D 中的一个字母，不要解释；与 strict_expected 完全一致为 correct，否则 wrong；不使用 partial。",
+      "turns": [
+        {
+          "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：逻辑学\n题目：社会成员的幸福感是可以运用现代手段精确量化的。衡量一项社会改革措施是否成功，要看社会成员的幸福感总量是否增加。S市最近推出的福利改革明显增加了公务员的幸福感总量，因此，这项改革措施是成功的。以下哪项如果为真，最能削弱上述论证?\nA. 上述改革措施并没有增加s市所有公务员的幸福感。\nB. S市公务员只占全市社会成员很小的比例。\nC. 上述改革措施在增加公务员幸福感总量的同时，减少了S市民营企业人员的幸福感总量。\nD. 上述改革措施在增加公务员幸福感总量的同时，减少了S市全体社会成员的幸福感总量。\n答案：",
+          "expected": "D",
+          "must_contain": [
+            "D"
+          ],
+          "scoring_type": "single_choice_abcd",
+          "strict_answer_only": true
+        }
+      ],
+      "question": "社会成员的幸福感是可以运用现代手段精确量化的。衡量一项社会改革措施是否成功，要看社会成员的幸福感总量是否增加。S市最近推出的福利改革明显增加了公务员的幸福感总量，因此，这项改革措施是成功的。以下哪项如果为真，最能削弱上述论证?____",
+      "options": {
+        "A": "上述改革措施并没有增加s市所有公务员的幸福感。",
+        "B": "S市公务员只占全市社会成员很小的比例。",
+        "C": "上述改革措施在增加公务员幸福感总量的同时，减少了S市民营企业人员的幸福感总量。",
+        "D": "上述改革措施在增加公务员幸福感总量的同时，减少了S市全体社会成员的幸福感总量。"
+      },
+      "answer": "D",
+      "explanation": ""
+    },
+    {
+      "case_id": "CEVAL-ABCD-027",
+      "priority": "P0",
+      "module": "主对话-标准选择题",
+      "feature": "语言与人文",
+      "ability": "高中语文",
+      "source": "C-Eval validation",
+      "benchmark": "C-Eval",
+      "benchmark_dataset": "ceval/ceval-exam",
+      "benchmark_split": "validation",
+      "benchmark_subject": "high_school_chinese",
+      "benchmark_subject_name": "高中语文",
+      "benchmark_source_id": 0,
+      "source_fidelity": "原题引用",
+      "source_fidelity_reason": "来自 C-Eval validation split 的原始单项选择题，保留原题题干、选项与标准答案。",
+      "easy_wrong": "否",
+      "summary": "下文划线处选填哪项最恰切 作物同病菌进行斗争，情形是复杂的：，就是同一个抗病品种，对不同的病菌的抵抗方式也不一样。",
+      "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：高中语文\n题目：下文划线处选填哪项最恰切 作物同病菌进行斗争，情形是复杂的：，就是同一个抗病品种，对不同的病菌的抵抗方式也不一样。\nA. 不同的抗病品种抵抗病菌的方式不仅有所不同\nB. 不同的抗病品种不仅抵抗病菌的方式有所不同\nC. 不仅不同的抗病品种抵抗病菌的方式有所不同\nD. 固然不同的抗病品种抵抗病菌的方式有所不同\n答案：",
+      "expected_result": "C",
+      "steps": [
+        "新建会话",
+        "输入 C-Eval 单项选择题",
+        "发送",
+        "等待回答",
+        "提取首个独立 A/B/C/D 判分并记录截图/XML/时延"
+      ],
+      "recovery_action": "用新建会话隔离用例；必要时关闭当前 App 后拉起下一产品。",
+      "test_type": "model_dialogue",
+      "execution_mode": "uiautomator2_text_dialogue",
+      "send_as_model_question": true,
+      "execution_protocol": "text_dialogue_or_metric",
+      "current_dialogue_suitable": "是",
+      "needs_material": "否",
+      "needs_operation": "否",
+      "scoring_type": "single_choice_abcd",
+      "strict_expected": "C",
+      "score_rule": "App 必须仅回答选项 A/B/C/D 中的一个字母，不要解释；与 strict_expected 完全一致为 correct，否则 wrong；不使用 partial。",
+      "turns": [
+        {
+          "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：高中语文\n题目：下文划线处选填哪项最恰切 作物同病菌进行斗争，情形是复杂的：，就是同一个抗病品种，对不同的病菌的抵抗方式也不一样。\nA. 不同的抗病品种抵抗病菌的方式不仅有所不同\nB. 不同的抗病品种不仅抵抗病菌的方式有所不同\nC. 不仅不同的抗病品种抵抗病菌的方式有所不同\nD. 固然不同的抗病品种抵抗病菌的方式有所不同\n答案：",
+          "expected": "C",
+          "must_contain": [
+            "C"
+          ],
+          "scoring_type": "single_choice_abcd",
+          "strict_answer_only": true
+        }
+      ],
+      "question": "下文划线处选填哪项最恰切____ 作物同病菌进行斗争，情形是复杂的：____，就是同一个抗病品种，对不同的病菌的抵抗方式也不一样。",
+      "options": {
+        "A": "不同的抗病品种抵抗病菌的方式不仅有所不同",
+        "B": "不同的抗病品种不仅抵抗病菌的方式有所不同",
+        "C": "不仅不同的抗病品种抵抗病菌的方式有所不同",
+        "D": "固然不同的抗病品种抵抗病菌的方式有所不同"
+      },
+      "answer": "C",
+      "explanation": ""
+    },
+    {
+      "case_id": "CEVAL-ABCD-028",
+      "priority": "P0",
+      "module": "主对话-标准选择题",
+      "feature": "逻辑与公务员",
+      "ability": "公务员",
+      "source": "C-Eval validation",
+      "benchmark": "C-Eval",
+      "benchmark_dataset": "ceval/ceval-exam",
+      "benchmark_split": "validation",
+      "benchmark_subject": "civil_servant",
+      "benchmark_subject_name": "公务员",
+      "benchmark_source_id": 31,
+      "source_fidelity": "原题引用",
+      "source_fidelity_reason": "来自 C-Eval validation split 的原始单项选择题，保留原题题干、选项与标准答案。",
+      "easy_wrong": "否",
+      "summary": "3，5，16，82，1315，",
+      "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：公务员\n题目：3，5，16，82，1315，\nA. 107834\nB. 12849\nC. 12847\nD. 108847\n答案：",
+      "expected_result": "A",
+      "steps": [
+        "新建会话",
+        "输入 C-Eval 单项选择题",
+        "发送",
+        "等待回答",
+        "提取首个独立 A/B/C/D 判分并记录截图/XML/时延"
+      ],
+      "recovery_action": "用新建会话隔离用例；必要时关闭当前 App 后拉起下一产品。",
+      "test_type": "model_dialogue",
+      "execution_mode": "uiautomator2_text_dialogue",
+      "send_as_model_question": true,
+      "execution_protocol": "text_dialogue_or_metric",
+      "current_dialogue_suitable": "是",
+      "needs_material": "否",
+      "needs_operation": "否",
+      "scoring_type": "single_choice_abcd",
+      "strict_expected": "A",
+      "score_rule": "App 必须仅回答选项 A/B/C/D 中的一个字母，不要解释；与 strict_expected 完全一致为 correct，否则 wrong；不使用 partial。",
+      "turns": [
+        {
+          "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：公务员\n题目：3，5，16，82，1315，\nA. 107834\nB. 12849\nC. 12847\nD. 108847\n答案：",
+          "expected": "A",
+          "must_contain": [
+            "A"
+          ],
+          "scoring_type": "single_choice_abcd",
+          "strict_answer_only": true
+        }
+      ],
+      "question": "3，5，16，82，1315，____",
+      "options": {
+        "A": "107834",
+        "B": "12849",
+        "C": "12847",
+        "D": "108847"
+      },
+      "answer": "A",
+      "explanation": ""
+    },
+    {
+      "case_id": "CEVAL-ABCD-029",
+      "priority": "P0",
+      "module": "主对话-标准选择题",
+      "feature": "逻辑与公务员",
+      "ability": "逻辑学",
+      "source": "C-Eval validation",
+      "benchmark": "C-Eval",
+      "benchmark_dataset": "ceval/ceval-exam",
+      "benchmark_split": "validation",
+      "benchmark_subject": "logic",
+      "benchmark_subject_name": "逻辑学",
+      "benchmark_source_id": 10,
+      "source_fidelity": "原题引用",
+      "source_fidelity_reason": "来自 C-Eval validation split 的原始单项选择题，保留原题题干、选项与标准答案。",
+      "easy_wrong": "否",
+      "summary": "核电站所发生的核泄漏严重事故的最初起因，没有一次是设备故障，都是人为失误所致。这种失误，和小到导致交通堵塞，大到导致仓库失火的人为失误，没有实质性的区别。从长远",
+      "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：逻辑学\n题目：核电站所发生的核泄漏严重事故的最初起因，没有一次是设备故障，都是人为失误所致。这种失误，和小到导致交通堵塞，大到导致仓库失火的人为失误，没有实质性的区别。从长远的观点看，交通堵塞和仓库失火几乎是不可避免的。上述断定最能支持以下哪项结论?\nA. 核电站不可能因设备故障而导致事故。\nB. 核电站的管理并不比指挥交通、管理仓库复杂。\nC. 核电站如果持续运作，那么发生核泄漏严重事故几乎是不可避免的。\nD. 人们试图通过严格的规章制度以杜绝安全事故的努力是没有意义的。\n答案：",
+      "expected_result": "C",
+      "steps": [
+        "新建会话",
+        "输入 C-Eval 单项选择题",
+        "发送",
+        "等待回答",
+        "提取首个独立 A/B/C/D 判分并记录截图/XML/时延"
+      ],
+      "recovery_action": "用新建会话隔离用例；必要时关闭当前 App 后拉起下一产品。",
+      "test_type": "model_dialogue",
+      "execution_mode": "uiautomator2_text_dialogue",
+      "send_as_model_question": true,
+      "execution_protocol": "text_dialogue_or_metric",
+      "current_dialogue_suitable": "是",
+      "needs_material": "否",
+      "needs_operation": "否",
+      "scoring_type": "single_choice_abcd",
+      "strict_expected": "C",
+      "score_rule": "App 必须仅回答选项 A/B/C/D 中的一个字母，不要解释；与 strict_expected 完全一致为 correct，否则 wrong；不使用 partial。",
+      "turns": [
+        {
+          "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：逻辑学\n题目：核电站所发生的核泄漏严重事故的最初起因，没有一次是设备故障，都是人为失误所致。这种失误，和小到导致交通堵塞，大到导致仓库失火的人为失误，没有实质性的区别。从长远的观点看，交通堵塞和仓库失火几乎是不可避免的。上述断定最能支持以下哪项结论?\nA. 核电站不可能因设备故障而导致事故。\nB. 核电站的管理并不比指挥交通、管理仓库复杂。\nC. 核电站如果持续运作，那么发生核泄漏严重事故几乎是不可避免的。\nD. 人们试图通过严格的规章制度以杜绝安全事故的努力是没有意义的。\n答案：",
+          "expected": "C",
+          "must_contain": [
+            "C"
+          ],
+          "scoring_type": "single_choice_abcd",
+          "strict_answer_only": true
+        }
+      ],
+      "question": "核电站所发生的核泄漏严重事故的最初起因，没有一次是设备故障，都是人为失误所致。这种失误，和小到导致交通堵塞，大到导致仓库失火的人为失误，没有实质性的区别。从长远的观点看，交通堵塞和仓库失火几乎是不可避免的。上述断定最能支持以下哪项结论?____",
+      "options": {
+        "A": "核电站不可能因设备故障而导致事故。",
+        "B": "核电站的管理并不比指挥交通、管理仓库复杂。",
+        "C": "核电站如果持续运作，那么发生核泄漏严重事故几乎是不可避免的。",
+        "D": "人们试图通过严格的规章制度以杜绝安全事故的努力是没有意义的。"
+      },
+      "answer": "C",
+      "explanation": ""
+    },
+    {
+      "case_id": "CEVAL-ABCD-030",
+      "priority": "P0",
+      "module": "主对话-标准选择题",
+      "feature": "计算机",
+      "ability": "操作系统",
+      "source": "C-Eval validation",
+      "benchmark": "C-Eval",
+      "benchmark_dataset": "ceval/ceval-exam",
+      "benchmark_split": "validation",
+      "benchmark_subject": "operating_system",
+      "benchmark_subject_name": "操作系统",
+      "benchmark_source_id": 7,
+      "source_fidelity": "原题引用",
+      "source_fidelity_reason": "来自 C-Eval validation split 的原始单项选择题，保留原题题干、选项与标准答案。",
+      "easy_wrong": "否",
+      "summary": "在Unix中，passwd命令位于目录中的。",
+      "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：操作系统\n题目：在Unix中，passwd命令位于目录中的。\nA. /usr/bin\nB. /lib\nC. /etc\nD. /dev\n答案：",
+      "expected_result": "A",
+      "steps": [
+        "新建会话",
+        "输入 C-Eval 单项选择题",
+        "发送",
+        "等待回答",
+        "提取首个独立 A/B/C/D 判分并记录截图/XML/时延"
+      ],
+      "recovery_action": "用新建会话隔离用例；必要时关闭当前 App 后拉起下一产品。",
+      "test_type": "model_dialogue",
+      "execution_mode": "uiautomator2_text_dialogue",
+      "send_as_model_question": true,
+      "execution_protocol": "text_dialogue_or_metric",
+      "current_dialogue_suitable": "是",
+      "needs_material": "否",
+      "needs_operation": "否",
+      "scoring_type": "single_choice_abcd",
+      "strict_expected": "A",
+      "score_rule": "App 必须仅回答选项 A/B/C/D 中的一个字母，不要解释；与 strict_expected 完全一致为 correct，否则 wrong；不使用 partial。",
+      "turns": [
+        {
+          "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：操作系统\n题目：在Unix中，passwd命令位于目录中的。\nA. /usr/bin\nB. /lib\nC. /etc\nD. /dev\n答案：",
+          "expected": "A",
+          "must_contain": [
+            "A"
+          ],
+          "scoring_type": "single_choice_abcd",
+          "strict_answer_only": true
+        }
+      ],
+      "question": "在Unix中，passwd命令位于____目录中的。",
+      "options": {
+        "A": "/usr/bin",
+        "B": "/lib",
+        "C": "/etc",
+        "D": "/dev"
+      },
+      "answer": "A",
+      "explanation": ""
+    },
+    {
+      "case_id": "CEVAL-ABCD-031",
+      "priority": "P0",
+      "module": "主对话-标准选择题",
+      "feature": "逻辑与公务员",
+      "ability": "逻辑学",
+      "source": "C-Eval validation",
+      "benchmark": "C-Eval",
+      "benchmark_dataset": "ceval/ceval-exam",
+      "benchmark_split": "validation",
+      "benchmark_subject": "logic",
+      "benchmark_subject_name": "逻辑学",
+      "benchmark_source_id": 0,
+      "source_fidelity": "原题引用",
+      "source_fidelity_reason": "来自 C-Eval validation split 的原始单项选择题，保留原题题干、选项与标准答案。",
+      "easy_wrong": "否",
+      "summary": "许多公司目前都为雇员免费提供健身、缓解压力或戒烟的服务项目。这些项目增加了员工的生产力，减少了缺勤率，并降低了员工的健康保险费。因此，这些服务项目不但有益于公司",
+      "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：逻辑学\n题目：许多公司目前都为雇员免费提供健身、缓解压力或戒烟的服务项目。这些项目增加了员工的生产力，减少了缺勤率，并降低了员工的健康保险费。因此，这些服务项目不但有益于公司，而且有利于员工个人。以下哪项如果为真，最能构成对上述论证的支持?\nA. 健身是公司为员工所提供的最常见的服务项目。\nB. 有研究表明，在有压力的管理环境中，训练对许多人都是无效的。\nC. 有规律的锻炼可以减少心脏病发病率并使人的精力更加充沛。\nD. 过快地参加大运动量的健身活动有时会造成运动伤害。\n答案：",
+      "expected_result": "C",
+      "steps": [
+        "新建会话",
+        "输入 C-Eval 单项选择题",
+        "发送",
+        "等待回答",
+        "提取首个独立 A/B/C/D 判分并记录截图/XML/时延"
+      ],
+      "recovery_action": "用新建会话隔离用例；必要时关闭当前 App 后拉起下一产品。",
+      "test_type": "model_dialogue",
+      "execution_mode": "uiautomator2_text_dialogue",
+      "send_as_model_question": true,
+      "execution_protocol": "text_dialogue_or_metric",
+      "current_dialogue_suitable": "是",
+      "needs_material": "否",
+      "needs_operation": "否",
+      "scoring_type": "single_choice_abcd",
+      "strict_expected": "C",
+      "score_rule": "App 必须仅回答选项 A/B/C/D 中的一个字母，不要解释；与 strict_expected 完全一致为 correct，否则 wrong；不使用 partial。",
+      "turns": [
+        {
+          "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：逻辑学\n题目：许多公司目前都为雇员免费提供健身、缓解压力或戒烟的服务项目。这些项目增加了员工的生产力，减少了缺勤率，并降低了员工的健康保险费。因此，这些服务项目不但有益于公司，而且有利于员工个人。以下哪项如果为真，最能构成对上述论证的支持?\nA. 健身是公司为员工所提供的最常见的服务项目。\nB. 有研究表明，在有压力的管理环境中，训练对许多人都是无效的。\nC. 有规律的锻炼可以减少心脏病发病率并使人的精力更加充沛。\nD. 过快地参加大运动量的健身活动有时会造成运动伤害。\n答案：",
+          "expected": "C",
+          "must_contain": [
+            "C"
+          ],
+          "scoring_type": "single_choice_abcd",
+          "strict_answer_only": true
+        }
+      ],
+      "question": "许多公司目前都为雇员免费提供健身、缓解压力或戒烟的服务项目。这些项目增加了员工的生产力，减少了缺勤率，并降低了员工的健康保险费。因此，这些服务项目不但有益于公司，而且有利于员工个人。以下哪项如果为真，最能构成对上述论证的支持?____",
+      "options": {
+        "A": "健身是公司为员工所提供的最常见的服务项目。",
+        "B": "有研究表明，在有压力的管理环境中，训练对许多人都是无效的。",
+        "C": "有规律的锻炼可以减少心脏病发病率并使人的精力更加充沛。",
+        "D": "过快地参加大运动量的健身活动有时会造成运动伤害。"
+      },
+      "answer": "C",
+      "explanation": ""
+    },
+    {
+      "case_id": "CEVAL-ABCD-032",
+      "priority": "P0",
+      "module": "主对话-标准选择题",
+      "feature": "法律与公共知识",
+      "ability": "高中政治",
+      "source": "C-Eval validation",
+      "benchmark": "C-Eval",
+      "benchmark_dataset": "ceval/ceval-exam",
+      "benchmark_split": "validation",
+      "benchmark_subject": "high_school_politics",
+      "benchmark_subject_name": "高中政治",
+      "benchmark_source_id": 13,
+      "source_fidelity": "原题引用",
+      "source_fidelity_reason": "来自 C-Eval validation split 的原始单项选择题，保留原题题干、选项与标准答案。",
+      "easy_wrong": "否",
+      "summary": "2012年我国粮食总产量达58957万吨，比上年增长3.2%。我国粮食生产已实现“九连丰”。这表明我国 ①吃饭问题得到解决 ②产业结构发生了变化 ③粮食安全没有",
+      "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：高中政治\n题目：2012年我国粮食总产量达58957万吨，比上年增长3.2%。我国粮食生产已实现“九连丰”。这表明我国 ①吃饭问题得到解决 ②产业结构发生了变化 ③粮食安全没有后顾之忧 ④国民经济的基础地位得到巩固\nA. ①②\nB. ②③\nC. ①④\nD. ②④\n答案：",
+      "expected_result": "C",
+      "steps": [
+        "新建会话",
+        "输入 C-Eval 单项选择题",
+        "发送",
+        "等待回答",
+        "提取首个独立 A/B/C/D 判分并记录截图/XML/时延"
+      ],
+      "recovery_action": "用新建会话隔离用例；必要时关闭当前 App 后拉起下一产品。",
+      "test_type": "model_dialogue",
+      "execution_mode": "uiautomator2_text_dialogue",
+      "send_as_model_question": true,
+      "execution_protocol": "text_dialogue_or_metric",
+      "current_dialogue_suitable": "是",
+      "needs_material": "否",
+      "needs_operation": "否",
+      "scoring_type": "single_choice_abcd",
+      "strict_expected": "C",
+      "score_rule": "App 必须仅回答选项 A/B/C/D 中的一个字母，不要解释；与 strict_expected 完全一致为 correct，否则 wrong；不使用 partial。",
+      "turns": [
+        {
+          "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：高中政治\n题目：2012年我国粮食总产量达58957万吨，比上年增长3.2%。我国粮食生产已实现“九连丰”。这表明我国 ①吃饭问题得到解决 ②产业结构发生了变化 ③粮食安全没有后顾之忧 ④国民经济的基础地位得到巩固\nA. ①②\nB. ②③\nC. ①④\nD. ②④\n答案：",
+          "expected": "C",
+          "must_contain": [
+            "C"
+          ],
+          "scoring_type": "single_choice_abcd",
+          "strict_answer_only": true
+        }
+      ],
+      "question": "2012年我国粮食总产量达58957万吨，比上年增长3.2%。我国粮食生产已实现“九连丰”。这表明我国____ ①吃饭问题得到解决 ②产业结构发生了变化 ③粮食安全没有后顾之忧 ④国民经济的基础地位得到巩固",
+      "options": {
+        "A": "①②",
+        "B": "②③",
+        "C": "①④",
+        "D": "②④"
+      },
+      "answer": "C",
+      "explanation": ""
+    },
+    {
+      "case_id": "CEVAL-ABCD-033",
+      "priority": "P0",
+      "module": "主对话-标准选择题",
+      "feature": "数学",
+      "ability": "高等数学",
+      "source": "C-Eval validation",
+      "benchmark": "C-Eval",
+      "benchmark_dataset": "ceval/ceval-exam",
+      "benchmark_split": "validation",
+      "benchmark_subject": "advanced_mathematics",
+      "benchmark_subject_name": "高等数学",
+      "benchmark_source_id": 5,
+      "source_fidelity": "原题引用",
+      "source_fidelity_reason": "来自 C-Eval validation split 的原始单项选择题，保留原题题干、选项与标准答案。",
+      "easy_wrong": "否",
+      "summary": "已知$\\int_0^{+\\infty}{\\frac{\\sin x}{x}\\mathrm{d}x=\\frac{\\pi}{2}}$，则$\\int_0^{+\\inft",
+      "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：高等数学\n题目：已知$\\int_0^{+\\infty}{\\frac{\\sin x}{x}\\mathrm{d}x=\\frac{\\pi}{2}}$，则$\\int_0^{+\\infty}{\\int_0^{+\\infty}{\\frac{\\sin x\\sin\\left(x+y\\right)}{x\\left(x+y\\right)}}}\\mathrm{d}x\\mathrm{d}y$=\nA. $\\frac{\\pi ^2}{12}$\nB. $\\frac{\\pi ^2}{8}$\nC. $\\frac{\\pi ^2}{4}$\nD. $\\frac{\\pi ^2}{2}$\n答案：",
+      "expected_result": "B",
+      "steps": [
+        "新建会话",
+        "输入 C-Eval 单项选择题",
+        "发送",
+        "等待回答",
+        "提取首个独立 A/B/C/D 判分并记录截图/XML/时延"
+      ],
+      "recovery_action": "用新建会话隔离用例；必要时关闭当前 App 后拉起下一产品。",
+      "test_type": "model_dialogue",
+      "execution_mode": "uiautomator2_text_dialogue",
+      "send_as_model_question": true,
+      "execution_protocol": "text_dialogue_or_metric",
+      "current_dialogue_suitable": "是",
+      "needs_material": "否",
+      "needs_operation": "否",
+      "scoring_type": "single_choice_abcd",
+      "strict_expected": "B",
+      "score_rule": "App 必须仅回答选项 A/B/C/D 中的一个字母，不要解释；与 strict_expected 完全一致为 correct，否则 wrong；不使用 partial。",
+      "turns": [
+        {
+          "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：高等数学\n题目：已知$\\int_0^{+\\infty}{\\frac{\\sin x}{x}\\mathrm{d}x=\\frac{\\pi}{2}}$，则$\\int_0^{+\\infty}{\\int_0^{+\\infty}{\\frac{\\sin x\\sin\\left(x+y\\right)}{x\\left(x+y\\right)}}}\\mathrm{d}x\\mathrm{d}y$=\nA. $\\frac{\\pi ^2}{12}$\nB. $\\frac{\\pi ^2}{8}$\nC. $\\frac{\\pi ^2}{4}$\nD. $\\frac{\\pi ^2}{2}$\n答案：",
+          "expected": "B",
+          "must_contain": [
+            "B"
+          ],
+          "scoring_type": "single_choice_abcd",
+          "strict_answer_only": true
+        }
+      ],
+      "question": "已知$\\int_0^{+\\infty}{\\frac{\\sin x}{x}\\mathrm{d}x=\\frac{\\pi}{2}}$，则$\\int_0^{+\\infty}{\\int_0^{+\\infty}{\\frac{\\sin x\\sin\\left(x+y\\right)}{x\\left(x+y\\right)}}}\\mathrm{d}x\\mathrm{d}y$=____",
+      "options": {
+        "A": "$\\frac{\\pi ^2}{12}$",
+        "B": "$\\frac{\\pi ^2}{8}$",
+        "C": "$\\frac{\\pi ^2}{4}$",
+        "D": "$\\frac{\\pi ^2}{2}$"
+      },
+      "answer": "B",
+      "explanation": ""
+    },
+    {
+      "case_id": "CEVAL-ABCD-034",
+      "priority": "P0",
+      "module": "主对话-标准选择题",
+      "feature": "理科",
+      "ability": "大学物理",
+      "source": "C-Eval validation",
+      "benchmark": "C-Eval",
+      "benchmark_dataset": "ceval/ceval-exam",
+      "benchmark_split": "validation",
+      "benchmark_subject": "college_physics",
+      "benchmark_subject_name": "大学物理",
+      "benchmark_source_id": 0,
+      "source_fidelity": "原题引用",
+      "source_fidelity_reason": "来自 C-Eval validation split 的原始单项选择题，保留原题题干、选项与标准答案。",
+      "easy_wrong": "否",
+      "summary": "α粒子在加速器中被加速，当其质量为静止质量的 3 倍时，其动能为静止能量的",
+      "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：大学物理\n题目：α粒子在加速器中被加速，当其质量为静止质量的 3 倍时，其动能为静止能量的\nA. 2倍\nB. 3倍\nC. 4倍\nD. 5倍\n答案：",
+      "expected_result": "A",
+      "steps": [
+        "新建会话",
+        "输入 C-Eval 单项选择题",
+        "发送",
+        "等待回答",
+        "提取首个独立 A/B/C/D 判分并记录截图/XML/时延"
+      ],
+      "recovery_action": "用新建会话隔离用例；必要时关闭当前 App 后拉起下一产品。",
+      "test_type": "model_dialogue",
+      "execution_mode": "uiautomator2_text_dialogue",
+      "send_as_model_question": true,
+      "execution_protocol": "text_dialogue_or_metric",
+      "current_dialogue_suitable": "是",
+      "needs_material": "否",
+      "needs_operation": "否",
+      "scoring_type": "single_choice_abcd",
+      "strict_expected": "A",
+      "score_rule": "App 必须仅回答选项 A/B/C/D 中的一个字母，不要解释；与 strict_expected 完全一致为 correct，否则 wrong；不使用 partial。",
+      "turns": [
+        {
+          "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：大学物理\n题目：α粒子在加速器中被加速，当其质量为静止质量的 3 倍时，其动能为静止能量的\nA. 2倍\nB. 3倍\nC. 4倍\nD. 5倍\n答案：",
+          "expected": "A",
+          "must_contain": [
+            "A"
+          ],
+          "scoring_type": "single_choice_abcd",
+          "strict_answer_only": true
+        }
+      ],
+      "question": "α粒子在加速器中被加速，当其质量为静止质量的 3 倍时，其动能为静止能量的____",
+      "options": {
+        "A": "2倍",
+        "B": "3倍",
+        "C": "4倍",
+        "D": "5倍"
+      },
+      "answer": "A",
+      "explanation": ""
+    },
+    {
+      "case_id": "CEVAL-ABCD-035",
+      "priority": "P0",
+      "module": "主对话-标准选择题",
+      "feature": "数学",
+      "ability": "高等数学",
+      "source": "C-Eval validation",
+      "benchmark": "C-Eval",
+      "benchmark_dataset": "ceval/ceval-exam",
+      "benchmark_split": "validation",
+      "benchmark_subject": "advanced_mathematics",
+      "benchmark_subject_name": "高等数学",
+      "benchmark_source_id": 17,
+      "source_fidelity": "原题引用",
+      "source_fidelity_reason": "来自 C-Eval validation split 的原始单项选择题，保留原题题干、选项与标准答案。",
+      "easy_wrong": "否",
+      "summary": "计算定积分：$\\int_{-1}^1{\\frac{\\mathrm{d}x}{\\left(1+\\mathrm{e}^x\\right)\\left(1+x^2\\rig",
+      "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：高等数学\n题目：计算定积分：$\\int_{-1}^1{\\frac{\\mathrm{d}x}{\\left(1+\\mathrm{e}^x\\right)\\left(1+x^2\\right)}}$\nA. $\\frac{\\pi}{8}$\nB. $\\frac{\\pi}{4}$\nC. $\\frac{\\pi}{2}$\nD. $\\pi$\n答案：",
+      "expected_result": "B",
+      "steps": [
+        "新建会话",
+        "输入 C-Eval 单项选择题",
+        "发送",
+        "等待回答",
+        "提取首个独立 A/B/C/D 判分并记录截图/XML/时延"
+      ],
+      "recovery_action": "用新建会话隔离用例；必要时关闭当前 App 后拉起下一产品。",
+      "test_type": "model_dialogue",
+      "execution_mode": "uiautomator2_text_dialogue",
+      "send_as_model_question": true,
+      "execution_protocol": "text_dialogue_or_metric",
+      "current_dialogue_suitable": "是",
+      "needs_material": "否",
+      "needs_operation": "否",
+      "scoring_type": "single_choice_abcd",
+      "strict_expected": "B",
+      "score_rule": "App 必须仅回答选项 A/B/C/D 中的一个字母，不要解释；与 strict_expected 完全一致为 correct，否则 wrong；不使用 partial。",
+      "turns": [
+        {
+          "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：高等数学\n题目：计算定积分：$\\int_{-1}^1{\\frac{\\mathrm{d}x}{\\left(1+\\mathrm{e}^x\\right)\\left(1+x^2\\right)}}$\nA. $\\frac{\\pi}{8}$\nB. $\\frac{\\pi}{4}$\nC. $\\frac{\\pi}{2}$\nD. $\\pi$\n答案：",
+          "expected": "B",
+          "must_contain": [
+            "B"
+          ],
+          "scoring_type": "single_choice_abcd",
+          "strict_answer_only": true
+        }
+      ],
+      "question": "计算定积分：$\\int_{-1}^1{\\frac{\\mathrm{d}x}{\\left(1+\\mathrm{e}^x\\right)\\left(1+x^2\\right)}}$____",
+      "options": {
+        "A": "$\\frac{\\pi}{8}$",
+        "B": "$\\frac{\\pi}{4}$",
+        "C": "$\\frac{\\pi}{2}$",
+        "D": "$\\pi$"
+      },
+      "answer": "B",
+      "explanation": ""
+    },
+    {
+      "case_id": "CEVAL-ABCD-036",
+      "priority": "P0",
+      "module": "主对话-标准选择题",
+      "feature": "逻辑与公务员",
+      "ability": "逻辑学",
+      "source": "C-Eval validation",
+      "benchmark": "C-Eval",
+      "benchmark_dataset": "ceval/ceval-exam",
+      "benchmark_split": "validation",
+      "benchmark_subject": "logic",
+      "benchmark_subject_name": "逻辑学",
+      "benchmark_source_id": 14,
+      "source_fidelity": "原题引用",
+      "source_fidelity_reason": "来自 C-Eval validation split 的原始单项选择题，保留原题题干、选项与标准答案。",
+      "easy_wrong": "否",
+      "summary": "办公室主任：本办公室不打算使用循环再利用纸张。给用户的信件必须能留下好的印象。不能打印在劣质纸张上。文具供应商：循环再利用纸张不一定是劣质的。事实上，最初的纸张",
+      "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：逻辑学\n题目：办公室主任：本办公室不打算使用循环再利用纸张。给用户的信件必须能留下好的印象。不能打印在劣质纸张上。文具供应商：循环再利用纸张不一定是劣质的。事实上，最初的纸张就是用可回收材料制造的。一直到19世纪50年代，由于碎屑原料供不应求，才使用木纤维作为造纸原料。以下哪项最为恰当地概括了文具供应商的反驳中存在的漏洞?\nA. 没有意识到办公室主任对于循环再利用纸张的偏见是由于某种无知。\nB. 使用了不相关的事实来证明一个关于产品质量的断定。\nC. 不恰当地假设办公室主任忽视了环境保护。\nD. 不恰当地假设办公室主任了解纸张的制造工艺。\n答案：",
+      "expected_result": "B",
+      "steps": [
+        "新建会话",
+        "输入 C-Eval 单项选择题",
+        "发送",
+        "等待回答",
+        "提取首个独立 A/B/C/D 判分并记录截图/XML/时延"
+      ],
+      "recovery_action": "用新建会话隔离用例；必要时关闭当前 App 后拉起下一产品。",
+      "test_type": "model_dialogue",
+      "execution_mode": "uiautomator2_text_dialogue",
+      "send_as_model_question": true,
+      "execution_protocol": "text_dialogue_or_metric",
+      "current_dialogue_suitable": "是",
+      "needs_material": "否",
+      "needs_operation": "否",
+      "scoring_type": "single_choice_abcd",
+      "strict_expected": "B",
+      "score_rule": "App 必须仅回答选项 A/B/C/D 中的一个字母，不要解释；与 strict_expected 完全一致为 correct，否则 wrong；不使用 partial。",
+      "turns": [
+        {
+          "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：逻辑学\n题目：办公室主任：本办公室不打算使用循环再利用纸张。给用户的信件必须能留下好的印象。不能打印在劣质纸张上。文具供应商：循环再利用纸张不一定是劣质的。事实上，最初的纸张就是用可回收材料制造的。一直到19世纪50年代，由于碎屑原料供不应求，才使用木纤维作为造纸原料。以下哪项最为恰当地概括了文具供应商的反驳中存在的漏洞?\nA. 没有意识到办公室主任对于循环再利用纸张的偏见是由于某种无知。\nB. 使用了不相关的事实来证明一个关于产品质量的断定。\nC. 不恰当地假设办公室主任忽视了环境保护。\nD. 不恰当地假设办公室主任了解纸张的制造工艺。\n答案：",
+          "expected": "B",
+          "must_contain": [
+            "B"
+          ],
+          "scoring_type": "single_choice_abcd",
+          "strict_answer_only": true
+        }
+      ],
+      "question": "办公室主任：本办公室不打算使用循环再利用纸张。给用户的信件必须能留下好的印象。不能打印在劣质纸张上。文具供应商：循环再利用纸张不一定是劣质的。事实上，最初的纸张就是用可回收材料制造的。一直到19世纪50年代，由于碎屑原料供不应求，才使用木纤维作为造纸原料。以下哪项最为恰当地概括了文具供应商的反驳中存在的漏洞?____",
+      "options": {
+        "A": "没有意识到办公室主任对于循环再利用纸张的偏见是由于某种无知。",
+        "B": "使用了不相关的事实来证明一个关于产品质量的断定。",
+        "C": "不恰当地假设办公室主任忽视了环境保护。",
+        "D": "不恰当地假设办公室主任了解纸张的制造工艺。"
+      },
+      "answer": "B",
+      "explanation": ""
+    },
+    {
+      "case_id": "CEVAL-ABCD-037",
+      "priority": "P0",
+      "module": "主对话-标准选择题",
+      "feature": "理科",
+      "ability": "大学化学",
+      "source": "C-Eval validation",
+      "benchmark": "C-Eval",
+      "benchmark_dataset": "ceval/ceval-exam",
+      "benchmark_split": "validation",
+      "benchmark_subject": "college_chemistry",
+      "benchmark_subject_name": "大学化学",
+      "benchmark_source_id": 19,
+      "source_fidelity": "原题引用",
+      "source_fidelity_reason": "来自 C-Eval validation split 的原始单项选择题，保留原题题干、选项与标准答案。",
+      "easy_wrong": "否",
+      "summary": "对于一个化学反应来说，下列说法中正确的是",
+      "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：大学化学\n题目：对于一个化学反应来说，下列说法中正确的是\nA. 标准反应吉布斯自由能变化值越负，反应速率越快\nB. 标准反应焓变越负，反应速率越快\nC. 活化能越大，反应速率越快\nD. 活化能越小，反应速率越快\n答案：",
+      "expected_result": "D",
+      "steps": [
+        "新建会话",
+        "输入 C-Eval 单项选择题",
+        "发送",
+        "等待回答",
+        "提取首个独立 A/B/C/D 判分并记录截图/XML/时延"
+      ],
+      "recovery_action": "用新建会话隔离用例；必要时关闭当前 App 后拉起下一产品。",
+      "test_type": "model_dialogue",
+      "execution_mode": "uiautomator2_text_dialogue",
+      "send_as_model_question": true,
+      "execution_protocol": "text_dialogue_or_metric",
+      "current_dialogue_suitable": "是",
+      "needs_material": "否",
+      "needs_operation": "否",
+      "scoring_type": "single_choice_abcd",
+      "strict_expected": "D",
+      "score_rule": "App 必须仅回答选项 A/B/C/D 中的一个字母，不要解释；与 strict_expected 完全一致为 correct，否则 wrong；不使用 partial。",
+      "turns": [
+        {
+          "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：大学化学\n题目：对于一个化学反应来说，下列说法中正确的是\nA. 标准反应吉布斯自由能变化值越负，反应速率越快\nB. 标准反应焓变越负，反应速率越快\nC. 活化能越大，反应速率越快\nD. 活化能越小，反应速率越快\n答案：",
+          "expected": "D",
+          "must_contain": [
+            "D"
+          ],
+          "scoring_type": "single_choice_abcd",
+          "strict_answer_only": true
+        }
+      ],
+      "question": "对于一个化学反应来说，下列说法中正确的是____",
+      "options": {
+        "A": "标准反应吉布斯自由能变化值越负，反应速率越快",
+        "B": "标准反应焓变越负，反应速率越快",
+        "C": "活化能越大，反应速率越快",
+        "D": "活化能越小，反应速率越快"
+      },
+      "answer": "D",
+      "explanation": ""
+    },
+    {
+      "case_id": "CEVAL-ABCD-038",
+      "priority": "P0",
+      "module": "主对话-标准选择题",
+      "feature": "历史地理",
+      "ability": "初中地理",
+      "source": "C-Eval validation",
+      "benchmark": "C-Eval",
+      "benchmark_dataset": "ceval/ceval-exam",
+      "benchmark_split": "validation",
+      "benchmark_subject": "middle_school_geography",
+      "benchmark_subject_name": "初中地理",
+      "benchmark_source_id": 11,
+      "source_fidelity": "原题引用",
+      "source_fidelity_reason": "来自 C-Eval validation split 的原始单项选择题，保留原题题干、选项与标准答案。",
+      "easy_wrong": "否",
+      "summary": "我国水资源的时间分布规律是",
+      "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：初中地理\n题目：我国水资源的时间分布规律是\nA. 东南多，西北少\nB. 东南少，西北多\nC. 夏秋多，冬春少\nD. 夏秋少，冬春多\n答案：",
+      "expected_result": "C",
+      "steps": [
+        "新建会话",
+        "输入 C-Eval 单项选择题",
+        "发送",
+        "等待回答",
+        "提取首个独立 A/B/C/D 判分并记录截图/XML/时延"
+      ],
+      "recovery_action": "用新建会话隔离用例；必要时关闭当前 App 后拉起下一产品。",
+      "test_type": "model_dialogue",
+      "execution_mode": "uiautomator2_text_dialogue",
+      "send_as_model_question": true,
+      "execution_protocol": "text_dialogue_or_metric",
+      "current_dialogue_suitable": "是",
+      "needs_material": "否",
+      "needs_operation": "否",
+      "scoring_type": "single_choice_abcd",
+      "strict_expected": "C",
+      "score_rule": "App 必须仅回答选项 A/B/C/D 中的一个字母，不要解释；与 strict_expected 完全一致为 correct，否则 wrong；不使用 partial。",
+      "turns": [
+        {
+          "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：初中地理\n题目：我国水资源的时间分布规律是\nA. 东南多，西北少\nB. 东南少，西北多\nC. 夏秋多，冬春少\nD. 夏秋少，冬春多\n答案：",
+          "expected": "C",
+          "must_contain": [
+            "C"
+          ],
+          "scoring_type": "single_choice_abcd",
+          "strict_answer_only": true
+        }
+      ],
+      "question": "我国水资源的时间分布规律是____",
+      "options": {
+        "A": "东南多，西北少",
+        "B": "东南少，西北多",
+        "C": "夏秋多，冬春少",
+        "D": "夏秋少，冬春多"
+      },
+      "answer": "C",
+      "explanation": ""
+    },
+    {
+      "case_id": "CEVAL-ABCD-039",
+      "priority": "P0",
+      "module": "主对话-标准选择题",
+      "feature": "逻辑与公务员",
+      "ability": "逻辑学",
+      "source": "C-Eval validation",
+      "benchmark": "C-Eval",
+      "benchmark_dataset": "ceval/ceval-exam",
+      "benchmark_split": "validation",
+      "benchmark_subject": "logic",
+      "benchmark_subject_name": "逻辑学",
+      "benchmark_source_id": 16,
+      "source_fidelity": "原题引用",
+      "source_fidelity_reason": "来自 C-Eval validation split 的原始单项选择题，保留原题题干、选项与标准答案。",
+      "easy_wrong": "否",
+      "summary": "生态文明建设事关社会发展方式和人民福祉。只有实行最严格的制度，最严密的法治，才能为生态文明建设提供可靠保障；如果要实行最严格的制度、最严密的法治，就要建立责任追",
+      "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：逻辑学\n题目：生态文明建设事关社会发展方式和人民福祉。只有实行最严格的制度，最严密的法治，才能为生态文明建设提供可靠保障；如果要实行最严格的制度、最严密的法治，就要建立责任追究制度，对那些不顾生态环境盲目决策并造成严重后果者，追究其相应的责任。根据上述信息,可以得出以下哪项？\nA. 如果对那些不顾生态环境盲目决策并造成严重后果者追究相应责任，就能为生态文明建设提供可靠保障。\nB. 实行最严格的制度和最严密的法治是生态文明建设的重要目标。\nC. 如果不建立责任追究制度，就不能为生态文明建设提供可靠保障。\nD. 只有筑牢生态环境的制度防护墙，才能造福于民。\n答案：",
+      "expected_result": "C",
+      "steps": [
+        "新建会话",
+        "输入 C-Eval 单项选择题",
+        "发送",
+        "等待回答",
+        "提取首个独立 A/B/C/D 判分并记录截图/XML/时延"
+      ],
+      "recovery_action": "用新建会话隔离用例；必要时关闭当前 App 后拉起下一产品。",
+      "test_type": "model_dialogue",
+      "execution_mode": "uiautomator2_text_dialogue",
+      "send_as_model_question": true,
+      "execution_protocol": "text_dialogue_or_metric",
+      "current_dialogue_suitable": "是",
+      "needs_material": "否",
+      "needs_operation": "否",
+      "scoring_type": "single_choice_abcd",
+      "strict_expected": "C",
+      "score_rule": "App 必须仅回答选项 A/B/C/D 中的一个字母，不要解释；与 strict_expected 完全一致为 correct，否则 wrong；不使用 partial。",
+      "turns": [
+        {
+          "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：逻辑学\n题目：生态文明建设事关社会发展方式和人民福祉。只有实行最严格的制度，最严密的法治，才能为生态文明建设提供可靠保障；如果要实行最严格的制度、最严密的法治，就要建立责任追究制度，对那些不顾生态环境盲目决策并造成严重后果者，追究其相应的责任。根据上述信息,可以得出以下哪项？\nA. 如果对那些不顾生态环境盲目决策并造成严重后果者追究相应责任，就能为生态文明建设提供可靠保障。\nB. 实行最严格的制度和最严密的法治是生态文明建设的重要目标。\nC. 如果不建立责任追究制度，就不能为生态文明建设提供可靠保障。\nD. 只有筑牢生态环境的制度防护墙，才能造福于民。\n答案：",
+          "expected": "C",
+          "must_contain": [
+            "C"
+          ],
+          "scoring_type": "single_choice_abcd",
+          "strict_answer_only": true
+        }
+      ],
+      "question": "生态文明建设事关社会发展方式和人民福祉。只有实行最严格的制度，最严密的法治，才能为生态文明建设提供可靠保障；如果要实行最严格的制度、最严密的法治，就要建立责任追究制度，对那些不顾生态环境盲目决策并造成严重后果者，追究其相应的责任。根据上述信息,可以得出以下哪项？____",
+      "options": {
+        "A": "如果对那些不顾生态环境盲目决策并造成严重后果者追究相应责任，就能为生态文明建设提供可靠保障。",
+        "B": "实行最严格的制度和最严密的法治是生态文明建设的重要目标。",
+        "C": "如果不建立责任追究制度，就不能为生态文明建设提供可靠保障。",
+        "D": "只有筑牢生态环境的制度防护墙，才能造福于民。"
+      },
+      "answer": "C",
+      "explanation": ""
+    },
+    {
+      "case_id": "CEVAL-ABCD-040",
+      "priority": "P0",
+      "module": "主对话-标准选择题",
+      "feature": "数学",
+      "ability": "离散数学",
+      "source": "C-Eval validation",
+      "benchmark": "C-Eval",
+      "benchmark_dataset": "ceval/ceval-exam",
+      "benchmark_split": "validation",
+      "benchmark_subject": "discrete_mathematics",
+      "benchmark_subject_name": "离散数学",
+      "benchmark_source_id": 11,
+      "source_fidelity": "原题引用",
+      "source_fidelity_reason": "来自 C-Eval validation split 的原始单项选择题，保留原题题干、选项与标准答案。",
+      "easy_wrong": "否",
+      "summary": "下面说法错误的是",
+      "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：离散数学\n题目：下面说法错误的是\nA. 邻接矩阵能表示自环，也能表示重边\nB. 有向图邻接矩阵的第$i$行非零元的数目恰好是$\\nu_{i}$的正度。第$j$列非零元的数目是$\\nu_{j}$的负度\nC. 关联矩阵能表示重边，不能表示自环\nD. 有向图关联矩阵第$i$行中1 的数目是$\\nu_{i}$的正度，-1 的数目是$\\nu_{i}$的负度。\n答案：",
+      "expected_result": "A",
+      "steps": [
+        "新建会话",
+        "输入 C-Eval 单项选择题",
+        "发送",
+        "等待回答",
+        "提取首个独立 A/B/C/D 判分并记录截图/XML/时延"
+      ],
+      "recovery_action": "用新建会话隔离用例；必要时关闭当前 App 后拉起下一产品。",
+      "test_type": "model_dialogue",
+      "execution_mode": "uiautomator2_text_dialogue",
+      "send_as_model_question": true,
+      "execution_protocol": "text_dialogue_or_metric",
+      "current_dialogue_suitable": "是",
+      "needs_material": "否",
+      "needs_operation": "否",
+      "scoring_type": "single_choice_abcd",
+      "strict_expected": "A",
+      "score_rule": "App 必须仅回答选项 A/B/C/D 中的一个字母，不要解释；与 strict_expected 完全一致为 correct，否则 wrong；不使用 partial。",
+      "turns": [
+        {
+          "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：离散数学\n题目：下面说法错误的是\nA. 邻接矩阵能表示自环，也能表示重边\nB. 有向图邻接矩阵的第$i$行非零元的数目恰好是$\\nu_{i}$的正度。第$j$列非零元的数目是$\\nu_{j}$的负度\nC. 关联矩阵能表示重边，不能表示自环\nD. 有向图关联矩阵第$i$行中1 的数目是$\\nu_{i}$的正度，-1 的数目是$\\nu_{i}$的负度。\n答案：",
+          "expected": "A",
+          "must_contain": [
+            "A"
+          ],
+          "scoring_type": "single_choice_abcd",
+          "strict_answer_only": true
+        }
+      ],
+      "question": "下面说法错误的是____",
+      "options": {
+        "A": "邻接矩阵能表示自环，也能表示重边",
+        "B": "有向图邻接矩阵的第$i$行非零元的数目恰好是$\\nu_{i}$的正度。第$j$列非零元的数目是$\\nu_{j}$的负度",
+        "C": "关联矩阵能表示重边，不能表示自环",
+        "D": "有向图关联矩阵第$i$行中1 的数目是$\\nu_{i}$的正度，-1 的数目是$\\nu_{i}$的负度。"
+      },
+      "answer": "A",
+      "explanation": ""
+    },
+    {
+      "case_id": "CEVAL-ABCD-041",
+      "priority": "P0",
+      "module": "主对话-标准选择题",
+      "feature": "法律与公共知识",
+      "ability": "法律职业资格",
+      "source": "C-Eval validation",
+      "benchmark": "C-Eval",
+      "benchmark_dataset": "ceval/ceval-exam",
+      "benchmark_split": "validation",
+      "benchmark_subject": "legal_professional",
+      "benchmark_subject_name": "法律职业资格",
+      "benchmark_source_id": 15,
+      "source_fidelity": "原题引用",
+      "source_fidelity_reason": "来自 C-Eval validation split 的原始单项选择题，保留原题题干、选项与标准答案。",
+      "easy_wrong": "否",
+      "summary": "下面关于法的规范作用，说法不正确的是：",
+      "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：法律职业资格\n题目：下面关于法的规范作用，说法不正确的是：\nA. 《民法通则》规定，当事人一方不履行合同义务或者履行合同义务不符合约定条件的，另一方有权要求履行或者采取补救措施，并有权要求赔偿损失。这一法条体现了法的指引作用\nB. 一富家子弟在闹市飙车将一行人撞死，在围观的人群中有人说，肇事者应当以危害公共安全罪论处。围观者的言论体现法的评价作用\nC. 一建筑商为承包某工程，便向主管该项目的市领导张某送去5万元的见面钱，张某义正词严地对建筑商说，你这种行为我如果收下，国家将会制裁我，所以我不能接受。这体现了法的预测作用\nD. 某私营煤矿的矿主因违规开矿发生重大矿难，被法院以重大安全事故罪判处有期徒刑6年，这体现了法的教育作用\n答案：",
+      "expected_result": "D",
+      "steps": [
+        "新建会话",
+        "输入 C-Eval 单项选择题",
+        "发送",
+        "等待回答",
+        "提取首个独立 A/B/C/D 判分并记录截图/XML/时延"
+      ],
+      "recovery_action": "用新建会话隔离用例；必要时关闭当前 App 后拉起下一产品。",
+      "test_type": "model_dialogue",
+      "execution_mode": "uiautomator2_text_dialogue",
+      "send_as_model_question": true,
+      "execution_protocol": "text_dialogue_or_metric",
+      "current_dialogue_suitable": "是",
+      "needs_material": "否",
+      "needs_operation": "否",
+      "scoring_type": "single_choice_abcd",
+      "strict_expected": "D",
+      "score_rule": "App 必须仅回答选项 A/B/C/D 中的一个字母，不要解释；与 strict_expected 完全一致为 correct，否则 wrong；不使用 partial。",
+      "turns": [
+        {
+          "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：法律职业资格\n题目：下面关于法的规范作用，说法不正确的是：\nA. 《民法通则》规定，当事人一方不履行合同义务或者履行合同义务不符合约定条件的，另一方有权要求履行或者采取补救措施，并有权要求赔偿损失。这一法条体现了法的指引作用\nB. 一富家子弟在闹市飙车将一行人撞死，在围观的人群中有人说，肇事者应当以危害公共安全罪论处。围观者的言论体现法的评价作用\nC. 一建筑商为承包某工程，便向主管该项目的市领导张某送去5万元的见面钱，张某义正词严地对建筑商说，你这种行为我如果收下，国家将会制裁我，所以我不能接受。这体现了法的预测作用\nD. 某私营煤矿的矿主因违规开矿发生重大矿难，被法院以重大安全事故罪判处有期徒刑6年，这体现了法的教育作用\n答案：",
+          "expected": "D",
+          "must_contain": [
+            "D"
+          ],
+          "scoring_type": "single_choice_abcd",
+          "strict_answer_only": true
+        }
+      ],
+      "question": "下面关于法的规范作用，说法不正确的是：____",
+      "options": {
+        "A": "《民法通则》规定，当事人一方不履行合同义务或者履行合同义务不符合约定条件的，另一方有权要求履行或者采取补救措施，并有权要求赔偿损失。这一法条体现了法的指引作用",
+        "B": "一富家子弟在闹市飙车将一行人撞死，在围观的人群中有人说，肇事者应当以危害公共安全罪论处。围观者的言论体现法的评价作用",
+        "C": "一建筑商为承包某工程，便向主管该项目的市领导张某送去5万元的见面钱，张某义正词严地对建筑商说，你这种行为我如果收下，国家将会制裁我，所以我不能接受。这体现了法的预测作用",
+        "D": "某私营煤矿的矿主因违规开矿发生重大矿难，被法院以重大安全事故罪判处有期徒刑6年，这体现了法的教育作用"
+      },
+      "answer": "D",
+      "explanation": ""
+    },
+    {
+      "case_id": "CEVAL-ABCD-042",
+      "priority": "P0",
+      "module": "主对话-标准选择题",
+      "feature": "语言与人文",
+      "ability": "中国语言文学",
+      "source": "C-Eval validation",
+      "benchmark": "C-Eval",
+      "benchmark_dataset": "ceval/ceval-exam",
+      "benchmark_split": "validation",
+      "benchmark_subject": "chinese_language_and_literature",
+      "benchmark_subject_name": "中国语言文学",
+      "benchmark_source_id": 3,
+      "source_fidelity": "原题引用",
+      "source_fidelity_reason": "来自 C-Eval validation split 的原始单项选择题，保留原题题干、选项与标准答案。",
+      "easy_wrong": "否",
+      "summary": "《史记·高祖本纪》：“今则来，沛公恐不得有此。”句中“则”的用法是。",
+      "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：中国语言文学\n题目：《史记·高祖本纪》：“今则来，沛公恐不得有此。”句中“则”的用法是。\nA. 表示承接\nB. 表示转折\nC. 表示假设\nD. 表示因果\n答案：",
+      "expected_result": "C",
+      "steps": [
+        "新建会话",
+        "输入 C-Eval 单项选择题",
+        "发送",
+        "等待回答",
+        "提取首个独立 A/B/C/D 判分并记录截图/XML/时延"
+      ],
+      "recovery_action": "用新建会话隔离用例；必要时关闭当前 App 后拉起下一产品。",
+      "test_type": "model_dialogue",
+      "execution_mode": "uiautomator2_text_dialogue",
+      "send_as_model_question": true,
+      "execution_protocol": "text_dialogue_or_metric",
+      "current_dialogue_suitable": "是",
+      "needs_material": "否",
+      "needs_operation": "否",
+      "scoring_type": "single_choice_abcd",
+      "strict_expected": "C",
+      "score_rule": "App 必须仅回答选项 A/B/C/D 中的一个字母，不要解释；与 strict_expected 完全一致为 correct，否则 wrong；不使用 partial。",
+      "turns": [
+        {
+          "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：中国语言文学\n题目：《史记·高祖本纪》：“今则来，沛公恐不得有此。”句中“则”的用法是。\nA. 表示承接\nB. 表示转折\nC. 表示假设\nD. 表示因果\n答案：",
+          "expected": "C",
+          "must_contain": [
+            "C"
+          ],
+          "scoring_type": "single_choice_abcd",
+          "strict_answer_only": true
+        }
+      ],
+      "question": "《史记·高祖本纪》：“今则来，沛公恐不得有此。”句中“则”的用法是____。",
+      "options": {
+        "A": "表示承接",
+        "B": "表示转折",
+        "C": "表示假设",
+        "D": "表示因果"
+      },
+      "answer": "C",
+      "explanation": ""
+    },
+    {
+      "case_id": "CEVAL-ABCD-043",
+      "priority": "P0",
+      "module": "主对话-标准选择题",
+      "feature": "法律与公共知识",
+      "ability": "法律",
+      "source": "C-Eval validation",
+      "benchmark": "C-Eval",
+      "benchmark_dataset": "ceval/ceval-exam",
+      "benchmark_split": "validation",
+      "benchmark_subject": "law",
+      "benchmark_subject_name": "法律",
+      "benchmark_source_id": 15,
+      "source_fidelity": "原题引用",
+      "source_fidelity_reason": "来自 C-Eval validation split 的原始单项选择题，保留原题题干、选项与标准答案。",
+      "easy_wrong": "否",
+      "summary": "与《大清律例》相比，《大清现行刑律》的变化不包括。",
+      "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：法律\n题目：与《大清律例》相比，《大清现行刑律》的变化不包括。\nA. 取消了六部分篇的法典编纂体例\nB. 删除了“十恶”重罪等内容\nC. 对于婚姻、继承、田宅、钱债等纯属民事性质的行为不再科刑\nD. 增加了一些新罪名，诸如妨害国交罪、妨害选举罪、私铸银元罪等\n答案：",
+      "expected_result": "B",
+      "steps": [
+        "新建会话",
+        "输入 C-Eval 单项选择题",
+        "发送",
+        "等待回答",
+        "提取首个独立 A/B/C/D 判分并记录截图/XML/时延"
+      ],
+      "recovery_action": "用新建会话隔离用例；必要时关闭当前 App 后拉起下一产品。",
+      "test_type": "model_dialogue",
+      "execution_mode": "uiautomator2_text_dialogue",
+      "send_as_model_question": true,
+      "execution_protocol": "text_dialogue_or_metric",
+      "current_dialogue_suitable": "是",
+      "needs_material": "否",
+      "needs_operation": "否",
+      "scoring_type": "single_choice_abcd",
+      "strict_expected": "B",
+      "score_rule": "App 必须仅回答选项 A/B/C/D 中的一个字母，不要解释；与 strict_expected 完全一致为 correct，否则 wrong；不使用 partial。",
+      "turns": [
+        {
+          "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：法律\n题目：与《大清律例》相比，《大清现行刑律》的变化不包括。\nA. 取消了六部分篇的法典编纂体例\nB. 删除了“十恶”重罪等内容\nC. 对于婚姻、继承、田宅、钱债等纯属民事性质的行为不再科刑\nD. 增加了一些新罪名，诸如妨害国交罪、妨害选举罪、私铸银元罪等\n答案：",
+          "expected": "B",
+          "must_contain": [
+            "B"
+          ],
+          "scoring_type": "single_choice_abcd",
+          "strict_answer_only": true
+        }
+      ],
+      "question": "与《大清律例》相比，《大清现行刑律》的变化不包括____。",
+      "options": {
+        "A": "取消了六部分篇的法典编纂体例",
+        "B": "删除了“十恶”重罪等内容",
+        "C": "对于婚姻、继承、田宅、钱债等纯属民事性质的行为不再科刑",
+        "D": "增加了一些新罪名，诸如妨害国交罪、妨害选举罪、私铸银元罪等"
+      },
+      "answer": "B",
+      "explanation": ""
+    },
+    {
+      "case_id": "CEVAL-ABCD-044",
+      "priority": "P0",
+      "module": "主对话-标准选择题",
+      "feature": "法律与公共知识",
+      "ability": "会计",
+      "source": "C-Eval validation",
+      "benchmark": "C-Eval",
+      "benchmark_dataset": "ceval/ceval-exam",
+      "benchmark_split": "validation",
+      "benchmark_subject": "accountant",
+      "benchmark_subject_name": "会计",
+      "benchmark_source_id": 43,
+      "source_fidelity": "原题引用",
+      "source_fidelity_reason": "来自 C-Eval validation split 的原始单项选择题，保留原题题干、选项与标准答案。",
+      "easy_wrong": "否",
+      "summary": "因土地规模化耕种需要，农村居民张某经批准搬迁，搬迁前住宅占用耕地220平方米，搬迁后新建自用住宅占用耕地260平方米(规定用地标准内)，当地耕地占用税税额每平方",
+      "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：会计\n题目：因土地规模化耕种需要，农村居民张某经批准搬迁，搬迁前住宅占用耕地220平方米，搬迁后新建自用住宅占用耕地260平方米(规定用地标准内)，当地耕地占用税税额每平方米20元，张某应缴纳耕地占用税元。\nA. 0\nB. 400\nC. 800\nD. 2600\n答案：",
+      "expected_result": "B",
+      "steps": [
+        "新建会话",
+        "输入 C-Eval 单项选择题",
+        "发送",
+        "等待回答",
+        "提取首个独立 A/B/C/D 判分并记录截图/XML/时延"
+      ],
+      "recovery_action": "用新建会话隔离用例；必要时关闭当前 App 后拉起下一产品。",
+      "test_type": "model_dialogue",
+      "execution_mode": "uiautomator2_text_dialogue",
+      "send_as_model_question": true,
+      "execution_protocol": "text_dialogue_or_metric",
+      "current_dialogue_suitable": "是",
+      "needs_material": "否",
+      "needs_operation": "否",
+      "scoring_type": "single_choice_abcd",
+      "strict_expected": "B",
+      "score_rule": "App 必须仅回答选项 A/B/C/D 中的一个字母，不要解释；与 strict_expected 完全一致为 correct，否则 wrong；不使用 partial。",
+      "turns": [
+        {
+          "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：会计\n题目：因土地规模化耕种需要，农村居民张某经批准搬迁，搬迁前住宅占用耕地220平方米，搬迁后新建自用住宅占用耕地260平方米(规定用地标准内)，当地耕地占用税税额每平方米20元，张某应缴纳耕地占用税元。\nA. 0\nB. 400\nC. 800\nD. 2600\n答案：",
+          "expected": "B",
+          "must_contain": [
+            "B"
+          ],
+          "scoring_type": "single_choice_abcd",
+          "strict_answer_only": true
+        }
+      ],
+      "question": "因土地规模化耕种需要，农村居民张某经批准搬迁，搬迁前住宅占用耕地220平方米，搬迁后新建自用住宅占用耕地260平方米(规定用地标准内)，当地耕地占用税税额每平方米20元，张某应缴纳耕地占用税____元。",
+      "options": {
+        "A": "0",
+        "B": "400",
+        "C": "800",
+        "D": "2600"
+      },
+      "answer": "B",
+      "explanation": ""
+    },
+    {
+      "case_id": "CEVAL-ABCD-045",
+      "priority": "P0",
+      "module": "主对话-标准选择题",
+      "feature": "数学",
+      "ability": "概率统计",
+      "source": "C-Eval validation",
+      "benchmark": "C-Eval",
+      "benchmark_dataset": "ceval/ceval-exam",
+      "benchmark_split": "validation",
+      "benchmark_subject": "probability_and_statistics",
+      "benchmark_subject_name": "概率统计",
+      "benchmark_source_id": 11,
+      "source_fidelity": "原题引用",
+      "source_fidelity_reason": "来自 C-Eval validation split 的原始单项选择题，保留原题题干、选项与标准答案。",
+      "easy_wrong": "否",
+      "summary": "设$X\\sim N(1，4)，Y\\sim N(3，16)，P\\{Y=aX+b\\}=1$，且$\\rho_{XY}=-1$，则",
+      "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：概率统计\n题目：设$X\\sim N(1，4)，Y\\sim N(3，16)，P\\{Y=aX+b\\}=1$，且$\\rho_{XY}=-1$，则\nA. a=2, b=5\nB. a=-2, b=-5\nC. a=-2, b=5\nD. a=2, b=-5\n答案：",
+      "expected_result": "C",
+      "steps": [
+        "新建会话",
+        "输入 C-Eval 单项选择题",
+        "发送",
+        "等待回答",
+        "提取首个独立 A/B/C/D 判分并记录截图/XML/时延"
+      ],
+      "recovery_action": "用新建会话隔离用例；必要时关闭当前 App 后拉起下一产品。",
+      "test_type": "model_dialogue",
+      "execution_mode": "uiautomator2_text_dialogue",
+      "send_as_model_question": true,
+      "execution_protocol": "text_dialogue_or_metric",
+      "current_dialogue_suitable": "是",
+      "needs_material": "否",
+      "needs_operation": "否",
+      "scoring_type": "single_choice_abcd",
+      "strict_expected": "C",
+      "score_rule": "App 必须仅回答选项 A/B/C/D 中的一个字母，不要解释；与 strict_expected 完全一致为 correct，否则 wrong；不使用 partial。",
+      "turns": [
+        {
+          "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：概率统计\n题目：设$X\\sim N(1，4)，Y\\sim N(3，16)，P\\{Y=aX+b\\}=1$，且$\\rho_{XY}=-1$，则\nA. a=2, b=5\nB. a=-2, b=-5\nC. a=-2, b=5\nD. a=2, b=-5\n答案：",
+          "expected": "C",
+          "must_contain": [
+            "C"
+          ],
+          "scoring_type": "single_choice_abcd",
+          "strict_answer_only": true
+        }
+      ],
+      "question": "设$X\\sim N(1，4)，Y\\sim N(3，16)，P\\{Y=aX+b\\}=1$，且$\\rho_{XY}=-1$，则____",
+      "options": {
+        "A": "a=2, b=5",
+        "B": "a=-2, b=-5",
+        "C": "a=-2, b=5",
+        "D": "a=2, b=-5"
+      },
+      "answer": "C",
+      "explanation": ""
+    },
+    {
+      "case_id": "CEVAL-ABCD-046",
+      "priority": "P0",
+      "module": "主对话-标准选择题",
+      "feature": "语言与人文",
+      "ability": "高中语文",
+      "source": "C-Eval validation",
+      "benchmark": "C-Eval",
+      "benchmark_dataset": "ceval/ceval-exam",
+      "benchmark_split": "validation",
+      "benchmark_subject": "high_school_chinese",
+      "benchmark_subject_name": "高中语文",
+      "benchmark_source_id": 3,
+      "source_fidelity": "原题引用",
+      "source_fidelity_reason": "来自 C-Eval validation split 的原始单项选择题，保留原题题干、选项与标准答案。",
+      "easy_wrong": "否",
+      "summary": "下列各句中，没有语病的一句是",
+      "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：高中语文\n题目：下列各句中，没有语病的一句是\nA. 记者从新闻发布会上获悉，10月26日，辽宁省锦州市黑山县出现禽流感疫情已得到有效控制。\nB. 王越洲和姚佳琪赶赴航天城，他们将从航天员的手中接过搭乘“神舟六号”进行太空之旅的自己的画作，并得到纪念证书。\nC. 不管《泰晤士报》这个排行榜的权威程度颇受国人质疑，但据专家称，排行榜是能够说明一些问题的。\nD. 进入乌镇，信步于幽深的街巷中，你就会觉得自己好像浏览着一部关于江南水乡文化的线装书。\n答案：",
+      "expected_result": "D",
+      "steps": [
+        "新建会话",
+        "输入 C-Eval 单项选择题",
+        "发送",
+        "等待回答",
+        "提取首个独立 A/B/C/D 判分并记录截图/XML/时延"
+      ],
+      "recovery_action": "用新建会话隔离用例；必要时关闭当前 App 后拉起下一产品。",
+      "test_type": "model_dialogue",
+      "execution_mode": "uiautomator2_text_dialogue",
+      "send_as_model_question": true,
+      "execution_protocol": "text_dialogue_or_metric",
+      "current_dialogue_suitable": "是",
+      "needs_material": "否",
+      "needs_operation": "否",
+      "scoring_type": "single_choice_abcd",
+      "strict_expected": "D",
+      "score_rule": "App 必须仅回答选项 A/B/C/D 中的一个字母，不要解释；与 strict_expected 完全一致为 correct，否则 wrong；不使用 partial。",
+      "turns": [
+        {
+          "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：高中语文\n题目：下列各句中，没有语病的一句是\nA. 记者从新闻发布会上获悉，10月26日，辽宁省锦州市黑山县出现禽流感疫情已得到有效控制。\nB. 王越洲和姚佳琪赶赴航天城，他们将从航天员的手中接过搭乘“神舟六号”进行太空之旅的自己的画作，并得到纪念证书。\nC. 不管《泰晤士报》这个排行榜的权威程度颇受国人质疑，但据专家称，排行榜是能够说明一些问题的。\nD. 进入乌镇，信步于幽深的街巷中，你就会觉得自己好像浏览着一部关于江南水乡文化的线装书。\n答案：",
+          "expected": "D",
+          "must_contain": [
+            "D"
+          ],
+          "scoring_type": "single_choice_abcd",
+          "strict_answer_only": true
+        }
+      ],
+      "question": "下列各句中，没有语病的一句是____",
+      "options": {
+        "A": "记者从新闻发布会上获悉，10月26日，辽宁省锦州市黑山县出现禽流感疫情已得到有效控制。",
+        "B": "王越洲和姚佳琪赶赴航天城，他们将从航天员的手中接过搭乘“神舟六号”进行太空之旅的自己的画作，并得到纪念证书。",
+        "C": "不管《泰晤士报》这个排行榜的权威程度颇受国人质疑，但据专家称，排行榜是能够说明一些问题的。",
+        "D": "进入乌镇，信步于幽深的街巷中，你就会觉得自己好像浏览着一部关于江南水乡文化的线装书。"
+      },
+      "answer": "D",
+      "explanation": ""
+    },
+    {
+      "case_id": "CEVAL-ABCD-047",
+      "priority": "P0",
+      "module": "主对话-标准选择题",
+      "feature": "理科",
+      "ability": "初中物理",
+      "source": "C-Eval validation",
+      "benchmark": "C-Eval",
+      "benchmark_dataset": "ceval/ceval-exam",
+      "benchmark_split": "validation",
+      "benchmark_subject": "middle_school_physics",
+      "benchmark_subject_name": "初中物理",
+      "benchmark_source_id": 4,
+      "source_fidelity": "原题引用",
+      "source_fidelity_reason": "来自 C-Eval validation split 的原始单项选择题，保留原题题干、选项与标准答案。",
+      "easy_wrong": "否",
+      "summary": "自行车的各个部分中，减小了有害摩擦的是",
+      "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：初中物理\n题目：自行车的各个部分中，减小了有害摩擦的是\nA. 车胎\nB. 车把\nC. 车轴\nD. 脚踏板面\n答案：",
+      "expected_result": "C",
+      "steps": [
+        "新建会话",
+        "输入 C-Eval 单项选择题",
+        "发送",
+        "等待回答",
+        "提取首个独立 A/B/C/D 判分并记录截图/XML/时延"
+      ],
+      "recovery_action": "用新建会话隔离用例；必要时关闭当前 App 后拉起下一产品。",
+      "test_type": "model_dialogue",
+      "execution_mode": "uiautomator2_text_dialogue",
+      "send_as_model_question": true,
+      "execution_protocol": "text_dialogue_or_metric",
+      "current_dialogue_suitable": "是",
+      "needs_material": "否",
+      "needs_operation": "否",
+      "scoring_type": "single_choice_abcd",
+      "strict_expected": "C",
+      "score_rule": "App 必须仅回答选项 A/B/C/D 中的一个字母，不要解释；与 strict_expected 完全一致为 correct，否则 wrong；不使用 partial。",
+      "turns": [
+        {
+          "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：初中物理\n题目：自行车的各个部分中，减小了有害摩擦的是\nA. 车胎\nB. 车把\nC. 车轴\nD. 脚踏板面\n答案：",
+          "expected": "C",
+          "must_contain": [
+            "C"
+          ],
+          "scoring_type": "single_choice_abcd",
+          "strict_answer_only": true
+        }
+      ],
+      "question": "自行车的各个部分中，减小了有害摩擦的是____",
+      "options": {
+        "A": "车胎",
+        "B": "车把",
+        "C": "车轴",
+        "D": "脚踏板面"
+      },
+      "answer": "C",
+      "explanation": ""
+    },
+    {
+      "case_id": "CEVAL-ABCD-048",
+      "priority": "P0",
+      "module": "主对话-标准选择题",
+      "feature": "理科",
+      "ability": "初中化学",
+      "source": "C-Eval validation",
+      "benchmark": "C-Eval",
+      "benchmark_dataset": "ceval/ceval-exam",
+      "benchmark_split": "validation",
+      "benchmark_subject": "middle_school_chemistry",
+      "benchmark_subject_name": "初中化学",
+      "benchmark_source_id": 2,
+      "source_fidelity": "原题引用",
+      "source_fidelity_reason": "来自 C-Eval validation split 的原始单项选择题，保留原题题干、选项与标准答案。",
+      "easy_wrong": "否",
+      "summary": "空气是人类生存所必需的重要资源，空气中最多的气体是",
+      "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：初中化学\n题目：空气是人类生存所必需的重要资源，空气中最多的气体是\nA. $\\text{N}_2$\nB. $\\text{O}_2$\nC. $\\text{CO}_2$\nD. $\\text{H}_2 \\text{O}$\n答案：",
+      "expected_result": "A",
+      "steps": [
+        "新建会话",
+        "输入 C-Eval 单项选择题",
+        "发送",
+        "等待回答",
+        "提取首个独立 A/B/C/D 判分并记录截图/XML/时延"
+      ],
+      "recovery_action": "用新建会话隔离用例；必要时关闭当前 App 后拉起下一产品。",
+      "test_type": "model_dialogue",
+      "execution_mode": "uiautomator2_text_dialogue",
+      "send_as_model_question": true,
+      "execution_protocol": "text_dialogue_or_metric",
+      "current_dialogue_suitable": "是",
+      "needs_material": "否",
+      "needs_operation": "否",
+      "scoring_type": "single_choice_abcd",
+      "strict_expected": "A",
+      "score_rule": "App 必须仅回答选项 A/B/C/D 中的一个字母，不要解释；与 strict_expected 完全一致为 correct，否则 wrong；不使用 partial。",
+      "turns": [
+        {
+          "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：初中化学\n题目：空气是人类生存所必需的重要资源，空气中最多的气体是\nA. $\\text{N}_2$\nB. $\\text{O}_2$\nC. $\\text{CO}_2$\nD. $\\text{H}_2 \\text{O}$\n答案：",
+          "expected": "A",
+          "must_contain": [
+            "A"
+          ],
+          "scoring_type": "single_choice_abcd",
+          "strict_answer_only": true
+        }
+      ],
+      "question": "空气是人类生存所必需的重要资源，空气中最多的气体是____",
+      "options": {
+        "A": "$\\text{N}_2$",
+        "B": "$\\text{O}_2$",
+        "C": "$\\text{CO}_2$",
+        "D": "$\\text{H}_2 \\text{O}$"
+      },
+      "answer": "A",
+      "explanation": ""
+    },
+    {
+      "case_id": "CEVAL-ABCD-049",
+      "priority": "P0",
+      "module": "主对话-标准选择题",
+      "feature": "数学",
+      "ability": "高中数学",
+      "source": "C-Eval validation",
+      "benchmark": "C-Eval",
+      "benchmark_dataset": "ceval/ceval-exam",
+      "benchmark_split": "validation",
+      "benchmark_subject": "high_school_mathematics",
+      "benchmark_subject_name": "高中数学",
+      "benchmark_source_id": 17,
+      "source_fidelity": "原题引用",
+      "source_fidelity_reason": "来自 C-Eval validation split 的原始单项选择题，保留原题题干、选项与标准答案。",
+      "easy_wrong": "否",
+      "summary": "已知函数$f(x)$是定义在$\\mathbb{R}$上的偶函数，且在$\\left(0,+\\infty\\right)$上单调递增，则",
+      "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：高中数学\n题目：已知函数$f(x)$是定义在$\\mathbb{R}$上的偶函数，且在$\\left(0,+\\infty\\right)$上单调递增，则\nA. $f(-3)<f(-\\log_{3}13)<f(2^{0.6})$\nB. $f(-3)<f(2^{0.6})<f(-\\log_{3}13)$\nC. $f(2^{0.6})< f(-\\log_{3}13) <f(-3)$\nD. $f(2^{0.6})<f(-3)< f(-\\log_{3}13) $\n答案：",
+      "expected_result": "C",
+      "steps": [
+        "新建会话",
+        "输入 C-Eval 单项选择题",
+        "发送",
+        "等待回答",
+        "提取首个独立 A/B/C/D 判分并记录截图/XML/时延"
+      ],
+      "recovery_action": "用新建会话隔离用例；必要时关闭当前 App 后拉起下一产品。",
+      "test_type": "model_dialogue",
+      "execution_mode": "uiautomator2_text_dialogue",
+      "send_as_model_question": true,
+      "execution_protocol": "text_dialogue_or_metric",
+      "current_dialogue_suitable": "是",
+      "needs_material": "否",
+      "needs_operation": "否",
+      "scoring_type": "single_choice_abcd",
+      "strict_expected": "C",
+      "score_rule": "App 必须仅回答选项 A/B/C/D 中的一个字母，不要解释；与 strict_expected 完全一致为 correct，否则 wrong；不使用 partial。",
+      "turns": [
+        {
+          "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：高中数学\n题目：已知函数$f(x)$是定义在$\\mathbb{R}$上的偶函数，且在$\\left(0,+\\infty\\right)$上单调递增，则\nA. $f(-3)<f(-\\log_{3}13)<f(2^{0.6})$\nB. $f(-3)<f(2^{0.6})<f(-\\log_{3}13)$\nC. $f(2^{0.6})< f(-\\log_{3}13) <f(-3)$\nD. $f(2^{0.6})<f(-3)< f(-\\log_{3}13) $\n答案：",
+          "expected": "C",
+          "must_contain": [
+            "C"
+          ],
+          "scoring_type": "single_choice_abcd",
+          "strict_answer_only": true
+        }
+      ],
+      "question": "已知函数$f(x)$是定义在$\\mathbb{R}$上的偶函数，且在$\\left(0,+\\infty\\right)$上单调递增，则____",
+      "options": {
+        "A": "$f(-3)<f(-\\log_{3}13)<f(2^{0.6})$",
+        "B": "$f(-3)<f(2^{0.6})<f(-\\log_{3}13)$",
+        "C": "$f(2^{0.6})< f(-\\log_{3}13) <f(-3)$",
+        "D": "$f(2^{0.6})<f(-3)< f(-\\log_{3}13) $"
+      },
+      "answer": "C",
+      "explanation": ""
+    },
+    {
+      "case_id": "CEVAL-ABCD-050",
+      "priority": "P0",
+      "module": "主对话-标准选择题",
+      "feature": "语言与人文",
+      "ability": "中国语言文学",
+      "source": "C-Eval validation",
+      "benchmark": "C-Eval",
+      "benchmark_dataset": "ceval/ceval-exam",
+      "benchmark_split": "validation",
+      "benchmark_subject": "chinese_language_and_literature",
+      "benchmark_subject_name": "中国语言文学",
+      "benchmark_source_id": 12,
+      "source_fidelity": "原题引用",
+      "source_fidelity_reason": "来自 C-Eval validation split 的原始单项选择题，保留原题题干、选项与标准答案。",
+      "easy_wrong": "否",
+      "summary": "下列句中，不属于宾语前置的是。",
+      "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：中国语言文学\n题目：下列句中，不属于宾语前置的是。\nA. 姜氏何厌之有?\nB. 斥鷃笑之曰：“彼且奚适也?”\nC. 居则曰：“不吾知也!”\nD. 胡不见我于王?\n答案：",
+      "expected_result": "D",
+      "steps": [
+        "新建会话",
+        "输入 C-Eval 单项选择题",
+        "发送",
+        "等待回答",
+        "提取首个独立 A/B/C/D 判分并记录截图/XML/时延"
+      ],
+      "recovery_action": "用新建会话隔离用例；必要时关闭当前 App 后拉起下一产品。",
+      "test_type": "model_dialogue",
+      "execution_mode": "uiautomator2_text_dialogue",
+      "send_as_model_question": true,
+      "execution_protocol": "text_dialogue_or_metric",
+      "current_dialogue_suitable": "是",
+      "needs_material": "否",
+      "needs_operation": "否",
+      "scoring_type": "single_choice_abcd",
+      "strict_expected": "D",
+      "score_rule": "App 必须仅回答选项 A/B/C/D 中的一个字母，不要解释；与 strict_expected 完全一致为 correct，否则 wrong；不使用 partial。",
+      "turns": [
+        {
+          "input": "以下是单项选择题。请仅回答选项 A、B、C、D 中的一个字母，不要解释，否则判定不通过。\n科目：中国语言文学\n题目：下列句中，不属于宾语前置的是。\nA. 姜氏何厌之有?\nB. 斥鷃笑之曰：“彼且奚适也?”\nC. 居则曰：“不吾知也!”\nD. 胡不见我于王?\n答案：",
+          "expected": "D",
+          "must_contain": [
+            "D"
+          ],
+          "scoring_type": "single_choice_abcd",
+          "strict_answer_only": true
+        }
+      ],
+      "question": "下列句中，不属于宾语前置的是____。",
+      "options": {
+        "A": "姜氏何厌之有?",
+        "B": "斥鷃笑之曰：“彼且奚适也?”",
+        "C": "居则曰：“不吾知也!”",
+        "D": "胡不见我于王?"
+      },
+      "answer": "D",
+      "explanation": ""
+    }
+  ]
+}

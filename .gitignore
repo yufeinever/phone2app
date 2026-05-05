@@ -14,7 +14,8 @@ build/
 
 # Large/generated execution artifacts.
 reports/
-tools/
+tools/reports/
+tools/__pycache__/
 _tmp*.json
 tmp/
 temp/

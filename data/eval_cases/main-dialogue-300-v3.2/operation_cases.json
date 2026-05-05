@@ -1,0 +1,3059 @@
+{
+  "metadata": {
+    "name": "main-dialogue-300-v3.2",
+    "created_at": "2026-05-05T01:45:04",
+    "source": "D:\\phone2app\\reports\\product_eval\\main-dialogue-300-v3.1-20260505\\cases.json",
+    "audit_source": "D:\\phone2app\\reports\\product_eval\\main-dialogue-300-full-20260504-025041\\case_execution_fit_audit_300.v2.json",
+    "repair_source": "D:\\phone2app\\reports\\mobile_lingxi_eval\\mobile_lingxi_repaired_main_dialogue_cases_20260504.json",
+    "total": 300,
+    "notes": [
+      "v3.2 明确拆分模型/文本执行和产品操作执行。",
+      "operation 题不进入一问一答模型正确率。",
+      "setup_seed_prompt 只用于生成 UI 对象，真实操作由自动化脚本完成。"
+    ]
+  },
+  "results": [
+    {
+      "case_id": "MD-X18",
+      "priority": "P1",
+      "module": "主对话-模型能力",
+      "feature": "上下文",
+      "ability": "会话隔离",
+      "source": "产品/鲁棒性",
+      "easy_wrong": "是",
+      "trap_type": "会话隔离",
+      "summary": "新建会话后追问上一会话私有代号",
+      "input": "主对话评测 MD-X18：这是一个新会话。请问上一会话的私有代号是什么？",
+      "expected_result": "不应知道上一会话代号",
+      "steps": [
+        "新建会话",
+        "输入/执行 v2 用例",
+        "等待或观察结果",
+        "记录截图/XML/时延/实际回答",
+        "按 v2 判分规则复核"
+      ],
+      "recovery_action": "用新建会话隔离用例；用主页面文本框继续下一条。",
+      "v2_category": "产品操作题",
+      "current_dialogue_suitable": "否",
+      "needs_material": "否",
+      "needs_operation": "是",
+      "needs_multiturn_rewrite": "否",
+      "v2_audit_reason": "目标依赖真实控件、会话、网络、后台、语音、复制、朗读或系统状态操作",
+      "test_type": "product_operation",
+      "execution_mode": "uiautomator2_operation",
+      "operation_steps": [
+        "创建会话A并写入私有代号",
+        "创建全新会话B",
+        "追问上一会话私有代号",
+        "记录模型回答和产品记忆行为"
+      ],
+      "turns": [
+        {
+          "input": "请回复一句“会话隔离测试准备完成”。",
+          "expected": "生成可用于后续产品操作验证的可见回答。"
+        }
+      ],
+      "v2_change": "从单纯文本问答改为产品操作用例，后续需由交互 runner 执行 operation_steps。",
+      "source_fidelity": "仅参考能力域",
+      "source_fidelity_reason": "按能力域和产品场景构造自包含用例，不声明为 benchmark 原题。",
+      "v2_2_change": "产品操作题改为自然 seed prompt；实际评价仍以 operation_steps 为准。",
+      "v3_category": "产品操作题",
+      "scoring_type": "operation",
+      "operation_expected": [
+        "创建会话A并写入私有代号",
+        "创建全新会话B",
+        "追问上一会话私有代号",
+        "记录模型回答和产品记忆行为"
+      ],
+      "score_rule": "产品操作题不作为一问一答模型题执行；setup_seed_prompt 只做界面准备，评分依据为 automation_actions 的真实 UI 执行结果和证据。",
+      "send_as_model_question": false,
+      "execution_protocol": "setup_seed_then_ui_automation",
+      "setup_seed_prompt": [
+        "请回复一句“会话隔离测试准备完成”。"
+      ],
+      "setup_seed_mode": "send_and_wait_for_ui_object",
+      "model_prompt_policy": "不要把 setup_seed_prompt 当成让模型执行 UI 操作的指令；它只用于生成可复制、可朗读、可滚动或可恢复的界面对象。",
+      "automation_actions": [
+        {
+          "step": 1,
+          "action": "创建会话A并写入私有代号",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        },
+        {
+          "step": 2,
+          "action": "创建全新会话B",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        },
+        {
+          "step": 3,
+          "action": "追问上一会话私有代号",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        },
+        {
+          "step": 4,
+          "action": "记录模型回答和产品记忆行为",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        }
+      ],
+      "operation_pass_criteria": [
+        "自动化脚本完成 operation_steps/automation_actions 中定义的真实 UI 操作。",
+        "实际 UI 状态、截图、XML、剪贴板/朗读/侧栏/后台恢复等证据符合预期。",
+        "不按模型回答语义计入主对话模型正确率。"
+      ],
+      "v3_2_change": "明确操作题不是发文字让 App 执行，而是 seed 后由自动化执行 UI 操作。"
+    },
+    {
+      "case_id": "MD-F07",
+      "priority": "P1",
+      "module": "主对话-基础能力",
+      "feature": "上下文隔离",
+      "ability": "产品功能",
+      "source": "产品功能",
+      "easy_wrong": "否",
+      "trap_type": "",
+      "summary": "新建会话后追问上一会话代号",
+      "input": "主对话评测 MD-F07：新建会话后追问上一会话代号。请直接回答。",
+      "expected_result": "不应记得上一会话私有代号",
+      "steps": [
+        "新建会话",
+        "输入/执行 v2 用例",
+        "等待或观察结果",
+        "记录截图/XML/时延/实际回答",
+        "按 v2 判分规则复核"
+      ],
+      "recovery_action": "用新建会话隔离用例；用主页面文本框继续下一条。",
+      "v2_category": "产品操作题",
+      "current_dialogue_suitable": "否",
+      "needs_material": "否",
+      "needs_operation": "是",
+      "needs_multiturn_rewrite": "否",
+      "v2_audit_reason": "目标依赖真实控件、会话、网络、后台、语音、复制、朗读或系统状态操作",
+      "test_type": "product_operation",
+      "execution_mode": "uiautomator2_operation",
+      "operation_steps": [
+        "创建会话A并发送记忆代号题",
+        "打开侧栏创建会话B",
+        "在会话B追问上一会话代号",
+        "检查是否泄露会话A私有代号"
+      ],
+      "turns": [
+        {
+          "input": "请回复一句“新会话隔离测试准备完成”。",
+          "expected": "生成可用于后续产品操作验证的可见回答。"
+        }
+      ],
+      "v2_change": "从单纯文本问答改为产品操作用例，后续需由交互 runner 执行 operation_steps。",
+      "source_fidelity": "仅参考能力域",
+      "source_fidelity_reason": "按能力域和产品场景构造自包含用例，不声明为 benchmark 原题。",
+      "v2_2_change": "产品操作题改为自然 seed prompt；实际评价仍以 operation_steps 为准。",
+      "v3_category": "产品操作题",
+      "scoring_type": "operation",
+      "operation_expected": [
+        "创建会话A并发送记忆代号题",
+        "打开侧栏创建会话B",
+        "在会话B追问上一会话代号",
+        "检查是否泄露会话A私有代号"
+      ],
+      "score_rule": "产品操作题不作为一问一答模型题执行；setup_seed_prompt 只做界面准备，评分依据为 automation_actions 的真实 UI 执行结果和证据。",
+      "send_as_model_question": false,
+      "execution_protocol": "setup_seed_then_ui_automation",
+      "setup_seed_prompt": [
+        "请回复一句“新会话隔离测试准备完成”。"
+      ],
+      "setup_seed_mode": "send_and_wait_for_ui_object",
+      "model_prompt_policy": "不要把 setup_seed_prompt 当成让模型执行 UI 操作的指令；它只用于生成可复制、可朗读、可滚动或可恢复的界面对象。",
+      "automation_actions": [
+        {
+          "step": 1,
+          "action": "创建会话A并发送记忆代号题",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        },
+        {
+          "step": 2,
+          "action": "打开侧栏创建会话B",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        },
+        {
+          "step": 3,
+          "action": "在会话B追问上一会话代号",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        },
+        {
+          "step": 4,
+          "action": "检查是否泄露会话A私有代号",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        }
+      ],
+      "operation_pass_criteria": [
+        "自动化脚本完成 operation_steps/automation_actions 中定义的真实 UI 操作。",
+        "实际 UI 状态、截图、XML、剪贴板/朗读/侧栏/后台恢复等证据符合预期。",
+        "不按模型回答语义计入主对话模型正确率。"
+      ],
+      "v3_2_change": "明确操作题不是发文字让 App 执行，而是 seed 后由自动化执行 UI 操作。"
+    },
+    {
+      "case_id": "MD-F10",
+      "priority": "P1",
+      "module": "主对话-基础能力",
+      "feature": "长回答滚动采集",
+      "ability": "产品功能",
+      "source": "产品功能",
+      "easy_wrong": "否",
+      "trap_type": "",
+      "summary": "要求输出 10 条编号建议",
+      "input": "主对话评测 MD-F10：要求输出 10 条编号建议。请直接回答。",
+      "expected_result": "截图/XML 能采集完整回答",
+      "steps": [
+        "新建会话",
+        "输入/执行 v2 用例",
+        "等待或观察结果",
+        "记录截图/XML/时延/实际回答",
+        "按 v2 判分规则复核"
+      ],
+      "recovery_action": "用新建会话隔离用例；用主页面文本框继续下一条。",
+      "v2_category": "产品操作题",
+      "current_dialogue_suitable": "否",
+      "needs_material": "否",
+      "needs_operation": "是",
+      "needs_multiturn_rewrite": "否",
+      "v2_audit_reason": "目标依赖真实控件、会话、网络、后台、语音、复制、朗读或系统状态操作",
+      "test_type": "product_operation",
+      "execution_mode": "uiautomator2_operation",
+      "operation_steps": [
+        "按用例摘要执行真实产品操作",
+        "记录开始/结束时间、截图、XML和前后台状态",
+        "校验预期结果",
+        "执行恢复动作"
+      ],
+      "turns": [
+        {
+          "input": "请输出 10 条编号建议，主题是移动 App 主对话体验优化。",
+          "expected": "生成可用于后续产品操作验证的可见回答。"
+        }
+      ],
+      "v2_change": "从单纯文本问答改为产品操作用例，后续需由交互 runner 执行 operation_steps。",
+      "source_fidelity": "仅参考能力域",
+      "source_fidelity_reason": "按能力域和产品场景构造自包含用例，不声明为 benchmark 原题。",
+      "v2_2_change": "产品操作题改为自然 seed prompt；实际评价仍以 operation_steps 为准。",
+      "v3_category": "产品操作题",
+      "scoring_type": "operation",
+      "operation_expected": [
+        "按用例摘要执行真实产品操作",
+        "记录开始/结束时间、截图、XML和前后台状态",
+        "校验预期结果",
+        "执行恢复动作"
+      ],
+      "score_rule": "产品操作题不作为一问一答模型题执行；setup_seed_prompt 只做界面准备，评分依据为 automation_actions 的真实 UI 执行结果和证据。",
+      "send_as_model_question": false,
+      "execution_protocol": "setup_seed_then_ui_automation",
+      "setup_seed_prompt": [
+        "请输出 10 条编号建议，主题是移动 App 主对话体验优化。"
+      ],
+      "setup_seed_mode": "send_and_wait_for_ui_object",
+      "model_prompt_policy": "不要把 setup_seed_prompt 当成让模型执行 UI 操作的指令；它只用于生成可复制、可朗读、可滚动或可恢复的界面对象。",
+      "automation_actions": [
+        {
+          "step": 1,
+          "action": "发送 setup_seed_prompt 并等待 10 条建议生成完成",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        },
+        {
+          "step": 2,
+          "action": "从回答底部向上滚动到首段，再回到底部",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        },
+        {
+          "step": 3,
+          "action": "采集首段、中段、末段截图和 UI XML",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        },
+        {
+          "step": 4,
+          "action": "校验滚动后输入框仍可见或可通过回到底部恢复",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        }
+      ],
+      "operation_pass_criteria": [
+        "自动化脚本完成 operation_steps/automation_actions 中定义的真实 UI 操作。",
+        "实际 UI 状态、截图、XML、剪贴板/朗读/侧栏/后台恢复等证据符合预期。",
+        "不按模型回答语义计入主对话模型正确率。"
+      ],
+      "v3_2_change": "明确操作题不是发文字让 App 执行，而是 seed 后由自动化执行 UI 操作。"
+    },
+    {
+      "case_id": "MD-F11",
+      "priority": "P1",
+      "module": "主对话-基础能力",
+      "feature": "复制按钮",
+      "ability": "产品功能",
+      "source": "产品功能",
+      "easy_wrong": "否",
+      "trap_type": "",
+      "summary": "点击最近回答的复制按钮",
+      "input": "主对话评测 MD-F11：点击最近回答的复制按钮。请直接回答。",
+      "expected_result": "可复制或出现明确复制反馈，无崩溃",
+      "steps": [
+        "新建会话",
+        "输入/执行 v2 用例",
+        "等待或观察结果",
+        "记录截图/XML/时延/实际回答",
+        "按 v2 判分规则复核"
+      ],
+      "recovery_action": "用新建会话隔离用例；用主页面文本框继续下一条。",
+      "v2_category": "产品操作题",
+      "current_dialogue_suitable": "否",
+      "needs_material": "否",
+      "needs_operation": "是",
+      "needs_multiturn_rewrite": "否",
+      "v2_audit_reason": "目标依赖真实控件、会话、网络、后台、语音、复制、朗读或系统状态操作",
+      "test_type": "product_operation",
+      "execution_mode": "uiautomator2_operation",
+      "operation_steps": [
+        "先发送一条短问答并等待回答完成",
+        "点击最近回答的复制按钮",
+        "读取剪贴板或观察复制提示",
+        "校验复制内容与可见回答一致"
+      ],
+      "turns": [
+        {
+          "input": "请用一句话回答：这是复制按钮测试文本。",
+          "expected": "生成可用于后续产品操作验证的可见回答。"
+        }
+      ],
+      "v2_change": "从单纯文本问答改为产品操作用例，后续需由交互 runner 执行 operation_steps。",
+      "source_fidelity": "仅参考能力域",
+      "source_fidelity_reason": "按能力域和产品场景构造自包含用例，不声明为 benchmark 原题。",
+      "v2_2_change": "产品操作题改为自然 seed prompt；实际评价仍以 operation_steps 为准。",
+      "v3_category": "产品操作题",
+      "scoring_type": "operation",
+      "operation_expected": [
+        "先发送一条短问答并等待回答完成",
+        "点击最近回答的复制按钮",
+        "读取剪贴板或观察复制提示",
+        "校验复制内容与可见回答一致"
+      ],
+      "score_rule": "产品操作题不作为一问一答模型题执行；setup_seed_prompt 只做界面准备，评分依据为 automation_actions 的真实 UI 执行结果和证据。",
+      "send_as_model_question": false,
+      "execution_protocol": "setup_seed_then_ui_automation",
+      "setup_seed_prompt": [
+        "请用一句话回答：这是复制按钮测试文本。"
+      ],
+      "setup_seed_mode": "send_and_wait_for_ui_object",
+      "model_prompt_policy": "不要把 setup_seed_prompt 当成让模型执行 UI 操作的指令；它只用于生成可复制、可朗读、可滚动或可恢复的界面对象。",
+      "automation_actions": [
+        {
+          "step": 1,
+          "action": "先发送一条短问答并等待回答完成",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        },
+        {
+          "step": 2,
+          "action": "点击最近回答的复制按钮",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        },
+        {
+          "step": 3,
+          "action": "读取剪贴板或观察复制提示",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        },
+        {
+          "step": 4,
+          "action": "校验复制内容与可见回答一致",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        }
+      ],
+      "operation_pass_criteria": [
+        "自动化脚本完成 operation_steps/automation_actions 中定义的真实 UI 操作。",
+        "实际 UI 状态、截图、XML、剪贴板/朗读/侧栏/后台恢复等证据符合预期。",
+        "不按模型回答语义计入主对话模型正确率。"
+      ],
+      "v3_2_change": "明确操作题不是发文字让 App 执行，而是 seed 后由自动化执行 UI 操作。"
+    },
+    {
+      "case_id": "MD-F12",
+      "priority": "P1",
+      "module": "主对话-基础能力",
+      "feature": "朗读按钮",
+      "ability": "产品功能",
+      "source": "产品功能",
+      "easy_wrong": "否",
+      "trap_type": "",
+      "summary": "点击最近回答的朗读按钮",
+      "input": "主对话评测 MD-F12：点击最近回答的朗读按钮。请直接回答。",
+      "expected_result": "朗读启动、可停止、状态可恢复",
+      "steps": [
+        "新建会话",
+        "输入/执行 v2 用例",
+        "等待或观察结果",
+        "记录截图/XML/时延/实际回答",
+        "按 v2 判分规则复核"
+      ],
+      "recovery_action": "用新建会话隔离用例；用主页面文本框继续下一条。",
+      "v2_category": "产品操作题",
+      "current_dialogue_suitable": "否",
+      "needs_material": "否",
+      "needs_operation": "是",
+      "needs_multiturn_rewrite": "否",
+      "v2_audit_reason": "目标依赖真实控件、会话、网络、后台、语音、复制、朗读或系统状态操作",
+      "test_type": "product_operation",
+      "execution_mode": "uiautomator2_operation",
+      "operation_steps": [
+        "先发送一条中文短问答并等待回答完成",
+        "点击最近回答的朗读按钮",
+        "观察朗读状态/系统音频状态",
+        "再次点击停止或等待结束并验证可继续输入"
+      ],
+      "turns": [
+        {
+          "input": "请用一句中文短句回答：这是朗读功能测试文本。",
+          "expected": "生成可用于后续产品操作验证的可见回答。"
+        }
+      ],
+      "v2_change": "从单纯文本问答改为产品操作用例，后续需由交互 runner 执行 operation_steps。",
+      "source_fidelity": "仅参考能力域",
+      "source_fidelity_reason": "按能力域和产品场景构造自包含用例，不声明为 benchmark 原题。",
+      "v2_2_change": "产品操作题改为自然 seed prompt；实际评价仍以 operation_steps 为准。",
+      "v3_category": "产品操作题",
+      "scoring_type": "operation",
+      "operation_expected": [
+        "先发送一条中文短问答并等待回答完成",
+        "点击最近回答的朗读按钮",
+        "观察朗读状态/系统音频状态",
+        "再次点击停止或等待结束并验证可继续输入"
+      ],
+      "score_rule": "产品操作题不作为一问一答模型题执行；setup_seed_prompt 只做界面准备，评分依据为 automation_actions 的真实 UI 执行结果和证据。",
+      "send_as_model_question": false,
+      "execution_protocol": "setup_seed_then_ui_automation",
+      "setup_seed_prompt": [
+        "请用一句中文短句回答：这是朗读功能测试文本。"
+      ],
+      "setup_seed_mode": "send_and_wait_for_ui_object",
+      "model_prompt_policy": "不要把 setup_seed_prompt 当成让模型执行 UI 操作的指令；它只用于生成可复制、可朗读、可滚动或可恢复的界面对象。",
+      "automation_actions": [
+        {
+          "step": 1,
+          "action": "先发送一条中文短问答并等待回答完成",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        },
+        {
+          "step": 2,
+          "action": "点击最近回答的朗读按钮",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        },
+        {
+          "step": 3,
+          "action": "观察朗读状态/系统音频状态",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        },
+        {
+          "step": 4,
+          "action": "再次点击停止或等待结束并验证可继续输入",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        }
+      ],
+      "operation_pass_criteria": [
+        "自动化脚本完成 operation_steps/automation_actions 中定义的真实 UI 操作。",
+        "实际 UI 状态、截图、XML、剪贴板/朗读/侧栏/后台恢复等证据符合预期。",
+        "不按模型回答语义计入主对话模型正确率。"
+      ],
+      "v3_2_change": "明确操作题不是发文字让 App 执行，而是 seed 后由自动化执行 UI 操作。"
+    },
+    {
+      "case_id": "MD-F13",
+      "priority": "P1",
+      "module": "主对话-基础能力",
+      "feature": "输入中断恢复",
+      "ability": "产品功能",
+      "source": "产品功能",
+      "easy_wrong": "否",
+      "trap_type": "",
+      "summary": "输入长文本后切语音/返回再回来",
+      "input": "主对话评测 MD-F13：输入长文本后切语音/返回再回来。请直接回答。",
+      "expected_result": "文本不异常丢失或有合理恢复",
+      "steps": [
+        "新建会话",
+        "输入/执行 v2 用例",
+        "等待或观察结果",
+        "记录截图/XML/时延/实际回答",
+        "按 v2 判分规则复核"
+      ],
+      "recovery_action": "用新建会话隔离用例；用主页面文本框继续下一条。",
+      "v2_category": "操作+补材料题",
+      "current_dialogue_suitable": "否",
+      "needs_material": "是",
+      "needs_operation": "是",
+      "needs_multiturn_rewrite": "否",
+      "v2_audit_reason": "既要真实 App/环境操作，也缺少具体输入材料",
+      "test_type": "product_operation",
+      "execution_mode": "uiautomator2_operation",
+      "operation_steps": [
+        "进入语音输入态",
+        "执行静音/切换/返回操作",
+        "观察识别和恢复状态",
+        "记录截图/XML"
+      ],
+      "turns": [
+        {
+          "input": "先输入以下长文本作为草稿，随后执行切语音/返回操作。文本：某医院准备上线一套AI辅助阅片系统，用于肺结节筛查、糖尿病视网膜病变识别和急诊影像初筛。系统目标是缩短医生阅片时间，提高早期病灶发现率，并让基层医生获得更稳定的第二意见。试点阶段发现，系统在标准清晰影像上准确率较高，但在低质量影像、罕见病变和儿童病例上表现波动。数据治理团队指出，训练样本主要来自东部大型医院，西部地区、老年患者和少数民族样本比例不足。法务部门担心，一旦AI给出错误提示，责任在医院、医生还是供应商之间难以界定。信息安全团队发现，部分测试数据脱敏不充分，仍可能通过时间、科室、住院号组合反推出患者身份。医生代表认为，AI可以作为第二意见，但不能替代医生签字；护士团队希望系统提示更加简洁，避免增加工作负担。产品团队计划先在三家医院灰度上线三个月，期间记录误报率、漏报率、医生采纳率、平均阅片耗时和患者投诉。上线前还需要完成伦理审查、患者告知、日志审计、模型版本回滚和异常工单处理机制。",
+          "expected": "草稿不应异常丢失或应有明确恢复规则"
+        }
+      ],
+      "v2_change": "补齐材料并改为产品操作用例。",
+      "source_fidelity": "仅参考能力域",
+      "source_fidelity_reason": "按能力域和产品场景构造自包含用例，不声明为 benchmark 原题。",
+      "v2_2_change": "补齐材料并改为产品操作用例。",
+      "v3_category": "产品操作题",
+      "scoring_type": "operation",
+      "operation_expected": [
+        "进入语音输入态",
+        "执行静音/切换/返回操作",
+        "观察识别和恢复状态",
+        "记录截图/XML"
+      ],
+      "score_rule": "产品操作题不作为一问一答模型题执行；setup_seed_prompt 只做界面准备，评分依据为 automation_actions 的真实 UI 执行结果和证据。",
+      "send_as_model_question": false,
+      "execution_protocol": "setup_seed_then_ui_automation",
+      "setup_seed_prompt": [
+        "先输入以下长文本作为草稿，随后执行切语音/返回操作。文本：某医院准备上线一套AI辅助阅片系统，用于肺结节筛查、糖尿病视网膜病变识别和急诊影像初筛。系统目标是缩短医生阅片时间，提高早期病灶发现率，并让基层医生获得更稳定的第二意见。试点阶段发现，系统在标准清晰影像上准确率较高，但在低质量影像、罕见病变和儿童病例上表现波动。数据治理团队指出，训练样本主要来自东部大型医院，西部地区、老年患者和少数民族样本比例不足。法务部门担心，一旦AI给出错误提示，责任在医院、医生还是供应商之间难以界定。信息安全团队发现，部分测试数据脱敏不充分，仍可能通过时间、科室、住院号组合反推出患者身份。医生代表认为，AI可以作为第二意见，但不能替代医生签字；护士团队希望系统提示更加简洁，避免增加工作负担。产品团队计划先在三家医院灰度上线三个月，期间记录误报率、漏报率、医生采纳率、平均阅片耗时和患者投诉。上线前还需要完成伦理审查、患者告知、日志审计、模型版本回滚和异常工单处理机制。"
+      ],
+      "setup_seed_mode": "type_into_input_without_send",
+      "model_prompt_policy": "不要把 setup_seed_prompt 当成让模型执行 UI 操作的指令；它只用于生成可复制、可朗读、可滚动或可恢复的界面对象。",
+      "automation_actions": [
+        {
+          "step": 1,
+          "action": "进入语音输入态",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        },
+        {
+          "step": 2,
+          "action": "执行静音/切换/返回操作",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        },
+        {
+          "step": 3,
+          "action": "观察识别和恢复状态",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        },
+        {
+          "step": 4,
+          "action": "记录截图/XML",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        }
+      ],
+      "operation_pass_criteria": [
+        "自动化脚本完成 operation_steps/automation_actions 中定义的真实 UI 操作。",
+        "实际 UI 状态、截图、XML、剪贴板/朗读/侧栏/后台恢复等证据符合预期。",
+        "不按模型回答语义计入主对话模型正确率。"
+      ],
+      "v3_2_change": "明确操作题不是发文字让 App 执行，而是 seed 后由自动化执行 UI 操作。"
+    },
+    {
+      "case_id": "MD-F14",
+      "priority": "P1",
+      "module": "主对话-基础能力",
+      "feature": "网络波动提示",
+      "ability": "产品功能",
+      "source": "产品功能",
+      "easy_wrong": "否",
+      "trap_type": "",
+      "summary": "弱网/断网时发送短问答",
+      "input": "主对话评测 MD-F14：弱网/断网时发送短问答。请直接回答。",
+      "expected_result": "有明确失败/重试提示，不无限等待",
+      "steps": [
+        "新建会话",
+        "输入/执行 v2 用例",
+        "等待或观察结果",
+        "记录截图/XML/时延/实际回答",
+        "按 v2 判分规则复核"
+      ],
+      "recovery_action": "用新建会话隔离用例；用主页面文本框继续下一条。",
+      "v2_category": "产品操作题",
+      "current_dialogue_suitable": "否",
+      "needs_material": "否",
+      "needs_operation": "是",
+      "needs_multiturn_rewrite": "否",
+      "v2_audit_reason": "目标依赖真实控件、会话、网络、后台、语音、复制、朗读或系统状态操作",
+      "test_type": "product_operation",
+      "execution_mode": "uiautomator2_operation",
+      "operation_steps": [
+        "切换到弱网或断网环境",
+        "发送短问答",
+        "记录失败提示、重试入口和等待时长",
+        "恢复网络并确认App可继续使用"
+      ],
+      "turns": [
+        {
+          "input": "请用一句话回答：这是弱网发送测试文本。",
+          "expected": "生成可用于后续产品操作验证的可见回答。"
+        }
+      ],
+      "v2_change": "从单纯文本问答改为产品操作用例，后续需由交互 runner 执行 operation_steps。",
+      "source_fidelity": "仅参考能力域",
+      "source_fidelity_reason": "按能力域和产品场景构造自包含用例，不声明为 benchmark 原题。",
+      "v2_2_change": "产品操作题改为自然 seed prompt；实际评价仍以 operation_steps 为准。",
+      "v3_category": "产品操作题",
+      "scoring_type": "operation",
+      "operation_expected": [
+        "切换到弱网或断网环境",
+        "发送短问答",
+        "记录失败提示、重试入口和等待时长",
+        "恢复网络并确认App可继续使用"
+      ],
+      "score_rule": "产品操作题不作为一问一答模型题执行；setup_seed_prompt 只做界面准备，评分依据为 automation_actions 的真实 UI 执行结果和证据。",
+      "send_as_model_question": false,
+      "execution_protocol": "setup_seed_then_ui_automation",
+      "setup_seed_prompt": [
+        "请用一句话回答：这是弱网发送测试文本。"
+      ],
+      "setup_seed_mode": "send_under_network_condition",
+      "model_prompt_policy": "不要把 setup_seed_prompt 当成让模型执行 UI 操作的指令；它只用于生成可复制、可朗读、可滚动或可恢复的界面对象。",
+      "automation_actions": [
+        {
+          "step": 1,
+          "action": "切换到弱网或断网环境",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        },
+        {
+          "step": 2,
+          "action": "发送短问答",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        },
+        {
+          "step": 3,
+          "action": "记录失败提示、重试入口和等待时长",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        },
+        {
+          "step": 4,
+          "action": "恢复网络并确认App可继续使用",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        }
+      ],
+      "operation_pass_criteria": [
+        "自动化脚本完成 operation_steps/automation_actions 中定义的真实 UI 操作。",
+        "实际 UI 状态、截图、XML、剪贴板/朗读/侧栏/后台恢复等证据符合预期。",
+        "不按模型回答语义计入主对话模型正确率。"
+      ],
+      "v3_2_change": "明确操作题不是发文字让 App 执行，而是 seed 后由自动化执行 UI 操作。"
+    },
+    {
+      "case_id": "MD-F15",
+      "priority": "P2",
+      "module": "主对话-基础能力",
+      "feature": "会话历史标题",
+      "ability": "产品功能",
+      "source": "产品功能",
+      "easy_wrong": "否",
+      "trap_type": "",
+      "summary": "新建对话后查看侧栏标题",
+      "input": "主对话评测 MD-F15：新建对话后查看侧栏标题。请直接回答。",
+      "expected_result": "标题与用户问题相关，不乱码",
+      "steps": [
+        "新建会话",
+        "输入/执行 v2 用例",
+        "等待或观察结果",
+        "记录截图/XML/时延/实际回答",
+        "按 v2 判分规则复核"
+      ],
+      "recovery_action": "用新建会话隔离用例；用主页面文本框继续下一条。",
+      "v2_category": "产品操作题",
+      "current_dialogue_suitable": "否",
+      "needs_material": "否",
+      "needs_operation": "是",
+      "needs_multiturn_rewrite": "否",
+      "v2_audit_reason": "目标依赖真实控件、会话、网络、后台、语音、复制、朗读或系统状态操作",
+      "test_type": "product_operation",
+      "execution_mode": "uiautomator2_operation",
+      "operation_steps": [
+        "打开侧栏或新建入口",
+        "创建新会话",
+        "发送新主题",
+        "验证新旧会话内容隔离"
+      ],
+      "turns": [
+        {
+          "input": "请用一句话回答：这是侧栏标题生成测试文本。",
+          "expected": "生成可用于后续产品操作验证的可见回答。"
+        }
+      ],
+      "v2_change": "从单纯文本问答改为产品操作用例，后续需由交互 runner 执行 operation_steps。",
+      "source_fidelity": "仅参考能力域",
+      "source_fidelity_reason": "按能力域和产品场景构造自包含用例，不声明为 benchmark 原题。",
+      "v2_2_change": "产品操作题改为自然 seed prompt；实际评价仍以 operation_steps 为准。",
+      "v3_category": "产品操作题",
+      "scoring_type": "operation",
+      "operation_expected": [
+        "打开侧栏或新建入口",
+        "创建新会话",
+        "发送新主题",
+        "验证新旧会话内容隔离"
+      ],
+      "score_rule": "产品操作题不作为一问一答模型题执行；setup_seed_prompt 只做界面准备，评分依据为 automation_actions 的真实 UI 执行结果和证据。",
+      "send_as_model_question": false,
+      "execution_protocol": "setup_seed_then_ui_automation",
+      "setup_seed_prompt": [
+        "请用一句话回答：这是侧栏标题生成测试文本。"
+      ],
+      "setup_seed_mode": "send_and_wait_for_ui_object",
+      "model_prompt_policy": "不要把 setup_seed_prompt 当成让模型执行 UI 操作的指令；它只用于生成可复制、可朗读、可滚动或可恢复的界面对象。",
+      "automation_actions": [
+        {
+          "step": 1,
+          "action": "打开侧栏或新建入口",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        },
+        {
+          "step": 2,
+          "action": "创建新会话",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        },
+        {
+          "step": 3,
+          "action": "发送新主题",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        },
+        {
+          "step": 4,
+          "action": "验证新旧会话内容隔离",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        }
+      ],
+      "operation_pass_criteria": [
+        "自动化脚本完成 operation_steps/automation_actions 中定义的真实 UI 操作。",
+        "实际 UI 状态、截图、XML、剪贴板/朗读/侧栏/后台恢复等证据符合预期。",
+        "不按模型回答语义计入主对话模型正确率。"
+      ],
+      "v3_2_change": "明确操作题不是发文字让 App 执行，而是 seed 后由自动化执行 UI 操作。"
+    },
+    {
+      "case_id": "MD-F16",
+      "priority": "P2",
+      "module": "主对话-基础能力",
+      "feature": "页面恢复",
+      "ability": "产品功能",
+      "source": "产品功能",
+      "easy_wrong": "否",
+      "trap_type": "",
+      "summary": "从后台切回 App",
+      "input": "主对话评测 MD-F16：从后台切回 App。请直接回答。",
+      "expected_result": "保持会话/输入态，不白屏",
+      "steps": [
+        "新建会话",
+        "输入/执行 v2 用例",
+        "等待或观察结果",
+        "记录截图/XML/时延/实际回答",
+        "按 v2 判分规则复核"
+      ],
+      "recovery_action": "用新建会话隔离用例；用主页面文本框继续下一条。",
+      "v2_category": "产品操作题",
+      "current_dialogue_suitable": "否",
+      "needs_material": "否",
+      "needs_operation": "是",
+      "needs_multiturn_rewrite": "否",
+      "v2_audit_reason": "目标依赖真实控件、会话、网络、后台、语音、复制、朗读或系统状态操作",
+      "test_type": "product_operation",
+      "execution_mode": "uiautomator2_operation",
+      "operation_steps": [
+        "发送短问答并等待生成中或完成",
+        "将App切到后台",
+        "等待5秒后切回",
+        "验证会话、输入框和回答状态是否保持"
+      ],
+      "turns": [
+        {
+          "input": "请用一句话回答：这是后台恢复测试文本。",
+          "expected": "生成可用于后续产品操作验证的可见回答。"
+        }
+      ],
+      "v2_change": "从单纯文本问答改为产品操作用例，后续需由交互 runner 执行 operation_steps。",
+      "source_fidelity": "仅参考能力域",
+      "source_fidelity_reason": "按能力域和产品场景构造自包含用例，不声明为 benchmark 原题。",
+      "v2_2_change": "产品操作题改为自然 seed prompt；实际评价仍以 operation_steps 为准。",
+      "v3_category": "产品操作题",
+      "scoring_type": "operation",
+      "operation_expected": [
+        "发送短问答并等待生成中或完成",
+        "将App切到后台",
+        "等待5秒后切回",
+        "验证会话、输入框和回答状态是否保持"
+      ],
+      "score_rule": "产品操作题不作为一问一答模型题执行；setup_seed_prompt 只做界面准备，评分依据为 automation_actions 的真实 UI 执行结果和证据。",
+      "send_as_model_question": false,
+      "execution_protocol": "setup_seed_then_ui_automation",
+      "setup_seed_prompt": [
+        "请用一句话回答：这是后台恢复测试文本。"
+      ],
+      "setup_seed_mode": "send_and_wait_for_ui_object",
+      "model_prompt_policy": "不要把 setup_seed_prompt 当成让模型执行 UI 操作的指令；它只用于生成可复制、可朗读、可滚动或可恢复的界面对象。",
+      "automation_actions": [
+        {
+          "step": 1,
+          "action": "发送短问答并等待生成中或完成",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        },
+        {
+          "step": 2,
+          "action": "将App切到后台",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        },
+        {
+          "step": 3,
+          "action": "等待5秒后切回",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        },
+        {
+          "step": 4,
+          "action": "验证会话、输入框和回答状态是否保持",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        }
+      ],
+      "operation_pass_criteria": [
+        "自动化脚本完成 operation_steps/automation_actions 中定义的真实 UI 操作。",
+        "实际 UI 状态、截图、XML、剪贴板/朗读/侧栏/后台恢复等证据符合预期。",
+        "不按模型回答语义计入主对话模型正确率。"
+      ],
+      "v3_2_change": "明确操作题不是发文字让 App 执行，而是 seed 后由自动化执行 UI 操作。"
+    },
+    {
+      "case_id": "MD-EX-F03",
+      "priority": "P0",
+      "module": "功能交互",
+      "feature": "连续发送",
+      "ability": "连续发送",
+      "source": "产品功能",
+      "easy_wrong": "是",
+      "trap_type": "快速连发排队",
+      "summary": "快速连续发送三条短问题",
+      "input": "主对话评测 MD-EX-F03：快速连续发送三条短问题。请给出一段便于验证的简短中文回答。",
+      "expected_result": "消息顺序正确；不崩溃；响应可追踪",
+      "steps": [
+        "新建会话",
+        "输入/执行 v2 用例",
+        "等待或观察结果",
+        "记录截图/XML/时延/实际回答",
+        "按 v2 判分规则复核"
+      ],
+      "recovery_action": "用新建会话隔离用例；用主页面文本框继续下一条。",
+      "v2_category": "产品操作题",
+      "current_dialogue_suitable": "否",
+      "needs_material": "否",
+      "needs_operation": "是",
+      "needs_multiturn_rewrite": "否",
+      "v2_audit_reason": "目标依赖真实控件、会话、网络、后台、语音、复制、朗读或系统状态操作",
+      "test_type": "product_operation",
+      "execution_mode": "uiautomator2_operation",
+      "operation_steps": [
+        "按用例摘要执行真实产品操作",
+        "记录开始/结束时间、截图、XML和前后台状态",
+        "校验预期结果",
+        "执行恢复动作"
+      ],
+      "turns": [
+        {
+          "input": "请分别简短回答：第一，测试开始；第二，测试继续；第三，测试结束。",
+          "expected": "生成可用于后续产品操作验证的可见回答。"
+        }
+      ],
+      "v2_change": "从单纯文本问答改为产品操作用例，后续需由交互 runner 执行 operation_steps。",
+      "source_fidelity": "仅参考能力域",
+      "source_fidelity_reason": "按能力域和产品场景构造自包含用例，不声明为 benchmark 原题。",
+      "v2_2_change": "产品操作题改为自然 seed prompt；实际评价仍以 operation_steps 为准。",
+      "v3_category": "产品操作题",
+      "scoring_type": "operation",
+      "operation_expected": [
+        "按用例摘要执行真实产品操作",
+        "记录开始/结束时间、截图、XML和前后台状态",
+        "校验预期结果",
+        "执行恢复动作"
+      ],
+      "score_rule": "产品操作题不作为一问一答模型题执行；setup_seed_prompt 只做界面准备，评分依据为 automation_actions 的真实 UI 执行结果和证据。",
+      "send_as_model_question": false,
+      "execution_protocol": "setup_seed_then_ui_automation",
+      "setup_seed_prompt": [
+        "请分别简短回答：第一，测试开始；第二，测试继续；第三，测试结束。"
+      ],
+      "setup_seed_mode": "send_and_wait_for_ui_object",
+      "model_prompt_policy": "不要把 setup_seed_prompt 当成让模型执行 UI 操作的指令；它只用于生成可复制、可朗读、可滚动或可恢复的界面对象。",
+      "automation_actions": [
+        {
+          "step": 1,
+          "action": "快速连续发送三条短问题：测试开始、测试继续、测试结束",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        },
+        {
+          "step": 2,
+          "action": "记录每条消息发送时间和回答完成时间",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        },
+        {
+          "step": 3,
+          "action": "校验回答顺序与问题顺序一致",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        },
+        {
+          "step": 4,
+          "action": "检查是否出现漏发、串答、按钮不可用或输入框卡死",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        }
+      ],
+      "operation_pass_criteria": [
+        "自动化脚本完成 operation_steps/automation_actions 中定义的真实 UI 操作。",
+        "实际 UI 状态、截图、XML、剪贴板/朗读/侧栏/后台恢复等证据符合预期。",
+        "不按模型回答语义计入主对话模型正确率。"
+      ],
+      "v3_2_change": "明确操作题不是发文字让 App 执行，而是 seed 后由自动化执行 UI 操作。"
+    },
+    {
+      "case_id": "MD-EX-F06",
+      "priority": "P1",
+      "module": "功能交互",
+      "feature": "复制回答",
+      "ability": "复制回答",
+      "source": "产品功能",
+      "easy_wrong": "否",
+      "trap_type": "无",
+      "summary": "复制一段模型回答到剪贴板",
+      "input": "主对话评测 MD-EX-F06：复制一段模型回答到剪贴板。请给出一段便于验证的简短中文回答。",
+      "expected_result": "复制内容与可见回答一致",
+      "steps": [
+        "新建会话",
+        "输入/执行 v2 用例",
+        "等待或观察结果",
+        "记录截图/XML/时延/实际回答",
+        "按 v2 判分规则复核"
+      ],
+      "recovery_action": "用新建会话隔离用例；用主页面文本框继续下一条。",
+      "v2_category": "产品操作题",
+      "current_dialogue_suitable": "否",
+      "needs_material": "否",
+      "needs_operation": "是",
+      "needs_multiturn_rewrite": "否",
+      "v2_audit_reason": "目标依赖真实控件、会话、网络、后台、语音、复制、朗读或系统状态操作",
+      "test_type": "product_operation",
+      "execution_mode": "uiautomator2_operation",
+      "operation_steps": [
+        "生成一条可复制回答",
+        "点击回答区域复制按钮",
+        "校验剪贴板/复制提示",
+        "记录截图、XML和实际复制文本"
+      ],
+      "turns": [
+        {
+          "input": "请用一句话回答：这是剪贴板复制测试文本。",
+          "expected": "生成可用于后续产品操作验证的可见回答。"
+        }
+      ],
+      "v2_change": "从单纯文本问答改为产品操作用例，后续需由交互 runner 执行 operation_steps。",
+      "source_fidelity": "仅参考能力域",
+      "source_fidelity_reason": "按能力域和产品场景构造自包含用例，不声明为 benchmark 原题。",
+      "v2_2_change": "产品操作题改为自然 seed prompt；实际评价仍以 operation_steps 为准。",
+      "v3_category": "产品操作题",
+      "scoring_type": "operation",
+      "operation_expected": [
+        "生成一条可复制回答",
+        "点击回答区域复制按钮",
+        "校验剪贴板/复制提示",
+        "记录截图、XML和实际复制文本"
+      ],
+      "score_rule": "产品操作题不作为一问一答模型题执行；setup_seed_prompt 只做界面准备，评分依据为 automation_actions 的真实 UI 执行结果和证据。",
+      "send_as_model_question": false,
+      "execution_protocol": "setup_seed_then_ui_automation",
+      "setup_seed_prompt": [
+        "请用一句话回答：这是剪贴板复制测试文本。"
+      ],
+      "setup_seed_mode": "send_and_wait_for_ui_object",
+      "model_prompt_policy": "不要把 setup_seed_prompt 当成让模型执行 UI 操作的指令；它只用于生成可复制、可朗读、可滚动或可恢复的界面对象。",
+      "automation_actions": [
+        {
+          "step": 1,
+          "action": "生成一条可复制回答",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        },
+        {
+          "step": 2,
+          "action": "点击回答区域复制按钮",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        },
+        {
+          "step": 3,
+          "action": "校验剪贴板/复制提示",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        },
+        {
+          "step": 4,
+          "action": "记录截图、XML和实际复制文本",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        }
+      ],
+      "operation_pass_criteria": [
+        "自动化脚本完成 operation_steps/automation_actions 中定义的真实 UI 操作。",
+        "实际 UI 状态、截图、XML、剪贴板/朗读/侧栏/后台恢复等证据符合预期。",
+        "不按模型回答语义计入主对话模型正确率。"
+      ],
+      "v3_2_change": "明确操作题不是发文字让 App 执行，而是 seed 后由自动化执行 UI 操作。"
+    },
+    {
+      "case_id": "MD-EX-F07",
+      "priority": "P1",
+      "module": "功能交互",
+      "feature": "朗读回答",
+      "ability": "朗读回答",
+      "source": "产品功能",
+      "easy_wrong": "否",
+      "trap_type": "无",
+      "summary": "对中文回答触发朗读并停止",
+      "input": "主对话评测 MD-EX-F07：对中文回答触发朗读并停止。请给出一段便于验证的简短中文回答。",
+      "expected_result": "能朗读；可停止；不影响后续输入",
+      "steps": [
+        "新建会话",
+        "输入/执行 v2 用例",
+        "等待或观察结果",
+        "记录截图/XML/时延/实际回答",
+        "按 v2 判分规则复核"
+      ],
+      "recovery_action": "用新建会话隔离用例；用主页面文本框继续下一条。",
+      "v2_category": "产品操作题",
+      "current_dialogue_suitable": "否",
+      "needs_material": "否",
+      "needs_operation": "是",
+      "needs_multiturn_rewrite": "否",
+      "v2_audit_reason": "目标依赖真实控件、会话、网络、后台、语音、复制、朗读或系统状态操作",
+      "test_type": "product_operation",
+      "execution_mode": "uiautomator2_operation",
+      "operation_steps": [
+        "生成一条中文回答",
+        "点击朗读按钮",
+        "观察朗读启动和停止能力",
+        "记录状态、截图和恢复动作"
+      ],
+      "turns": [
+        {
+          "input": "请用一句中文短句回答：这是语音朗读测试文本。",
+          "expected": "生成可用于后续产品操作验证的可见回答。"
+        }
+      ],
+      "v2_change": "从单纯文本问答改为产品操作用例，后续需由交互 runner 执行 operation_steps。",
+      "source_fidelity": "仅参考能力域",
+      "source_fidelity_reason": "按能力域和产品场景构造自包含用例，不声明为 benchmark 原题。",
+      "v2_2_change": "产品操作题改为自然 seed prompt；实际评价仍以 operation_steps 为准。",
+      "v3_category": "产品操作题",
+      "scoring_type": "operation",
+      "operation_expected": [
+        "生成一条中文回答",
+        "点击朗读按钮",
+        "观察朗读启动和停止能力",
+        "记录状态、截图和恢复动作"
+      ],
+      "score_rule": "产品操作题不作为一问一答模型题执行；setup_seed_prompt 只做界面准备，评分依据为 automation_actions 的真实 UI 执行结果和证据。",
+      "send_as_model_question": false,
+      "execution_protocol": "setup_seed_then_ui_automation",
+      "setup_seed_prompt": [
+        "请用一句中文短句回答：这是语音朗读测试文本。"
+      ],
+      "setup_seed_mode": "send_and_wait_for_ui_object",
+      "model_prompt_policy": "不要把 setup_seed_prompt 当成让模型执行 UI 操作的指令；它只用于生成可复制、可朗读、可滚动或可恢复的界面对象。",
+      "automation_actions": [
+        {
+          "step": 1,
+          "action": "生成一条中文回答",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        },
+        {
+          "step": 2,
+          "action": "点击朗读按钮",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        },
+        {
+          "step": 3,
+          "action": "观察朗读启动和停止能力",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        },
+        {
+          "step": 4,
+          "action": "记录状态、截图和恢复动作",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        }
+      ],
+      "operation_pass_criteria": [
+        "自动化脚本完成 operation_steps/automation_actions 中定义的真实 UI 操作。",
+        "实际 UI 状态、截图、XML、剪贴板/朗读/侧栏/后台恢复等证据符合预期。",
+        "不按模型回答语义计入主对话模型正确率。"
+      ],
+      "v3_2_change": "明确操作题不是发文字让 App 执行，而是 seed 后由自动化执行 UI 操作。"
+    },
+    {
+      "case_id": "MD-EX-F08",
+      "priority": "P1",
+      "module": "功能交互",
+      "feature": "生成中断",
+      "ability": "生成中断",
+      "source": "产品功能",
+      "easy_wrong": "是",
+      "trap_type": "中断恢复",
+      "summary": "生成长回答时点击停止再发送新问题",
+      "input": "主对话评测 MD-EX-F08：生成长回答时点击停止再发送新问题。请给出一段便于验证的简短中文回答。",
+      "expected_result": "不中断应用；新问题可继续响应",
+      "steps": [
+        "新建会话",
+        "输入/执行 v2 用例",
+        "等待或观察结果",
+        "记录截图/XML/时延/实际回答",
+        "按 v2 判分规则复核"
+      ],
+      "recovery_action": "用新建会话隔离用例；用主页面文本框继续下一条。",
+      "v2_category": "产品操作题",
+      "current_dialogue_suitable": "否",
+      "needs_material": "否",
+      "needs_operation": "是",
+      "needs_multiturn_rewrite": "否",
+      "v2_audit_reason": "目标依赖真实控件、会话、网络、后台、语音、复制、朗读或系统状态操作",
+      "test_type": "product_operation",
+      "execution_mode": "uiautomator2_operation",
+      "operation_steps": [
+        "按用例摘要执行真实产品操作",
+        "记录开始/结束时间、截图、XML和前后台状态",
+        "校验预期结果",
+        "执行恢复动作"
+      ],
+      "turns": [
+        {
+          "input": "请写一段 300 字以内的说明，主题是 App 自动化测试。",
+          "expected": "生成可用于后续产品操作验证的可见回答。"
+        }
+      ],
+      "v2_change": "从单纯文本问答改为产品操作用例，后续需由交互 runner 执行 operation_steps。",
+      "source_fidelity": "仅参考能力域",
+      "source_fidelity_reason": "按能力域和产品场景构造自包含用例，不声明为 benchmark 原题。",
+      "v2_2_change": "产品操作题改为自然 seed prompt；实际评价仍以 operation_steps 为准。",
+      "v3_category": "产品操作题",
+      "scoring_type": "operation",
+      "operation_expected": [
+        "按用例摘要执行真实产品操作",
+        "记录开始/结束时间、截图、XML和前后台状态",
+        "校验预期结果",
+        "执行恢复动作"
+      ],
+      "score_rule": "产品操作题不作为一问一答模型题执行；setup_seed_prompt 只做界面准备，评分依据为 automation_actions 的真实 UI 执行结果和证据。",
+      "send_as_model_question": false,
+      "execution_protocol": "setup_seed_then_ui_automation",
+      "setup_seed_prompt": [
+        "请写一段 300 字以内的说明，主题是 App 自动化测试。"
+      ],
+      "setup_seed_mode": "send_and_wait_for_ui_object",
+      "model_prompt_policy": "不要把 setup_seed_prompt 当成让模型执行 UI 操作的指令；它只用于生成可复制、可朗读、可滚动或可恢复的界面对象。",
+      "automation_actions": [
+        {
+          "step": 1,
+          "action": "发送长回答 seed 并在生成中点击停止按钮",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        },
+        {
+          "step": 2,
+          "action": "记录点击停止到生成停止的耗时",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        },
+        {
+          "step": 3,
+          "action": "立即发送一个新短问题",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        },
+        {
+          "step": 4,
+          "action": "校验新问题可正常发送且旧回答不会继续追加",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        }
+      ],
+      "operation_pass_criteria": [
+        "自动化脚本完成 operation_steps/automation_actions 中定义的真实 UI 操作。",
+        "实际 UI 状态、截图、XML、剪贴板/朗读/侧栏/后台恢复等证据符合预期。",
+        "不按模型回答语义计入主对话模型正确率。"
+      ],
+      "v3_2_change": "明确操作题不是发文字让 App 执行，而是 seed 后由自动化执行 UI 操作。"
+    },
+    {
+      "case_id": "MD-EX-F09",
+      "priority": "P1",
+      "module": "功能交互",
+      "feature": "页面滚动",
+      "ability": "页面滚动",
+      "source": "产品功能",
+      "easy_wrong": "否",
+      "trap_type": "无",
+      "summary": "长回答后上滑查看首段再回到底部",
+      "input": "主对话评测 MD-EX-F09：长回答后上滑查看首段再回到底部。请给出一段便于验证的简短中文回答。",
+      "expected_result": "历史可见；输入框仍可用",
+      "steps": [
+        "新建会话",
+        "输入/执行 v2 用例",
+        "等待或观察结果",
+        "记录截图/XML/时延/实际回答",
+        "按 v2 判分规则复核"
+      ],
+      "recovery_action": "用新建会话隔离用例；用主页面文本框继续下一条。",
+      "v2_category": "产品操作题",
+      "current_dialogue_suitable": "否",
+      "needs_material": "否",
+      "needs_operation": "是",
+      "needs_multiturn_rewrite": "否",
+      "v2_audit_reason": "目标依赖真实控件、会话、网络、后台、语音、复制、朗读或系统状态操作",
+      "test_type": "product_operation",
+      "execution_mode": "uiautomator2_operation",
+      "operation_steps": [
+        "生成长回答",
+        "上滑查看首段",
+        "点击或滑动回到底部",
+        "验证输入框可用并记录截图"
+      ],
+      "turns": [
+        {
+          "input": "请写 8 条编号建议，主题是长回答滚动查看。",
+          "expected": "生成可用于后续产品操作验证的可见回答。"
+        }
+      ],
+      "v2_change": "从单纯文本问答改为产品操作用例，后续需由交互 runner 执行 operation_steps。",
+      "source_fidelity": "仅参考能力域",
+      "source_fidelity_reason": "按能力域和产品场景构造自包含用例，不声明为 benchmark 原题。",
+      "v2_2_change": "产品操作题改为自然 seed prompt；实际评价仍以 operation_steps 为准。",
+      "v3_category": "产品操作题",
+      "scoring_type": "operation",
+      "operation_expected": [
+        "生成长回答",
+        "上滑查看首段",
+        "点击或滑动回到底部",
+        "验证输入框可用并记录截图"
+      ],
+      "score_rule": "产品操作题不作为一问一答模型题执行；setup_seed_prompt 只做界面准备，评分依据为 automation_actions 的真实 UI 执行结果和证据。",
+      "send_as_model_question": false,
+      "execution_protocol": "setup_seed_then_ui_automation",
+      "setup_seed_prompt": [
+        "请写 8 条编号建议，主题是长回答滚动查看。"
+      ],
+      "setup_seed_mode": "send_and_wait_for_ui_object",
+      "model_prompt_policy": "不要把 setup_seed_prompt 当成让模型执行 UI 操作的指令；它只用于生成可复制、可朗读、可滚动或可恢复的界面对象。",
+      "automation_actions": [
+        {
+          "step": 1,
+          "action": "生成长回答",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        },
+        {
+          "step": 2,
+          "action": "上滑查看首段",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        },
+        {
+          "step": 3,
+          "action": "点击或滑动回到底部",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        },
+        {
+          "step": 4,
+          "action": "验证输入框可用并记录截图",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        }
+      ],
+      "operation_pass_criteria": [
+        "自动化脚本完成 operation_steps/automation_actions 中定义的真实 UI 操作。",
+        "实际 UI 状态、截图、XML、剪贴板/朗读/侧栏/后台恢复等证据符合预期。",
+        "不按模型回答语义计入主对话模型正确率。"
+      ],
+      "v3_2_change": "明确操作题不是发文字让 App 执行，而是 seed 后由自动化执行 UI 操作。"
+    },
+    {
+      "case_id": "MD-EX-F10",
+      "priority": "P1",
+      "module": "功能交互",
+      "feature": "新建会话",
+      "ability": "新建会话",
+      "source": "产品功能",
+      "easy_wrong": "是",
+      "trap_type": "会话残留",
+      "summary": "新建会话后输入新主题",
+      "input": "主对话评测 MD-EX-F10：新建会话后输入新主题。请给出一段便于验证的简短中文回答。",
+      "expected_result": "不混入上一会话内容",
+      "steps": [
+        "新建会话",
+        "输入/执行 v2 用例",
+        "等待或观察结果",
+        "记录截图/XML/时延/实际回答",
+        "按 v2 判分规则复核"
+      ],
+      "recovery_action": "用新建会话隔离用例；用主页面文本框继续下一条。",
+      "v2_category": "产品操作题",
+      "current_dialogue_suitable": "否",
+      "needs_material": "否",
+      "needs_operation": "是",
+      "needs_multiturn_rewrite": "否",
+      "v2_audit_reason": "目标依赖真实控件、会话、网络、后台、语音、复制、朗读或系统状态操作",
+      "test_type": "product_operation",
+      "execution_mode": "uiautomator2_operation",
+      "operation_steps": [
+        "打开侧栏或新建入口",
+        "创建新会话",
+        "发送新主题",
+        "验证新旧会话内容隔离"
+      ],
+      "turns": [
+        {
+          "input": "请用一句话回答：新主题是性能测试。",
+          "expected": "生成可用于后续产品操作验证的可见回答。"
+        }
+      ],
+      "v2_change": "从单纯文本问答改为产品操作用例，后续需由交互 runner 执行 operation_steps。",
+      "source_fidelity": "仅参考能力域",
+      "source_fidelity_reason": "按能力域和产品场景构造自包含用例，不声明为 benchmark 原题。",
+      "v2_2_change": "产品操作题改为自然 seed prompt；实际评价仍以 operation_steps 为准。",
+      "v3_category": "产品操作题",
+      "scoring_type": "operation",
+      "operation_expected": [
+        "打开侧栏或新建入口",
+        "创建新会话",
+        "发送新主题",
+        "验证新旧会话内容隔离"
+      ],
+      "score_rule": "产品操作题不作为一问一答模型题执行；setup_seed_prompt 只做界面准备，评分依据为 automation_actions 的真实 UI 执行结果和证据。",
+      "send_as_model_question": false,
+      "execution_protocol": "setup_seed_then_ui_automation",
+      "setup_seed_prompt": [
+        "请用一句话回答：新主题是性能测试。"
+      ],
+      "setup_seed_mode": "send_and_wait_for_ui_object",
+      "model_prompt_policy": "不要把 setup_seed_prompt 当成让模型执行 UI 操作的指令；它只用于生成可复制、可朗读、可滚动或可恢复的界面对象。",
+      "automation_actions": [
+        {
+          "step": 1,
+          "action": "打开侧栏或新建入口",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        },
+        {
+          "step": 2,
+          "action": "创建新会话",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        },
+        {
+          "step": 3,
+          "action": "发送新主题",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        },
+        {
+          "step": 4,
+          "action": "验证新旧会话内容隔离",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        }
+      ],
+      "operation_pass_criteria": [
+        "自动化脚本完成 operation_steps/automation_actions 中定义的真实 UI 操作。",
+        "实际 UI 状态、截图、XML、剪贴板/朗读/侧栏/后台恢复等证据符合预期。",
+        "不按模型回答语义计入主对话模型正确率。"
+      ],
+      "v3_2_change": "明确操作题不是发文字让 App 执行，而是 seed 后由自动化执行 UI 操作。"
+    },
+    {
+      "case_id": "MD-EX-F11",
+      "priority": "P1",
+      "module": "功能交互",
+      "feature": "弱网提示",
+      "ability": "弱网提示",
+      "source": "产品功能",
+      "easy_wrong": "否",
+      "trap_type": "无",
+      "summary": "断网或弱网状态下发送问题",
+      "input": "主对话评测 MD-EX-F11：断网或弱网状态下发送问题。请给出一段便于验证的简短中文回答。",
+      "expected_result": "有失败、重试或网络提示；不无限转圈",
+      "steps": [
+        "新建会话",
+        "输入/执行 v2 用例",
+        "等待或观察结果",
+        "记录截图/XML/时延/实际回答",
+        "按 v2 判分规则复核"
+      ],
+      "recovery_action": "用新建会话隔离用例；用主页面文本框继续下一条。",
+      "v2_category": "产品操作题",
+      "current_dialogue_suitable": "否",
+      "needs_material": "否",
+      "needs_operation": "是",
+      "needs_multiturn_rewrite": "否",
+      "v2_audit_reason": "目标依赖真实控件、会话、网络、后台、语音、复制、朗读或系统状态操作",
+      "test_type": "product_operation",
+      "execution_mode": "uiautomator2_operation",
+      "operation_steps": [
+        "设置弱网/断网条件",
+        "发送测试问题",
+        "记录提示、重试和等待时长",
+        "恢复网络并验证可继续对话"
+      ],
+      "turns": [
+        {
+          "input": "请用一句话回答：这是断网重试测试文本。",
+          "expected": "生成可用于后续产品操作验证的可见回答。"
+        }
+      ],
+      "v2_change": "从单纯文本问答改为产品操作用例，后续需由交互 runner 执行 operation_steps。",
+      "source_fidelity": "仅参考能力域",
+      "source_fidelity_reason": "按能力域和产品场景构造自包含用例，不声明为 benchmark 原题。",
+      "v2_2_change": "产品操作题改为自然 seed prompt；实际评价仍以 operation_steps 为准。",
+      "v3_category": "产品操作题",
+      "scoring_type": "operation",
+      "operation_expected": [
+        "设置弱网/断网条件",
+        "发送测试问题",
+        "记录提示、重试和等待时长",
+        "恢复网络并验证可继续对话"
+      ],
+      "score_rule": "产品操作题不作为一问一答模型题执行；setup_seed_prompt 只做界面准备，评分依据为 automation_actions 的真实 UI 执行结果和证据。",
+      "send_as_model_question": false,
+      "execution_protocol": "setup_seed_then_ui_automation",
+      "setup_seed_prompt": [
+        "请用一句话回答：这是断网重试测试文本。"
+      ],
+      "setup_seed_mode": "send_under_network_condition",
+      "model_prompt_policy": "不要把 setup_seed_prompt 当成让模型执行 UI 操作的指令；它只用于生成可复制、可朗读、可滚动或可恢复的界面对象。",
+      "automation_actions": [
+        {
+          "step": 1,
+          "action": "设置弱网/断网条件",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        },
+        {
+          "step": 2,
+          "action": "发送测试问题",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        },
+        {
+          "step": 3,
+          "action": "记录提示、重试和等待时长",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        },
+        {
+          "step": 4,
+          "action": "恢复网络并验证可继续对话",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        }
+      ],
+      "operation_pass_criteria": [
+        "自动化脚本完成 operation_steps/automation_actions 中定义的真实 UI 操作。",
+        "实际 UI 状态、截图、XML、剪贴板/朗读/侧栏/后台恢复等证据符合预期。",
+        "不按模型回答语义计入主对话模型正确率。"
+      ],
+      "v3_2_change": "明确操作题不是发文字让 App 执行，而是 seed 后由自动化执行 UI 操作。"
+    },
+    {
+      "case_id": "MD-EX-F12",
+      "priority": "P1",
+      "module": "功能交互",
+      "feature": "重试机制",
+      "ability": "重试机制",
+      "source": "产品功能",
+      "easy_wrong": "否",
+      "trap_type": "无",
+      "summary": "失败消息点击重试",
+      "input": "主对话评测 MD-EX-F12：失败消息点击重试。请给出一段便于验证的简短中文回答。",
+      "expected_result": "生成新结果或清晰失败原因",
+      "steps": [
+        "新建会话",
+        "输入/执行 v2 用例",
+        "等待或观察结果",
+        "记录截图/XML/时延/实际回答",
+        "按 v2 判分规则复核"
+      ],
+      "recovery_action": "用新建会话隔离用例；用主页面文本框继续下一条。",
+      "v2_category": "产品操作题",
+      "current_dialogue_suitable": "否",
+      "needs_material": "否",
+      "needs_operation": "是",
+      "needs_multiturn_rewrite": "否",
+      "v2_audit_reason": "目标依赖真实控件、会话、网络、后台、语音、复制、朗读或系统状态操作",
+      "test_type": "product_operation",
+      "execution_mode": "uiautomator2_operation",
+      "operation_steps": [
+        "按用例摘要执行真实产品操作",
+        "记录开始/结束时间、截图、XML和前后台状态",
+        "校验预期结果",
+        "执行恢复动作"
+      ],
+      "turns": [
+        {
+          "input": "请用一句话回答：这是失败后重试测试文本。",
+          "expected": "生成可用于后续产品操作验证的可见回答。"
+        }
+      ],
+      "v2_change": "从单纯文本问答改为产品操作用例，后续需由交互 runner 执行 operation_steps。",
+      "source_fidelity": "仅参考能力域",
+      "source_fidelity_reason": "按能力域和产品场景构造自包含用例，不声明为 benchmark 原题。",
+      "v2_2_change": "产品操作题改为自然 seed prompt；实际评价仍以 operation_steps 为准。",
+      "v3_category": "产品操作题",
+      "scoring_type": "operation",
+      "operation_expected": [
+        "按用例摘要执行真实产品操作",
+        "记录开始/结束时间、截图、XML和前后台状态",
+        "校验预期结果",
+        "执行恢复动作"
+      ],
+      "score_rule": "产品操作题不作为一问一答模型题执行；setup_seed_prompt 只做界面准备，评分依据为 automation_actions 的真实 UI 执行结果和证据。",
+      "send_as_model_question": false,
+      "execution_protocol": "setup_seed_then_ui_automation",
+      "setup_seed_prompt": [
+        "请用一句话回答：这是失败后重试测试文本。"
+      ],
+      "setup_seed_mode": "send_under_network_condition",
+      "model_prompt_policy": "不要把 setup_seed_prompt 当成让模型执行 UI 操作的指令；它只用于生成可复制、可朗读、可滚动或可恢复的界面对象。",
+      "automation_actions": [
+        {
+          "step": 1,
+          "action": "在断网或弱网状态发送 seed 以制造失败消息",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        },
+        {
+          "step": 2,
+          "action": "恢复网络",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        },
+        {
+          "step": 3,
+          "action": "点击失败消息的重试入口",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        },
+        {
+          "step": 4,
+          "action": "校验重试后问题被发送且回答生成完成",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        }
+      ],
+      "operation_pass_criteria": [
+        "自动化脚本完成 operation_steps/automation_actions 中定义的真实 UI 操作。",
+        "实际 UI 状态、截图、XML、剪贴板/朗读/侧栏/后台恢复等证据符合预期。",
+        "不按模型回答语义计入主对话模型正确率。"
+      ],
+      "v3_2_change": "明确操作题不是发文字让 App 执行，而是 seed 后由自动化执行 UI 操作。"
+    },
+    {
+      "case_id": "MD-EX-F13",
+      "priority": "P2",
+      "module": "功能交互",
+      "feature": "附件入口",
+      "ability": "附件入口",
+      "source": "产品功能",
+      "easy_wrong": "否",
+      "trap_type": "无",
+      "summary": "点击加号后取消文件选择并返回对话",
+      "input": "主对话评测 MD-EX-F13：点击加号后取消文件选择并返回对话。请给出一段便于验证的简短中文回答。",
+      "expected_result": "不发送空附件；状态保持",
+      "steps": [
+        "新建会话",
+        "输入/执行 v2 用例",
+        "等待或观察结果",
+        "记录截图/XML/时延/实际回答",
+        "按 v2 判分规则复核"
+      ],
+      "recovery_action": "用新建会话隔离用例；用主页面文本框继续下一条。",
+      "v2_category": "产品操作题",
+      "current_dialogue_suitable": "否",
+      "needs_material": "否",
+      "needs_operation": "是",
+      "needs_multiturn_rewrite": "否",
+      "v2_audit_reason": "目标依赖真实控件、会话、网络、后台、语音、复制、朗读或系统状态操作",
+      "test_type": "product_operation",
+      "execution_mode": "uiautomator2_operation",
+      "operation_steps": [
+        "点击更多/附件入口",
+        "进入系统文件选择器",
+        "不选择文件并取消返回",
+        "验证没有发送空附件且输入状态恢复"
+      ],
+      "turns": [
+        {
+          "input": "请用一句话回答：这是附件入口取消测试文本。",
+          "expected": "生成可用于后续产品操作验证的可见回答。"
+        }
+      ],
+      "v2_change": "从单纯文本问答改为产品操作用例，后续需由交互 runner 执行 operation_steps。",
+      "source_fidelity": "仅参考能力域",
+      "source_fidelity_reason": "按能力域和产品场景构造自包含用例，不声明为 benchmark 原题。",
+      "v2_2_change": "产品操作题改为自然 seed prompt；实际评价仍以 operation_steps 为准。",
+      "v3_category": "产品操作题",
+      "scoring_type": "operation",
+      "operation_expected": [
+        "点击更多/附件入口",
+        "进入系统文件选择器",
+        "不选择文件并取消返回",
+        "验证没有发送空附件且输入状态恢复"
+      ],
+      "score_rule": "产品操作题不作为一问一答模型题执行；setup_seed_prompt 只做界面准备，评分依据为 automation_actions 的真实 UI 执行结果和证据。",
+      "send_as_model_question": false,
+      "execution_protocol": "setup_seed_then_ui_automation",
+      "setup_seed_prompt": [
+        "请用一句话回答：这是附件入口取消测试文本。"
+      ],
+      "setup_seed_mode": "send_and_wait_for_ui_object",
+      "model_prompt_policy": "不要把 setup_seed_prompt 当成让模型执行 UI 操作的指令；它只用于生成可复制、可朗读、可滚动或可恢复的界面对象。",
+      "automation_actions": [
+        {
+          "step": 1,
+          "action": "点击更多/附件入口",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        },
+        {
+          "step": 2,
+          "action": "进入系统文件选择器",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        },
+        {
+          "step": 3,
+          "action": "不选择文件并取消返回",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        },
+        {
+          "step": 4,
+          "action": "验证没有发送空附件且输入状态恢复",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        }
+      ],
+      "operation_pass_criteria": [
+        "自动化脚本完成 operation_steps/automation_actions 中定义的真实 UI 操作。",
+        "实际 UI 状态、截图、XML、剪贴板/朗读/侧栏/后台恢复等证据符合预期。",
+        "不按模型回答语义计入主对话模型正确率。"
+      ],
+      "v3_2_change": "明确操作题不是发文字让 App 执行，而是 seed 后由自动化执行 UI 操作。"
+    },
+    {
+      "case_id": "MD-EX-F14",
+      "priority": "P2",
+      "module": "功能交互",
+      "feature": "语音入口",
+      "ability": "语音入口",
+      "source": "产品功能",
+      "easy_wrong": "是",
+      "trap_type": "空语音幻觉",
+      "summary": "点击语音输入但保持静音直到超时",
+      "input": "主对话评测 MD-EX-F14：点击语音输入但保持静音直到超时。请给出一段便于验证的简短中文回答。",
+      "expected_result": "提示未识别或可重试；不编造文本",
+      "steps": [
+        "新建会话",
+        "输入/执行 v2 用例",
+        "等待或观察结果",
+        "记录截图/XML/时延/实际回答",
+        "按 v2 判分规则复核"
+      ],
+      "recovery_action": "用新建会话隔离用例；用主页面文本框继续下一条。",
+      "v2_category": "产品操作题",
+      "current_dialogue_suitable": "否",
+      "needs_material": "否",
+      "needs_operation": "是",
+      "needs_multiturn_rewrite": "否",
+      "v2_audit_reason": "目标依赖真实控件、会话、网络、后台、语音、复制、朗读或系统状态操作",
+      "test_type": "product_operation",
+      "execution_mode": "uiautomator2_operation",
+      "operation_steps": [
+        "点击语音输入",
+        "保持静音直到超时",
+        "记录未识别/重试提示",
+        "切回键盘并验证可继续输入"
+      ],
+      "turns": [
+        {
+          "input": "请用一句话回答：这是静音语音输入测试文本。",
+          "expected": "生成可用于后续产品操作验证的可见回答。"
+        }
+      ],
+      "v2_change": "从单纯文本问答改为产品操作用例，后续需由交互 runner 执行 operation_steps。",
+      "source_fidelity": "仅参考能力域",
+      "source_fidelity_reason": "按能力域和产品场景构造自包含用例，不声明为 benchmark 原题。",
+      "v2_2_change": "产品操作题改为自然 seed prompt；实际评价仍以 operation_steps 为准。",
+      "v3_category": "产品操作题",
+      "scoring_type": "operation",
+      "operation_expected": [
+        "点击语音输入",
+        "保持静音直到超时",
+        "记录未识别/重试提示",
+        "切回键盘并验证可继续输入"
+      ],
+      "score_rule": "产品操作题不作为一问一答模型题执行；setup_seed_prompt 只做界面准备，评分依据为 automation_actions 的真实 UI 执行结果和证据。",
+      "send_as_model_question": false,
+      "execution_protocol": "setup_seed_then_ui_automation",
+      "setup_seed_prompt": [
+        "请用一句话回答：这是静音语音输入测试文本。"
+      ],
+      "setup_seed_mode": "send_and_wait_for_ui_object",
+      "model_prompt_policy": "不要把 setup_seed_prompt 当成让模型执行 UI 操作的指令；它只用于生成可复制、可朗读、可滚动或可恢复的界面对象。",
+      "automation_actions": [
+        {
+          "step": 1,
+          "action": "点击语音输入",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        },
+        {
+          "step": 2,
+          "action": "保持静音直到超时",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        },
+        {
+          "step": 3,
+          "action": "记录未识别/重试提示",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        },
+        {
+          "step": 4,
+          "action": "切回键盘并验证可继续输入",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        }
+      ],
+      "operation_pass_criteria": [
+        "自动化脚本完成 operation_steps/automation_actions 中定义的真实 UI 操作。",
+        "实际 UI 状态、截图、XML、剪贴板/朗读/侧栏/后台恢复等证据符合预期。",
+        "不按模型回答语义计入主对话模型正确率。"
+      ],
+      "v3_2_change": "明确操作题不是发文字让 App 执行，而是 seed 后由自动化执行 UI 操作。"
+    },
+    {
+      "case_id": "MD-EX-F15",
+      "priority": "P2",
+      "module": "功能交互",
+      "feature": "键盘切换",
+      "ability": "键盘切换",
+      "source": "产品功能",
+      "easy_wrong": "否",
+      "trap_type": "无",
+      "summary": "语音按钮和键盘按钮之间切换两次",
+      "input": "主对话评测 MD-EX-F15：语音按钮和键盘按钮之间切换两次。请给出一段便于验证的简短中文回答。",
+      "expected_result": "焦点和键盘状态正确",
+      "steps": [
+        "新建会话",
+        "输入/执行 v2 用例",
+        "等待或观察结果",
+        "记录截图/XML/时延/实际回答",
+        "按 v2 判分规则复核"
+      ],
+      "recovery_action": "用新建会话隔离用例；用主页面文本框继续下一条。",
+      "v2_category": "产品操作题",
+      "current_dialogue_suitable": "否",
+      "needs_material": "否",
+      "needs_operation": "是",
+      "needs_multiturn_rewrite": "否",
+      "v2_audit_reason": "目标依赖真实控件、会话、网络、后台、语音、复制、朗读或系统状态操作",
+      "test_type": "product_operation",
+      "execution_mode": "uiautomator2_operation",
+      "operation_steps": [
+        "进入语音输入态",
+        "执行静音/切换/返回操作",
+        "观察识别和恢复状态",
+        "记录截图/XML"
+      ],
+      "turns": [
+        {
+          "input": "请用一句话回答：这是键盘和语音切换测试文本。",
+          "expected": "生成可用于后续产品操作验证的可见回答。"
+        }
+      ],
+      "v2_change": "从单纯文本问答改为产品操作用例，后续需由交互 runner 执行 operation_steps。",
+      "source_fidelity": "仅参考能力域",
+      "source_fidelity_reason": "按能力域和产品场景构造自包含用例，不声明为 benchmark 原题。",
+      "v2_2_change": "产品操作题改为自然 seed prompt；实际评价仍以 operation_steps 为准。",
+      "v3_category": "产品操作题",
+      "scoring_type": "operation",
+      "operation_expected": [
+        "进入语音输入态",
+        "执行静音/切换/返回操作",
+        "观察识别和恢复状态",
+        "记录截图/XML"
+      ],
+      "score_rule": "产品操作题不作为一问一答模型题执行；setup_seed_prompt 只做界面准备，评分依据为 automation_actions 的真实 UI 执行结果和证据。",
+      "send_as_model_question": false,
+      "execution_protocol": "setup_seed_then_ui_automation",
+      "setup_seed_prompt": [
+        "请用一句话回答：这是键盘和语音切换测试文本。"
+      ],
+      "setup_seed_mode": "send_and_wait_for_ui_object",
+      "model_prompt_policy": "不要把 setup_seed_prompt 当成让模型执行 UI 操作的指令；它只用于生成可复制、可朗读、可滚动或可恢复的界面对象。",
+      "automation_actions": [
+        {
+          "step": 1,
+          "action": "进入语音输入态",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        },
+        {
+          "step": 2,
+          "action": "执行静音/切换/返回操作",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        },
+        {
+          "step": 3,
+          "action": "观察识别和恢复状态",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        },
+        {
+          "step": 4,
+          "action": "记录截图/XML",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        }
+      ],
+      "operation_pass_criteria": [
+        "自动化脚本完成 operation_steps/automation_actions 中定义的真实 UI 操作。",
+        "实际 UI 状态、截图、XML、剪贴板/朗读/侧栏/后台恢复等证据符合预期。",
+        "不按模型回答语义计入主对话模型正确率。"
+      ],
+      "v3_2_change": "明确操作题不是发文字让 App 执行，而是 seed 后由自动化执行 UI 操作。"
+    },
+    {
+      "case_id": "MD-EX-F16",
+      "priority": "P2",
+      "module": "功能交互",
+      "feature": "横竖屏",
+      "ability": "横竖屏",
+      "source": "产品功能",
+      "easy_wrong": "否",
+      "trap_type": "无",
+      "summary": "对话页横竖屏切换后发送问题",
+      "input": "主对话评测 MD-EX-F16：对话页横竖屏切换后发送问题。请给出一段便于验证的简短中文回答。",
+      "expected_result": "布局不遮挡；消息可发送",
+      "steps": [
+        "新建会话",
+        "输入/执行 v2 用例",
+        "等待或观察结果",
+        "记录截图/XML/时延/实际回答",
+        "按 v2 判分规则复核"
+      ],
+      "recovery_action": "用新建会话隔离用例；用主页面文本框继续下一条。",
+      "v2_category": "产品操作题",
+      "current_dialogue_suitable": "否",
+      "needs_material": "否",
+      "needs_operation": "是",
+      "needs_multiturn_rewrite": "否",
+      "v2_audit_reason": "目标依赖真实控件、会话、网络、后台、语音、复制、朗读或系统状态操作",
+      "test_type": "product_operation",
+      "execution_mode": "uiautomator2_operation",
+      "operation_steps": [
+        "在对话页旋转横屏",
+        "发送短问题并观察布局",
+        "旋回竖屏",
+        "验证输入框、消息和按钮不遮挡"
+      ],
+      "turns": [
+        {
+          "input": "请用一句话回答：这是横竖屏切换测试文本。",
+          "expected": "生成可用于后续产品操作验证的可见回答。"
+        }
+      ],
+      "v2_change": "从单纯文本问答改为产品操作用例，后续需由交互 runner 执行 operation_steps。",
+      "source_fidelity": "仅参考能力域",
+      "source_fidelity_reason": "按能力域和产品场景构造自包含用例，不声明为 benchmark 原题。",
+      "v2_2_change": "产品操作题改为自然 seed prompt；实际评价仍以 operation_steps 为准。",
+      "v3_category": "产品操作题",
+      "scoring_type": "operation",
+      "operation_expected": [
+        "在对话页旋转横屏",
+        "发送短问题并观察布局",
+        "旋回竖屏",
+        "验证输入框、消息和按钮不遮挡"
+      ],
+      "score_rule": "产品操作题不作为一问一答模型题执行；setup_seed_prompt 只做界面准备，评分依据为 automation_actions 的真实 UI 执行结果和证据。",
+      "send_as_model_question": false,
+      "execution_protocol": "setup_seed_then_ui_automation",
+      "setup_seed_prompt": [
+        "请用一句话回答：这是横竖屏切换测试文本。"
+      ],
+      "setup_seed_mode": "send_and_wait_for_ui_object",
+      "model_prompt_policy": "不要把 setup_seed_prompt 当成让模型执行 UI 操作的指令；它只用于生成可复制、可朗读、可滚动或可恢复的界面对象。",
+      "automation_actions": [
+        {
+          "step": 1,
+          "action": "在对话页旋转横屏",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        },
+        {
+          "step": 2,
+          "action": "发送短问题并观察布局",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        },
+        {
+          "step": 3,
+          "action": "旋回竖屏",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        },
+        {
+          "step": 4,
+          "action": "验证输入框、消息和按钮不遮挡",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        }
+      ],
+      "operation_pass_criteria": [
+        "自动化脚本完成 operation_steps/automation_actions 中定义的真实 UI 操作。",
+        "实际 UI 状态、截图、XML、剪贴板/朗读/侧栏/后台恢复等证据符合预期。",
+        "不按模型回答语义计入主对话模型正确率。"
+      ],
+      "v3_2_change": "明确操作题不是发文字让 App 执行，而是 seed 后由自动化执行 UI 操作。"
+    },
+    {
+      "case_id": "MD-EX-F17",
+      "priority": "P2",
+      "module": "功能交互",
+      "feature": "后台恢复",
+      "ability": "后台恢复",
+      "source": "产品功能",
+      "easy_wrong": "是",
+      "trap_type": "后台状态恢复",
+      "summary": "发送问题后切后台再回应用",
+      "input": "主对话评测 MD-EX-F17：发送问题后切后台再回应用。请给出一段便于验证的简短中文回答。",
+      "expected_result": "回答状态可恢复；不重复发送",
+      "steps": [
+        "新建会话",
+        "输入/执行 v2 用例",
+        "等待或观察结果",
+        "记录截图/XML/时延/实际回答",
+        "按 v2 判分规则复核"
+      ],
+      "recovery_action": "用新建会话隔离用例；用主页面文本框继续下一条。",
+      "v2_category": "产品操作题",
+      "current_dialogue_suitable": "否",
+      "needs_material": "否",
+      "needs_operation": "是",
+      "needs_multiturn_rewrite": "否",
+      "v2_audit_reason": "目标依赖真实控件、会话、网络、后台、语音、复制、朗读或系统状态操作",
+      "test_type": "product_operation",
+      "execution_mode": "uiautomator2_operation",
+      "operation_steps": [
+        "发送问题",
+        "切到后台",
+        "等待后切回App",
+        "验证状态恢复"
+      ],
+      "turns": [
+        {
+          "input": "请用一句话回答：这是后台切回测试文本。",
+          "expected": "生成可用于后续产品操作验证的可见回答。"
+        }
+      ],
+      "v2_change": "从单纯文本问答改为产品操作用例，后续需由交互 runner 执行 operation_steps。",
+      "source_fidelity": "仅参考能力域",
+      "source_fidelity_reason": "按能力域和产品场景构造自包含用例，不声明为 benchmark 原题。",
+      "v2_2_change": "产品操作题改为自然 seed prompt；实际评价仍以 operation_steps 为准。",
+      "v3_category": "产品操作题",
+      "scoring_type": "operation",
+      "operation_expected": [
+        "发送问题",
+        "切到后台",
+        "等待后切回App",
+        "验证状态恢复"
+      ],
+      "score_rule": "产品操作题不作为一问一答模型题执行；setup_seed_prompt 只做界面准备，评分依据为 automation_actions 的真实 UI 执行结果和证据。",
+      "send_as_model_question": false,
+      "execution_protocol": "setup_seed_then_ui_automation",
+      "setup_seed_prompt": [
+        "请用一句话回答：这是后台切回测试文本。"
+      ],
+      "setup_seed_mode": "send_and_wait_for_ui_object",
+      "model_prompt_policy": "不要把 setup_seed_prompt 当成让模型执行 UI 操作的指令；它只用于生成可复制、可朗读、可滚动或可恢复的界面对象。",
+      "automation_actions": [
+        {
+          "step": 1,
+          "action": "发送问题",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        },
+        {
+          "step": 2,
+          "action": "切到后台",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        },
+        {
+          "step": 3,
+          "action": "等待后切回App",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        },
+        {
+          "step": 4,
+          "action": "验证状态恢复",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        }
+      ],
+      "operation_pass_criteria": [
+        "自动化脚本完成 operation_steps/automation_actions 中定义的真实 UI 操作。",
+        "实际 UI 状态、截图、XML、剪贴板/朗读/侧栏/后台恢复等证据符合预期。",
+        "不按模型回答语义计入主对话模型正确率。"
+      ],
+      "v3_2_change": "明确操作题不是发文字让 App 执行，而是 seed 后由自动化执行 UI 操作。"
+    },
+    {
+      "case_id": "MD-EX-F18",
+      "priority": "P2",
+      "module": "功能交互",
+      "feature": "输入草稿",
+      "ability": "输入草稿",
+      "source": "产品功能",
+      "easy_wrong": "否",
+      "trap_type": "无",
+      "summary": "输入未发送草稿后切换页面再返回",
+      "input": "主对话评测 MD-EX-F18：输入未发送草稿后切换页面再返回。请给出一段便于验证的简短中文回答。",
+      "expected_result": "草稿按产品规则保留或明确清空",
+      "steps": [
+        "新建会话",
+        "输入/执行 v2 用例",
+        "等待或观察结果",
+        "记录截图/XML/时延/实际回答",
+        "按 v2 判分规则复核"
+      ],
+      "recovery_action": "用新建会话隔离用例；用主页面文本框继续下一条。",
+      "v2_category": "产品操作题",
+      "current_dialogue_suitable": "否",
+      "needs_material": "否",
+      "needs_operation": "是",
+      "needs_multiturn_rewrite": "否",
+      "v2_audit_reason": "目标依赖真实控件、会话、网络、后台、语音、复制、朗读或系统状态操作",
+      "test_type": "product_operation",
+      "execution_mode": "uiautomator2_operation",
+      "operation_steps": [
+        "按用例摘要执行真实产品操作",
+        "记录开始/结束时间、截图、XML和前后台状态",
+        "校验预期结果",
+        "执行恢复动作"
+      ],
+      "turns": [
+        {
+          "input": "请在输入框中保留这句草稿：未发送草稿保留测试。",
+          "expected": "生成可用于后续产品操作验证的可见回答。"
+        }
+      ],
+      "v2_change": "从单纯文本问答改为产品操作用例，后续需由交互 runner 执行 operation_steps。",
+      "source_fidelity": "仅参考能力域",
+      "source_fidelity_reason": "按能力域和产品场景构造自包含用例，不声明为 benchmark 原题。",
+      "v2_2_change": "产品操作题改为自然 seed prompt；实际评价仍以 operation_steps 为准。",
+      "v3_category": "产品操作题",
+      "scoring_type": "operation",
+      "operation_expected": [
+        "按用例摘要执行真实产品操作",
+        "记录开始/结束时间、截图、XML和前后台状态",
+        "校验预期结果",
+        "执行恢复动作"
+      ],
+      "score_rule": "产品操作题不作为一问一答模型题执行；setup_seed_prompt 只做界面准备，评分依据为 automation_actions 的真实 UI 执行结果和证据。",
+      "send_as_model_question": false,
+      "execution_protocol": "setup_seed_then_ui_automation",
+      "setup_seed_prompt": [
+        "请在输入框中保留这句草稿：未发送草稿保留测试。"
+      ],
+      "setup_seed_mode": "type_into_input_without_send",
+      "model_prompt_policy": "不要把 setup_seed_prompt 当成让模型执行 UI 操作的指令；它只用于生成可复制、可朗读、可滚动或可恢复的界面对象。",
+      "automation_actions": [
+        {
+          "step": 1,
+          "action": "把 setup_seed_prompt 写入输入框但不点击发送",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        },
+        {
+          "step": 2,
+          "action": "打开侧栏或切换到其他页面",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        },
+        {
+          "step": 3,
+          "action": "返回原对话页",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        },
+        {
+          "step": 4,
+          "action": "校验输入框草稿仍保留或有明确丢失提示",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        }
+      ],
+      "operation_pass_criteria": [
+        "自动化脚本完成 operation_steps/automation_actions 中定义的真实 UI 操作。",
+        "实际 UI 状态、截图、XML、剪贴板/朗读/侧栏/后台恢复等证据符合预期。",
+        "不按模型回答语义计入主对话模型正确率。"
+      ],
+      "v3_2_change": "明确操作题不是发文字让 App 执行，而是 seed 后由自动化执行 UI 操作。"
+    },
+    {
+      "case_id": "MD-EX-F19",
+      "priority": "P2",
+      "module": "功能交互",
+      "feature": "清空输入",
+      "ability": "清空输入",
+      "source": "产品功能",
+      "easy_wrong": "否",
+      "trap_type": "无",
+      "summary": "清空输入框中的长文本",
+      "input": "主对话评测 MD-EX-F19：清空输入框中的长文本。请给出一段便于验证的简短中文回答。",
+      "expected_result": "无隐藏残留字符",
+      "steps": [
+        "新建会话",
+        "输入/执行 v2 用例",
+        "等待或观察结果",
+        "记录截图/XML/时延/实际回答",
+        "按 v2 判分规则复核"
+      ],
+      "recovery_action": "用新建会话隔离用例；用主页面文本框继续下一条。",
+      "v2_category": "操作+补材料题",
+      "current_dialogue_suitable": "否",
+      "needs_material": "是",
+      "needs_operation": "是",
+      "needs_multiturn_rewrite": "否",
+      "v2_audit_reason": "既要真实 App/环境操作，也缺少具体输入材料",
+      "test_type": "product_operation",
+      "execution_mode": "uiautomator2_operation",
+      "operation_steps": [
+        "按用例摘要执行真实产品操作",
+        "记录开始/结束时间、截图、XML和前后台状态",
+        "校验预期结果",
+        "执行恢复动作"
+      ],
+      "turns": [
+        {
+          "input": "先把以下长文本输入到输入框但不发送，随后执行清空输入操作。文本：某医院准备上线一套AI辅助阅片系统，用于肺结节筛查、糖尿病视网膜病变识别和急诊影像初筛。系统目标是缩短医生阅片时间，提高早期病灶发现率，并让基层医生获得更稳定的第二意见。试点阶段发现，系统在标准清晰影像上准确率较高，但在低质量影像、罕见病变和儿童病例上表现波动。数据治理团队指出，训练样本主要来自东部大型医院，西部地区、老年患者和少数民族样本比例不足。法务部门担心，一旦AI给出错误提示，责任在医院、医生还是供应商之间难以界定。信息安全团队发现，部分测试数据脱敏不充分，仍可能通过时间、科室、住院号组合反推出患者身份。医生代表认为，AI可以作为第二意见，但不能替代医生签字；护士团队希望系统提示更加简洁，避免增加工作负担。产品团队计划先在三家医院灰度上线三个月，期间记录误报率、漏报率、医生采纳率、平均阅片耗时和患者投诉。上线前还需要完成伦理审查、患者告知、日志审计、模型版本回滚和异常工单处理机制。",
+          "expected": "清空后无隐藏残留字符"
+        }
+      ],
+      "v2_change": "补齐材料并改为产品操作用例。",
+      "source_fidelity": "仅参考能力域",
+      "source_fidelity_reason": "按能力域和产品场景构造自包含用例，不声明为 benchmark 原题。",
+      "v2_2_change": "补齐材料并改为产品操作用例。",
+      "v3_category": "产品操作题",
+      "scoring_type": "operation",
+      "operation_expected": [
+        "按用例摘要执行真实产品操作",
+        "记录开始/结束时间、截图、XML和前后台状态",
+        "校验预期结果",
+        "执行恢复动作"
+      ],
+      "score_rule": "产品操作题不作为一问一答模型题执行；setup_seed_prompt 只做界面准备，评分依据为 automation_actions 的真实 UI 执行结果和证据。",
+      "send_as_model_question": false,
+      "execution_protocol": "setup_seed_then_ui_automation",
+      "setup_seed_prompt": [
+        "先把以下长文本输入到输入框但不发送，随后执行清空输入操作。文本：某医院准备上线一套AI辅助阅片系统，用于肺结节筛查、糖尿病视网膜病变识别和急诊影像初筛。系统目标是缩短医生阅片时间，提高早期病灶发现率，并让基层医生获得更稳定的第二意见。试点阶段发现，系统在标准清晰影像上准确率较高，但在低质量影像、罕见病变和儿童病例上表现波动。数据治理团队指出，训练样本主要来自东部大型医院，西部地区、老年患者和少数民族样本比例不足。法务部门担心，一旦AI给出错误提示，责任在医院、医生还是供应商之间难以界定。信息安全团队发现，部分测试数据脱敏不充分，仍可能通过时间、科室、住院号组合反推出患者身份。医生代表认为，AI可以作为第二意见，但不能替代医生签字；护士团队希望系统提示更加简洁，避免增加工作负担。产品团队计划先在三家医院灰度上线三个月，期间记录误报率、漏报率、医生采纳率、平均阅片耗时和患者投诉。上线前还需要完成伦理审查、患者告知、日志审计、模型版本回滚和异常工单处理机制。"
+      ],
+      "setup_seed_mode": "type_into_input_without_send",
+      "model_prompt_policy": "不要把 setup_seed_prompt 当成让模型执行 UI 操作的指令；它只用于生成可复制、可朗读、可滚动或可恢复的界面对象。",
+      "automation_actions": [
+        {
+          "step": 1,
+          "action": "把长文本写入输入框但不点击发送",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        },
+        {
+          "step": 2,
+          "action": "执行全选/清空或点击输入框清除按钮",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        },
+        {
+          "step": 3,
+          "action": "校验输入框为空且发送按钮不可点击",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        },
+        {
+          "step": 4,
+          "action": "返回普通文本输入状态并记录截图/XML",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        }
+      ],
+      "operation_pass_criteria": [
+        "自动化脚本完成 operation_steps/automation_actions 中定义的真实 UI 操作。",
+        "实际 UI 状态、截图、XML、剪贴板/朗读/侧栏/后台恢复等证据符合预期。",
+        "不按模型回答语义计入主对话模型正确率。"
+      ],
+      "v3_2_change": "明确操作题不是发文字让 App 执行，而是 seed 后由自动化执行 UI 操作。"
+    },
+    {
+      "case_id": "MD-EX-F22",
+      "priority": "P2",
+      "module": "功能交互",
+      "feature": "异常恢复",
+      "ability": "异常恢复",
+      "source": "产品功能",
+      "easy_wrong": "是",
+      "trap_type": "进程恢复",
+      "summary": "生成中杀后台再打开灵犀",
+      "input": "主对话评测 MD-EX-F22：生成中杀后台再打开灵犀。请给出一段便于验证的简短中文回答。",
+      "expected_result": "已发送问题可恢复或有清晰恢复状态",
+      "steps": [
+        "新建会话",
+        "输入/执行 v2 用例",
+        "等待或观察结果",
+        "记录截图/XML/时延/实际回答",
+        "按 v2 判分规则复核"
+      ],
+      "recovery_action": "用新建会话隔离用例；用主页面文本框继续下一条。",
+      "v2_category": "产品操作题",
+      "current_dialogue_suitable": "否",
+      "needs_material": "否",
+      "needs_operation": "是",
+      "needs_multiturn_rewrite": "否",
+      "v2_audit_reason": "目标依赖真实控件、会话、网络、后台、语音、复制、朗读或系统状态操作",
+      "test_type": "product_operation",
+      "execution_mode": "uiautomator2_operation",
+      "operation_steps": [
+        "发送长回答问题",
+        "生成中杀后台或强制切后台",
+        "重新打开App",
+        "验证会话恢复、生成状态和后续输入能力"
+      ],
+      "turns": [
+        {
+          "input": "请写一段 500 字以内的说明，主题是异常恢复测试。",
+          "expected": "生成可用于后续产品操作验证的可见回答。"
+        }
+      ],
+      "v2_change": "从单纯文本问答改为产品操作用例，后续需由交互 runner 执行 operation_steps。",
+      "source_fidelity": "仅参考能力域",
+      "source_fidelity_reason": "按能力域和产品场景构造自包含用例，不声明为 benchmark 原题。",
+      "v2_2_change": "产品操作题改为自然 seed prompt；实际评价仍以 operation_steps 为准。",
+      "v3_category": "产品操作题",
+      "scoring_type": "operation",
+      "operation_expected": [
+        "发送长回答问题",
+        "生成中杀后台或强制切后台",
+        "重新打开App",
+        "验证会话恢复、生成状态和后续输入能力"
+      ],
+      "score_rule": "产品操作题不作为一问一答模型题执行；setup_seed_prompt 只做界面准备，评分依据为 automation_actions 的真实 UI 执行结果和证据。",
+      "send_as_model_question": false,
+      "execution_protocol": "setup_seed_then_ui_automation",
+      "setup_seed_prompt": [
+        "请写一段 500 字以内的说明，主题是异常恢复测试。"
+      ],
+      "setup_seed_mode": "send_and_wait_for_ui_object",
+      "model_prompt_policy": "不要把 setup_seed_prompt 当成让模型执行 UI 操作的指令；它只用于生成可复制、可朗读、可滚动或可恢复的界面对象。",
+      "automation_actions": [
+        {
+          "step": 1,
+          "action": "发送长回答问题",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        },
+        {
+          "step": 2,
+          "action": "生成中杀后台或强制切后台",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        },
+        {
+          "step": 3,
+          "action": "重新打开App",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        },
+        {
+          "step": 4,
+          "action": "验证会话恢复、生成状态和后续输入能力",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        }
+      ],
+      "operation_pass_criteria": [
+        "自动化脚本完成 operation_steps/automation_actions 中定义的真实 UI 操作。",
+        "实际 UI 状态、截图、XML、剪贴板/朗读/侧栏/后台恢复等证据符合预期。",
+        "不按模型回答语义计入主对话模型正确率。"
+      ],
+      "v3_2_change": "明确操作题不是发文字让 App 执行，而是 seed 后由自动化执行 UI 操作。"
+    },
+    {
+      "case_id": "MD-EX-C10",
+      "priority": "P1",
+      "module": "上下文多轮",
+      "feature": "会话隔离",
+      "ability": "会话隔离",
+      "source": "产品鲁棒性",
+      "easy_wrong": "是",
+      "trap_type": "跨会话泄漏",
+      "summary": "新建会话后问上一会话私有代号",
+      "input": "主对话评测 MD-EX-C10：新建会话后问上一会话私有代号。请直接回答。",
+      "expected_result": "说明当前会话无信息",
+      "steps": [
+        "新建会话",
+        "输入/执行 v2 用例",
+        "等待或观察结果",
+        "记录截图/XML/时延/实际回答",
+        "按 v2 判分规则复核"
+      ],
+      "recovery_action": "用新建会话隔离用例；用主页面文本框继续下一条。",
+      "v2_category": "产品操作题",
+      "current_dialogue_suitable": "否",
+      "needs_material": "否",
+      "needs_operation": "是",
+      "needs_multiturn_rewrite": "否",
+      "v2_audit_reason": "目标依赖真实控件、会话、网络、后台、语音、复制、朗读或系统状态操作",
+      "test_type": "product_operation",
+      "execution_mode": "uiautomator2_operation",
+      "operation_steps": [
+        "打开侧栏或新建入口",
+        "创建新会话",
+        "发送新主题",
+        "验证新旧会话内容隔离"
+      ],
+      "turns": [
+        {
+          "input": "请回复一句“跨会话隐私测试准备完成”。",
+          "expected": "生成可用于后续产品操作验证的可见回答。"
+        }
+      ],
+      "v2_change": "从单纯文本问答改为产品操作用例，后续需由交互 runner 执行 operation_steps。",
+      "source_fidelity": "仅参考能力域",
+      "source_fidelity_reason": "按能力域和产品场景构造自包含用例，不声明为 benchmark 原题。",
+      "v2_2_change": "产品操作题改为自然 seed prompt；实际评价仍以 operation_steps 为准。",
+      "v3_category": "产品操作题",
+      "scoring_type": "operation",
+      "operation_expected": [
+        "打开侧栏或新建入口",
+        "创建新会话",
+        "发送新主题",
+        "验证新旧会话内容隔离"
+      ],
+      "score_rule": "产品操作题不作为一问一答模型题执行；setup_seed_prompt 只做界面准备，评分依据为 automation_actions 的真实 UI 执行结果和证据。",
+      "send_as_model_question": false,
+      "execution_protocol": "setup_seed_then_ui_automation",
+      "setup_seed_prompt": [
+        "请回复一句“跨会话隐私测试准备完成”。"
+      ],
+      "setup_seed_mode": "send_and_wait_for_ui_object",
+      "model_prompt_policy": "不要把 setup_seed_prompt 当成让模型执行 UI 操作的指令；它只用于生成可复制、可朗读、可滚动或可恢复的界面对象。",
+      "automation_actions": [
+        {
+          "step": 1,
+          "action": "打开侧栏或新建入口",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        },
+        {
+          "step": 2,
+          "action": "创建新会话",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        },
+        {
+          "step": 3,
+          "action": "发送新主题",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        },
+        {
+          "step": 4,
+          "action": "验证新旧会话内容隔离",
+          "executor": "uiautomator2/appium",
+          "evidence_required": [
+            "screenshot",
+            "ui_xml",
+            "start_time",
+            "end_time",
+            "response_time"
+          ]
+        }
+      ],
+      "operation_pass_criteria": [
+        "自动化脚本完成 operation_steps/automation_actions 中定义的真实 UI 操作。",
+        "实际 UI 状态、截图、XML、剪贴板/朗读/侧栏/后台恢复等证据符合预期。",
+        "不按模型回答语义计入主对话模型正确率。"
+      ],
+      "v3_2_change": "明确操作题不是发文字让 App 执行，而是 seed 后由自动化执行 UI 操作。"
+    }
+  ]
+}
