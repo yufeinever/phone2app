@@ -245,8 +245,8 @@ def load_cases(path: Path) -> list[dict[str, Any]]:
                 converted["scoring_type"] = item.get("scoring_type")
             if item.get("scoring_type") == "single_choice_abcd":
                 converted["strict_answer_only"] = True
-            if item.get("scoring_type") == "objective" and expected:
-                converted["must_contain"] = [expected] if len(expected) <= 16 and "；" not in expected else []
+            if item.get("scoring_type") == "objective":
+                converted["manual_review"] = True
             elif item.get("scoring_type") == "single_choice_abcd" and expected:
                 converted["must_contain"] = [expected]
             turns.append(converted)
@@ -768,7 +768,17 @@ def run_case(run_dir: Path, device: Any, case: dict[str, Any]) -> dict[str, Any]
                 case_dir, case_id, turn_index, before_labels, turn["input"], turn
             )
             scroll_screenshots, scroll_xmls = capture_response_scroll_series(case_dir, case_id, turn_index)
-            passed, eval_detail = evaluate_response(response, turn)
+            if turn.get("manual_review"):
+                passed = False
+                turn_status = "review" if response.strip() else "fail"
+                eval_detail = (
+                    "manual_review: automatic objective scoring disabled"
+                    if response.strip()
+                    else "no_response_captured"
+                )
+            else:
+                passed, eval_detail = evaluate_response(response, turn)
+                turn_status = "pass" if passed else "fail"
             result["turns"].append(
                 {
                     "turn_index": turn_index,
@@ -776,6 +786,7 @@ def run_case(run_dir: Path, device: Any, case: dict[str, Any]) -> dict[str, Any]
                     "expected": turn["expected"],
                     "actual": response,
                     "passed": passed,
+                    "status": turn_status,
                     "evaluation_detail": eval_detail,
                     "start_time": turn_start.isoformat(timespec="seconds"),
                     "end_time": datetime.now().isoformat(timespec="seconds"),
@@ -790,10 +801,16 @@ def run_case(run_dir: Path, device: Any, case: dict[str, Any]) -> dict[str, Any]
                     "typed_xml": str(typed_xml),
                     "response_xml": str(response_xml),
                     "response_scroll_xmls": scroll_xmls,
-                    "error_screenshot": None if passed else str(response_png),
+                    "error_screenshot": str(response_png) if turn_status == "fail" else None,
                 }
             )
-        result["status"] = "pass" if all(turn["passed"] for turn in result["turns"]) else "fail"
+        turn_statuses = [turn.get("status") for turn in result["turns"]]
+        if any(status == "fail" for status in turn_statuses):
+            result["status"] = "fail"
+        elif any(status == "review" for status in turn_statuses):
+            result["status"] = "review"
+        else:
+            result["status"] = "pass"
         result["recovery_action"] = "用新建会话隔离用例；用主页面文本框继续下一条。"
     except Exception as exc:
         error_png = case_dir / f"{case_id}_error.png"
@@ -816,6 +833,7 @@ def run_case(run_dir: Path, device: Any, case: dict[str, Any]) -> dict[str, Any]
 
 def write_summary(run_dir: Path, metadata: dict[str, Any], results: list[dict[str, Any]]) -> None:
     passed = sum(1 for item in results if item["status"] == "pass")
+    review = sum(1 for item in results if item["status"] == "review")
     failed = sum(1 for item in results if item["status"] == "fail")
     errored = sum(1 for item in results if item["status"] == "error")
     rows = []
@@ -863,6 +881,7 @@ def write_summary(run_dir: Path, metadata: dict[str, Any], results: list[dict[st
         "",
         f"- 用例总数: `{len(results)}`",
         f"- 通过: `{passed}`",
+        f"- 待复核: `{review}`",
         f"- 失败: `{failed}`",
         f"- 执行错误: `{errored}`",
         f"- 通过率: `{passed}/{len(results)}`",
@@ -954,7 +973,7 @@ def case_overview_markdown(metadata: dict[str, Any], results: list[dict[str, Any
                 f"| {item['case_id']}#{turn.get('turn_index')} | {item['feature']} | "
                 f"{md_cell(question, 90)} | {md_cell(expected, 120)} | {md_cell(actual, 180)} | "
                 f"{turn.get('first_response_time_ms', '')} | {turn.get('response_complete_time_ms', '')} | "
-                f"{'pass' if turn.get('passed') else 'fail'} | {md_cell(turn.get('error_screenshot') or '')} |"
+                f"{turn.get('status') or ('pass' if turn.get('passed') else 'fail')} | {md_cell(turn.get('error_screenshot') or '')} |"
             )
     return "\n".join(lines) + "\n"
 
@@ -1007,7 +1026,10 @@ def main() -> int:
     metadata["end_time"] = datetime.now().isoformat(timespec="seconds")
     write_summary(run_dir, metadata, results)
     print(f"RESULT_DIR {run_dir}")
-    print(f"PASS {sum(1 for item in results if item['status'] == 'pass')}/{len(results)}")
+    pass_count = sum(1 for item in results if item["status"] == "pass")
+    review_count = sum(1 for item in results if item["status"] == "review")
+    fail_count = sum(1 for item in results if item["status"] in {"fail", "error"})
+    print(f"SUMMARY pass={pass_count} review={review_count} fail_or_error={fail_count} total={len(results)}")
     return 0
 
 

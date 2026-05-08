@@ -20,8 +20,9 @@ _tmp*.json
 tmp/
 temp/
 
-# Local agent/runbook notes can include machine-specific app identifiers.
-AGENTS.md
+# Local tool binaries.
+tools/scrcpy-*/
+tools/scrcpy-*.zip
 
 # Android/test runtime artifacts.
 *.apk
